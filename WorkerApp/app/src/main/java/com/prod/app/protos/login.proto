@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+import "persontypeenum.proto";
+import "summary.proto";
+import "names.proto";
+import "contactdetails.proto";
+import "time.proto";
+import "worker.proto";
+
+message LoginPb {
+    EntityPb dbInfo = 1;
+    ContactDetailsPb contactDetails = 2;
+    string password = 3;
+    PersonTypePb personType = 4;
+    WorkerPbRef workerRef = 5;
+    TimePb timeCreation = 6;
+}
+
+message LoginSearchRequestPb {
+    LoginPb login = 1;
+}
+
+message LoginSearchRespsonsePb {
+    SummaryPb summary =1;
+    repeated LoginPb results = 2;
+}

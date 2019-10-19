@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message EmailIdPb {
+    string localPart = 1;
+    string domain = 2;
+}
+
+message EmailBuilderPb{
+    EmailIdPb fromId=1;
+    repeated EmailIdPb toId=2;
+    string subject =3;
+    string content = 4;
+}

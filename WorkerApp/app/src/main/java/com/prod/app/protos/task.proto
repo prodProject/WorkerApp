@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+
+message TaskPb {
+  EntityPb dbInfo = 1;
+}

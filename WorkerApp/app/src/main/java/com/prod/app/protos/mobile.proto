@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message MobilePb {
+    CountryCodeEnum  code = 1;
+    string number = 2;
+}
+
+enum CountryCodeEnum{
+    UNKNOWN_CODE =0;
+    ISD_91 = 1;
+}

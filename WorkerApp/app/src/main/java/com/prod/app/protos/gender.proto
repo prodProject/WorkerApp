@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message GenderPb {
+    GenderEnum gender = 1;
+}
+
+enum GenderEnum{
+    UNKNOWN_GENDER=0;
+    MALE=1;
+    FEMALE=2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message PersonTypePb {
+    PersonTypeEnum personType = 1;
+}
+
+enum PersonTypeEnum{
+    UNKNOWN_PERSON_TYPE=0;
+    WORKER=1;
+    CONSUMER=2;
+}

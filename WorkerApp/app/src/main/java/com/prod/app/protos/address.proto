@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message AddressPb {
+    string houseNo= 1;
+    string streetOrRoad = 2;
+    string landmark = 3;
+    string pincode = 4;
+}

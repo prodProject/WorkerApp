@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message UIDPb {
+    string uid = 1;
+}

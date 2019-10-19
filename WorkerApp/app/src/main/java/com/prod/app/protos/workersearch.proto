@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+import "summary.proto";
+import "worker.proto";
+import "mobile.proto";
+import "contactdetails.proto";
+
+message WorkerSearchRequestPb {
+    StatusEnum lifeTime =1;
+    ContactDetailsPb contactDetais =2;
+    MobilePb mobileNo = 3;
+}
+
+message WorkerSearchResponsePb {
+    SummaryPb summary =1;
+    repeated WorkerPb results =2;
+}

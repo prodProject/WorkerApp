@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message NamesPb {
+    string firstName = 1;
+    string lastName = 2;
+    string canonicalName =3;
+}

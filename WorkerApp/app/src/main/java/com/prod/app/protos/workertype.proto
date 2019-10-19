@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+import "names.proto";
+
+message WorkertypePb {
+    EntityPb dbInfo = 1;
+    WorkerTypeEnum workerType = 2;
+    repeated NamesPb categories = 3;
+}
+
+enum WorkerTypeEnum {
+    UNKNOWN_WORKER_TYPE = 0;
+    CONSTRUCTOR = 1;
+    ELECTRICIAN = 2;
+    PAINTING = 3;
+    CLEANING = 4;
+    PLUMBING = 5;
+    MAID = 6;
+    CARPENTER = 7;
+    LAUNDARY_AND_DRY_CLEANING = 8;
+    PEST_CONTROL = 9;
+    PACKERS_AND_MOVERS = 10;
+    SALON = 11;
+}

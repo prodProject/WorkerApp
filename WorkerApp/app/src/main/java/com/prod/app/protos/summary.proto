@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+message SummaryPb {
+    int32 totalHits= 1;
+}

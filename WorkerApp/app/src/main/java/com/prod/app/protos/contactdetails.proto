@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "email.proto";
+import "mobile.proto";
+
+message ContactDetailsPb {
+    EmailIdPb email = 1;
+    MobilePb primaryMobile = 2;
+    repeated MobilePb secondryMobile = 3;
+
+}
