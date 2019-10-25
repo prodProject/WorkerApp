@@ -635,7 +635,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginPb.class, com.prod.app.protobuff.Login.LoginPb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.Login.LoginPb.newBuilder()
+      // Construct using com.prod.app.protobuff.LoginData.LoginPb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1847,7 +1847,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginSearchRequestPb.class, com.prod.app.protobuff.Login.LoginSearchRequestPb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.Login.LoginSearchRequestPb.newBuilder()
+      // Construct using com.prod.app.protobuff.LoginData.LoginSearchRequestPb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2545,7 +2545,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginSearchRespsonsePb.class, com.prod.app.protobuff.Login.LoginSearchRespsonsePb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.Login.LoginSearchRespsonsePb.newBuilder()
+      // Construct using com.prod.app.protobuff.LoginData.LoginSearchRespsonsePb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3197,7 +3197,7 @@ public final class Login {
     internal_static_com_prod_app_protobuff_LoginSearchRequestPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_LoginSearchRequestPb_descriptor,
-        new java.lang.String[] { "Login", });
+        new java.lang.String[] { "LoginData", });
     internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_fieldAccessorTable = new

@@ -2248,7 +2248,7 @@ public final class Registration {
     internal_static_com_prod_app_protobuff_RegistrationResponsePb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_RegistrationResponsePb_descriptor,
-        new java.lang.String[] { "Worker", "Comsumer", "Login", "Status", });
+        new java.lang.String[] { "Worker", "Comsumer", "LoginData", "Status", });
     com.prod.app.protobuff.Worker.getDescriptor();
     com.prod.app.protobuff.Consumer.getDescriptor();
     com.prod.app.protobuff.Login.getDescriptor();
