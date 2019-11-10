@@ -1278,11 +1278,1709 @@ public final class Workertype {
 
   }
 
+  public interface WorkerTypeSearchRequestPbOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.WorkerTypeSearchRequestPb)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    boolean hasDbInfo();
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    com.prod.app.protobuff.Entity.EntityPb getDbInfo();
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    com.prod.app.protobuff.Entity.EntityPbOrBuilder getDbInfoOrBuilder();
+
+    /**
+     * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+     */
+    int getWorkerTypeValue();
+    /**
+     * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+     */
+    com.prod.app.protobuff.Workertype.WorkerTypeEnum getWorkerType();
+  }
+  /**
+   * Protobuf type {@code com.prod.app.protobuff.WorkerTypeSearchRequestPb}
+   */
+  public  static final class WorkerTypeSearchRequestPb extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.prod.app.protobuff.WorkerTypeSearchRequestPb)
+      WorkerTypeSearchRequestPbOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use WorkerTypeSearchRequestPb.newBuilder() to construct.
+    private WorkerTypeSearchRequestPb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerTypeSearchRequestPb() {
+      workerType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new WorkerTypeSearchRequestPb();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private WorkerTypeSearchRequestPb(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.prod.app.protobuff.Entity.EntityPb.Builder subBuilder = null;
+              if (dbInfo_ != null) {
+                subBuilder = dbInfo_.toBuilder();
+              }
+              dbInfo_ = input.readMessage(com.prod.app.protobuff.Entity.EntityPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dbInfo_);
+                dbInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              workerType_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.class, com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.Builder.class);
+    }
+
+    public static final int DBINFO_FIELD_NUMBER = 1;
+    private com.prod.app.protobuff.Entity.EntityPb dbInfo_;
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    public boolean hasDbInfo() {
+      return dbInfo_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    public com.prod.app.protobuff.Entity.EntityPb getDbInfo() {
+      return dbInfo_ == null ? com.prod.app.protobuff.Entity.EntityPb.getDefaultInstance() : dbInfo_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+     */
+    public com.prod.app.protobuff.Entity.EntityPbOrBuilder getDbInfoOrBuilder() {
+      return getDbInfo();
+    }
+
+    public static final int WORKERTYPE_FIELD_NUMBER = 2;
+    private int workerType_;
+    /**
+     * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+     */
+    public int getWorkerTypeValue() {
+      return workerType_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+     */
+    public com.prod.app.protobuff.Workertype.WorkerTypeEnum getWorkerType() {
+      @SuppressWarnings("deprecation")
+      com.prod.app.protobuff.Workertype.WorkerTypeEnum result = com.prod.app.protobuff.Workertype.WorkerTypeEnum.valueOf(workerType_);
+      return result == null ? com.prod.app.protobuff.Workertype.WorkerTypeEnum.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (dbInfo_ != null) {
+        output.writeMessage(1, getDbInfo());
+      }
+      if (workerType_ != com.prod.app.protobuff.Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE.getNumber()) {
+        output.writeEnum(2, workerType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dbInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getDbInfo());
+      }
+      if (workerType_ != com.prod.app.protobuff.Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, workerType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb)) {
+        return super.equals(obj);
+      }
+      com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb other = (com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb) obj;
+
+      if (hasDbInfo() != other.hasDbInfo()) return false;
+      if (hasDbInfo()) {
+        if (!getDbInfo()
+            .equals(other.getDbInfo())) return false;
+      }
+      if (workerType_ != other.workerType_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDbInfo()) {
+        hash = (37 * hash) + DBINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getDbInfo().hashCode();
+      }
+      hash = (37 * hash) + WORKERTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + workerType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prod.app.protobuff.WorkerTypeSearchRequestPb}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prod.app.protobuff.WorkerTypeSearchRequestPb)
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPbOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.class, com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.Builder.class);
+      }
+
+      // Construct using com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dbInfoBuilder_ == null) {
+          dbInfo_ = null;
+        } else {
+          dbInfo_ = null;
+          dbInfoBuilder_ = null;
+        }
+        workerType_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb getDefaultInstanceForType() {
+        return com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb build() {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb buildPartial() {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb result = new com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb(this);
+        if (dbInfoBuilder_ == null) {
+          result.dbInfo_ = dbInfo_;
+        } else {
+          result.dbInfo_ = dbInfoBuilder_.build();
+        }
+        result.workerType_ = workerType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb) {
+          return mergeFrom((com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb other) {
+        if (other == com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb.getDefaultInstance()) return this;
+        if (other.hasDbInfo()) {
+          mergeDbInfo(other.getDbInfo());
+        }
+        if (other.workerType_ != 0) {
+          setWorkerTypeValue(other.getWorkerTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.prod.app.protobuff.Entity.EntityPb dbInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Entity.EntityPb, com.prod.app.protobuff.Entity.EntityPb.Builder, com.prod.app.protobuff.Entity.EntityPbOrBuilder> dbInfoBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public boolean hasDbInfo() {
+        return dbInfoBuilder_ != null || dbInfo_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public com.prod.app.protobuff.Entity.EntityPb getDbInfo() {
+        if (dbInfoBuilder_ == null) {
+          return dbInfo_ == null ? com.prod.app.protobuff.Entity.EntityPb.getDefaultInstance() : dbInfo_;
+        } else {
+          return dbInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public Builder setDbInfo(com.prod.app.protobuff.Entity.EntityPb value) {
+        if (dbInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dbInfo_ = value;
+          onChanged();
+        } else {
+          dbInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public Builder setDbInfo(
+          com.prod.app.protobuff.Entity.EntityPb.Builder builderForValue) {
+        if (dbInfoBuilder_ == null) {
+          dbInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          dbInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public Builder mergeDbInfo(com.prod.app.protobuff.Entity.EntityPb value) {
+        if (dbInfoBuilder_ == null) {
+          if (dbInfo_ != null) {
+            dbInfo_ =
+              com.prod.app.protobuff.Entity.EntityPb.newBuilder(dbInfo_).mergeFrom(value).buildPartial();
+          } else {
+            dbInfo_ = value;
+          }
+          onChanged();
+        } else {
+          dbInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public Builder clearDbInfo() {
+        if (dbInfoBuilder_ == null) {
+          dbInfo_ = null;
+          onChanged();
+        } else {
+          dbInfo_ = null;
+          dbInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public com.prod.app.protobuff.Entity.EntityPb.Builder getDbInfoBuilder() {
+        
+        onChanged();
+        return getDbInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      public com.prod.app.protobuff.Entity.EntityPbOrBuilder getDbInfoOrBuilder() {
+        if (dbInfoBuilder_ != null) {
+          return dbInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return dbInfo_ == null ?
+              com.prod.app.protobuff.Entity.EntityPb.getDefaultInstance() : dbInfo_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.EntityPb dbInfo = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Entity.EntityPb, com.prod.app.protobuff.Entity.EntityPb.Builder, com.prod.app.protobuff.Entity.EntityPbOrBuilder> 
+          getDbInfoFieldBuilder() {
+        if (dbInfoBuilder_ == null) {
+          dbInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Entity.EntityPb, com.prod.app.protobuff.Entity.EntityPb.Builder, com.prod.app.protobuff.Entity.EntityPbOrBuilder>(
+                  getDbInfo(),
+                  getParentForChildren(),
+                  isClean());
+          dbInfo_ = null;
+        }
+        return dbInfoBuilder_;
+      }
+
+      private int workerType_ = 0;
+      /**
+       * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+       */
+      public int getWorkerTypeValue() {
+        return workerType_;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+       */
+      public Builder setWorkerTypeValue(int value) {
+        workerType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkerTypeEnum getWorkerType() {
+        @SuppressWarnings("deprecation")
+        com.prod.app.protobuff.Workertype.WorkerTypeEnum result = com.prod.app.protobuff.Workertype.WorkerTypeEnum.valueOf(workerType_);
+        return result == null ? com.prod.app.protobuff.Workertype.WorkerTypeEnum.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+       */
+      public Builder setWorkerType(com.prod.app.protobuff.Workertype.WorkerTypeEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        workerType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerTypeEnum workerType = 2;</code>
+       */
+      public Builder clearWorkerType() {
+        
+        workerType_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.prod.app.protobuff.WorkerTypeSearchRequestPb)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prod.app.protobuff.WorkerTypeSearchRequestPb)
+    private static final com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb();
+    }
+
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerTypeSearchRequestPb>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerTypeSearchRequestPb>() {
+      @java.lang.Override
+      public WorkerTypeSearchRequestPb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new WorkerTypeSearchRequestPb(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerTypeSearchRequestPb> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerTypeSearchRequestPb> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prod.app.protobuff.Workertype.WorkerTypeSearchRequestPb getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerTypeSearchResponsePbOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.WorkerTypeSearchResponsePb)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    boolean hasSummary();
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    com.prod.app.protobuff.Summary.SummaryPb getSummary();
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    com.prod.app.protobuff.Summary.SummaryPbOrBuilder getSummaryOrBuilder();
+
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb> 
+        getResultsList();
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    com.prod.app.protobuff.Workertype.WorkertypePb getResults(int index);
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    int getResultsCount();
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    java.util.List<? extends com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder> 
+        getResultsOrBuilderList();
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder getResultsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.prod.app.protobuff.WorkerTypeSearchResponsePb}
+   */
+  public  static final class WorkerTypeSearchResponsePb extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.prod.app.protobuff.WorkerTypeSearchResponsePb)
+      WorkerTypeSearchResponsePbOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use WorkerTypeSearchResponsePb.newBuilder() to construct.
+    private WorkerTypeSearchResponsePb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerTypeSearchResponsePb() {
+      results_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new WorkerTypeSearchResponsePb();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private WorkerTypeSearchResponsePb(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.prod.app.protobuff.Summary.SummaryPb.Builder subBuilder = null;
+              if (summary_ != null) {
+                subBuilder = summary_.toBuilder();
+              }
+              summary_ = input.readMessage(com.prod.app.protobuff.Summary.SummaryPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(summary_);
+                summary_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                results_ = new java.util.ArrayList<com.prod.app.protobuff.Workertype.WorkertypePb>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              results_.add(
+                  input.readMessage(com.prod.app.protobuff.Workertype.WorkertypePb.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          results_ = java.util.Collections.unmodifiableList(results_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.class, com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.Builder.class);
+    }
+
+    public static final int SUMMARY_FIELD_NUMBER = 1;
+    private com.prod.app.protobuff.Summary.SummaryPb summary_;
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    public boolean hasSummary() {
+      return summary_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    public com.prod.app.protobuff.Summary.SummaryPb getSummary() {
+      return summary_ == null ? com.prod.app.protobuff.Summary.SummaryPb.getDefaultInstance() : summary_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+     */
+    public com.prod.app.protobuff.Summary.SummaryPbOrBuilder getSummaryOrBuilder() {
+      return getSummary();
+    }
+
+    public static final int RESULTS_FIELD_NUMBER = 2;
+    private java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb> results_;
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    public java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb> getResultsList() {
+      return results_;
+    }
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    public java.util.List<? extends com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder> 
+        getResultsOrBuilderList() {
+      return results_;
+    }
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    public int getResultsCount() {
+      return results_.size();
+    }
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    public com.prod.app.protobuff.Workertype.WorkertypePb getResults(int index) {
+      return results_.get(index);
+    }
+    /**
+     * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+     */
+    public com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder getResultsOrBuilder(
+        int index) {
+      return results_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (summary_ != null) {
+        output.writeMessage(1, getSummary());
+      }
+      for (int i = 0; i < results_.size(); i++) {
+        output.writeMessage(2, results_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (summary_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getSummary());
+      }
+      for (int i = 0; i < results_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, results_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb)) {
+        return super.equals(obj);
+      }
+      com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb other = (com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb) obj;
+
+      if (hasSummary() != other.hasSummary()) return false;
+      if (hasSummary()) {
+        if (!getSummary()
+            .equals(other.getSummary())) return false;
+      }
+      if (!getResultsList()
+          .equals(other.getResultsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSummary()) {
+        hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+        hash = (53 * hash) + getSummary().hashCode();
+      }
+      if (getResultsCount() > 0) {
+        hash = (37 * hash) + RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getResultsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prod.app.protobuff.WorkerTypeSearchResponsePb}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prod.app.protobuff.WorkerTypeSearchResponsePb)
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePbOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.class, com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.Builder.class);
+      }
+
+      // Construct using com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getResultsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (summaryBuilder_ == null) {
+          summary_ = null;
+        } else {
+          summary_ = null;
+          summaryBuilder_ = null;
+        }
+        if (resultsBuilder_ == null) {
+          results_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          resultsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prod.app.protobuff.Workertype.internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb getDefaultInstanceForType() {
+        return com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb build() {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb buildPartial() {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb result = new com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb(this);
+        int from_bitField0_ = bitField0_;
+        if (summaryBuilder_ == null) {
+          result.summary_ = summary_;
+        } else {
+          result.summary_ = summaryBuilder_.build();
+        }
+        if (resultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            results_ = java.util.Collections.unmodifiableList(results_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.results_ = results_;
+        } else {
+          result.results_ = resultsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb) {
+          return mergeFrom((com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb other) {
+        if (other == com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb.getDefaultInstance()) return this;
+        if (other.hasSummary()) {
+          mergeSummary(other.getSummary());
+        }
+        if (resultsBuilder_ == null) {
+          if (!other.results_.isEmpty()) {
+            if (results_.isEmpty()) {
+              results_ = other.results_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResultsIsMutable();
+              results_.addAll(other.results_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.results_.isEmpty()) {
+            if (resultsBuilder_.isEmpty()) {
+              resultsBuilder_.dispose();
+              resultsBuilder_ = null;
+              results_ = other.results_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resultsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResultsFieldBuilder() : null;
+            } else {
+              resultsBuilder_.addAllMessages(other.results_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.prod.app.protobuff.Summary.SummaryPb summary_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Summary.SummaryPb, com.prod.app.protobuff.Summary.SummaryPb.Builder, com.prod.app.protobuff.Summary.SummaryPbOrBuilder> summaryBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public boolean hasSummary() {
+        return summaryBuilder_ != null || summary_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public com.prod.app.protobuff.Summary.SummaryPb getSummary() {
+        if (summaryBuilder_ == null) {
+          return summary_ == null ? com.prod.app.protobuff.Summary.SummaryPb.getDefaultInstance() : summary_;
+        } else {
+          return summaryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public Builder setSummary(com.prod.app.protobuff.Summary.SummaryPb value) {
+        if (summaryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          summary_ = value;
+          onChanged();
+        } else {
+          summaryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public Builder setSummary(
+          com.prod.app.protobuff.Summary.SummaryPb.Builder builderForValue) {
+        if (summaryBuilder_ == null) {
+          summary_ = builderForValue.build();
+          onChanged();
+        } else {
+          summaryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public Builder mergeSummary(com.prod.app.protobuff.Summary.SummaryPb value) {
+        if (summaryBuilder_ == null) {
+          if (summary_ != null) {
+            summary_ =
+              com.prod.app.protobuff.Summary.SummaryPb.newBuilder(summary_).mergeFrom(value).buildPartial();
+          } else {
+            summary_ = value;
+          }
+          onChanged();
+        } else {
+          summaryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public Builder clearSummary() {
+        if (summaryBuilder_ == null) {
+          summary_ = null;
+          onChanged();
+        } else {
+          summary_ = null;
+          summaryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public com.prod.app.protobuff.Summary.SummaryPb.Builder getSummaryBuilder() {
+        
+        onChanged();
+        return getSummaryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      public com.prod.app.protobuff.Summary.SummaryPbOrBuilder getSummaryOrBuilder() {
+        if (summaryBuilder_ != null) {
+          return summaryBuilder_.getMessageOrBuilder();
+        } else {
+          return summary_ == null ?
+              com.prod.app.protobuff.Summary.SummaryPb.getDefaultInstance() : summary_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.SummaryPb summary = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Summary.SummaryPb, com.prod.app.protobuff.Summary.SummaryPb.Builder, com.prod.app.protobuff.Summary.SummaryPbOrBuilder> 
+          getSummaryFieldBuilder() {
+        if (summaryBuilder_ == null) {
+          summaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Summary.SummaryPb, com.prod.app.protobuff.Summary.SummaryPb.Builder, com.prod.app.protobuff.Summary.SummaryPbOrBuilder>(
+                  getSummary(),
+                  getParentForChildren(),
+                  isClean());
+          summary_ = null;
+        }
+        return summaryBuilder_;
+      }
+
+      private java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb> results_ =
+        java.util.Collections.emptyList();
+      private void ensureResultsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          results_ = new java.util.ArrayList<com.prod.app.protobuff.Workertype.WorkertypePb>(results_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.prod.app.protobuff.Workertype.WorkertypePb, com.prod.app.protobuff.Workertype.WorkertypePb.Builder, com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder> resultsBuilder_;
+
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb> getResultsList() {
+        if (resultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(results_);
+        } else {
+          return resultsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public int getResultsCount() {
+        if (resultsBuilder_ == null) {
+          return results_.size();
+        } else {
+          return resultsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkertypePb getResults(int index) {
+        if (resultsBuilder_ == null) {
+          return results_.get(index);
+        } else {
+          return resultsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder setResults(
+          int index, com.prod.app.protobuff.Workertype.WorkertypePb value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.set(index, value);
+          onChanged();
+        } else {
+          resultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder setResults(
+          int index, com.prod.app.protobuff.Workertype.WorkertypePb.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder addResults(com.prod.app.protobuff.Workertype.WorkertypePb value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.add(value);
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder addResults(
+          int index, com.prod.app.protobuff.Workertype.WorkertypePb value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.add(index, value);
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder addResults(
+          com.prod.app.protobuff.Workertype.WorkertypePb.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder addResults(
+          int index, com.prod.app.protobuff.Workertype.WorkertypePb.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder addAllResults(
+          java.lang.Iterable<? extends com.prod.app.protobuff.Workertype.WorkertypePb> values) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, results_);
+          onChanged();
+        } else {
+          resultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder clearResults() {
+        if (resultsBuilder_ == null) {
+          results_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resultsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public Builder removeResults(int index) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.remove(index);
+          onChanged();
+        } else {
+          resultsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkertypePb.Builder getResultsBuilder(
+          int index) {
+        return getResultsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder getResultsOrBuilder(
+          int index) {
+        if (resultsBuilder_ == null) {
+          return results_.get(index);  } else {
+          return resultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public java.util.List<? extends com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder> 
+           getResultsOrBuilderList() {
+        if (resultsBuilder_ != null) {
+          return resultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(results_);
+        }
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkertypePb.Builder addResultsBuilder() {
+        return getResultsFieldBuilder().addBuilder(
+            com.prod.app.protobuff.Workertype.WorkertypePb.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public com.prod.app.protobuff.Workertype.WorkertypePb.Builder addResultsBuilder(
+          int index) {
+        return getResultsFieldBuilder().addBuilder(
+            index, com.prod.app.protobuff.Workertype.WorkertypePb.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.prod.app.protobuff.WorkertypePb results = 2;</code>
+       */
+      public java.util.List<com.prod.app.protobuff.Workertype.WorkertypePb.Builder> 
+           getResultsBuilderList() {
+        return getResultsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.prod.app.protobuff.Workertype.WorkertypePb, com.prod.app.protobuff.Workertype.WorkertypePb.Builder, com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder> 
+          getResultsFieldBuilder() {
+        if (resultsBuilder_ == null) {
+          resultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.prod.app.protobuff.Workertype.WorkertypePb, com.prod.app.protobuff.Workertype.WorkertypePb.Builder, com.prod.app.protobuff.Workertype.WorkertypePbOrBuilder>(
+                  results_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          results_ = null;
+        }
+        return resultsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.prod.app.protobuff.WorkerTypeSearchResponsePb)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prod.app.protobuff.WorkerTypeSearchResponsePb)
+    private static final com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb();
+    }
+
+    public static com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerTypeSearchResponsePb>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerTypeSearchResponsePb>() {
+      @java.lang.Override
+      public WorkerTypeSearchResponsePb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new WorkerTypeSearchResponsePb(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerTypeSearchResponsePb> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerTypeSearchResponsePb> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prod.app.protobuff.Workertype.WorkerTypeSearchResponsePb getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prod_app_protobuff_WorkertypePb_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_prod_app_protobuff_WorkertypePb_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1293,24 +2991,32 @@ public final class Workertype {
   static {
     java.lang.String[] descriptorData = {
       "\n\020workertype.proto\022\026com.prod.app.protobu" +
-      "ff\032\014entity.proto\032\013names.proto\"\261\001\n\014Worker" +
-      "typePb\0220\n\006dbInfo\030\001 \001(\0132 .com.prod.app.pr" +
-      "otobuff.EntityPb\022:\n\nworkerType\030\002 \001(\0162&.c" +
-      "om.prod.app.protobuff.WorkerTypeEnum\0223\n\n" +
-      "categories\030\003 \003(\0132\037.com.prod.app.protobuf" +
-      "f.NamesPb*\342\001\n\016WorkerTypeEnum\022\027\n\023UNKNOWN_" +
-      "WORKER_TYPE\020\000\022\017\n\013CONSTRUCTOR\020\001\022\017\n\013ELECTR" +
-      "ICIAN\020\002\022\014\n\010PAINTING\020\003\022\014\n\010CLEANING\020\004\022\014\n\010P" +
-      "LUMBING\020\005\022\010\n\004MAID\020\006\022\r\n\tCARPENTER\020\007\022\035\n\031LA" +
-      "UNDARY_AND_DRY_CLEANING\020\010\022\020\n\014PEST_CONTRO" +
-      "L\020\t\022\026\n\022PACKERS_AND_MOVERS\020\n\022\t\n\005SALON\020\013b\006" +
-      "proto3"
+      "ff\032\014entity.proto\032\013names.proto\032\rsummary.p" +
+      "roto\"\261\001\n\014WorkertypePb\0220\n\006dbInfo\030\001 \001(\0132 ." +
+      "com.prod.app.protobuff.EntityPb\022:\n\nworke" +
+      "rType\030\002 \001(\0162&.com.prod.app.protobuff.Wor" +
+      "kerTypeEnum\0223\n\ncategories\030\003 \003(\0132\037.com.pr" +
+      "od.app.protobuff.NamesPb\"\211\001\n\031WorkerTypeS" +
+      "earchRequestPb\0220\n\006dbInfo\030\001 \001(\0132 .com.pro" +
+      "d.app.protobuff.EntityPb\022:\n\nworkerType\030\002" +
+      " \001(\0162&.com.prod.app.protobuff.WorkerType" +
+      "Enum\"\207\001\n\032WorkerTypeSearchResponsePb\0222\n\007s" +
+      "ummary\030\001 \001(\0132!.com.prod.app.protobuff.Su" +
+      "mmaryPb\0225\n\007results\030\002 \003(\0132$.com.prod.app." +
+      "protobuff.WorkertypePb*\342\001\n\016WorkerTypeEnu" +
+      "m\022\027\n\023UNKNOWN_WORKER_TYPE\020\000\022\017\n\013CONSTRUCTO" +
+      "R\020\001\022\017\n\013ELECTRICIAN\020\002\022\014\n\010PAINTING\020\003\022\014\n\010CL" +
+      "EANING\020\004\022\014\n\010PLUMBING\020\005\022\010\n\004MAID\020\006\022\r\n\tCARP" +
+      "ENTER\020\007\022\035\n\031LAUNDARY_AND_DRY_CLEANING\020\010\022\020" +
+      "\n\014PEST_CONTROL\020\t\022\026\n\022PACKERS_AND_MOVERS\020\n" +
+      "\022\t\n\005SALON\020\013b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.prod.app.protobuff.Entity.getDescriptor(),
           com.prod.app.protobuff.Names.getDescriptor(),
+          com.prod.app.protobuff.Summary.getDescriptor(),
         });
     internal_static_com_prod_app_protobuff_WorkertypePb_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1318,8 +3024,21 @@ public final class Workertype {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_WorkertypePb_descriptor,
         new java.lang.String[] { "DbInfo", "WorkerType", "Categories", });
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_prod_app_protobuff_WorkerTypeSearchRequestPb_descriptor,
+        new java.lang.String[] { "DbInfo", "WorkerType", });
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_prod_app_protobuff_WorkerTypeSearchResponsePb_descriptor,
+        new java.lang.String[] { "Summary", "Results", });
     com.prod.app.protobuff.Entity.getDescriptor();
     com.prod.app.protobuff.Names.getDescriptor();
+    com.prod.app.protobuff.Summary.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

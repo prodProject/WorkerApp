@@ -4,10 +4,14 @@ import android.content.Context;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.prod.app.CommonCode.ProtoJsonUtil;
 import com.prod.app.Interfaces.IDatabaseEntity;
 import com.prod.app.LocalDatabase.DaoSession;
 import com.prod.app.LocalDatabase.DatabaseInitHandler;
 import com.prod.app.LocalDatabase.LoginEntityDao;
+import com.prod.app.protobuff.Login;
+
+import java.io.IOException;
 
 public class LoginEntityDaoHelper implements IDatabaseEntity<LoginEntityDao> {
 
@@ -38,5 +42,9 @@ public class LoginEntityDaoHelper implements IDatabaseEntity<LoginEntityDao> {
     @Override
     public DaoSession getDeoSession() {
         return m_daoSession;
+    }
+
+    public Login.LoginPb getLoginPbFromInternalStorage(long id) throws IOException {
+        return ProtoJsonUtil.fromJson(getDeoEntity().load(id).getData(), Login.LoginPb.class);
     }
 }

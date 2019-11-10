@@ -7,11 +7,13 @@ import com.prod.basic.common.httpReqAndResp.HttpReqHandler;
 
 import java.util.concurrent.Callable;
 
+
 public class HttpCaller extends HttpReqHandler {
 
     public HttpCaller(RequestMethodEnum method, RequestContentTypeEnum contentType, String url, JsonObject content) {
         super(method, contentType, url, content);
     }
+
 
     public JsonObject execute() {
         Callable<JsonObject> callable = new Callable<JsonObject>() {
@@ -27,5 +29,6 @@ public class HttpCaller extends HttpReqHandler {
         }
         return  null;
     }
+
 
 }

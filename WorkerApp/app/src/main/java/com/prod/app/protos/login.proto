@@ -7,6 +7,8 @@ import "persontypeenum.proto";
 import "summary.proto";
 import "names.proto";
 import "contactdetails.proto";
+import "consumer.proto";
+import "responsestatusenum.proto";
 import "time.proto";
 import "worker.proto";
 
@@ -20,10 +22,20 @@ message LoginPb {
 }
 
 message LoginSearchRequestPb {
-    LoginPb login = 1;
+    StatusEnum lifeTime =1;
+    LoginPb login = 2;
 }
 
 message LoginSearchRespsonsePb {
     SummaryPb summary =1;
     repeated LoginPb results = 2;
+}
+
+message LoginRequestPb {
+    LoginPb login = 1;
+}
+message LoginResponsePb {
+    WorkerPb worker = 1;
+    ConsumerPb consumer = 2;
+    ResponseTypePb status = 4;
 }

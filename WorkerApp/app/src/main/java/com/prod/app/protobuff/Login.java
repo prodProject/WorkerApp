@@ -635,7 +635,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginPb.class, com.prod.app.protobuff.Login.LoginPb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.LoginData.LoginPb.newBuilder()
+      // Construct using com.prod.app.protobuff.Login.LoginPb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1544,15 +1544,24 @@ public final class Login {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+     */
+    int getLifeTimeValue();
+    /**
+     * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+     */
+    com.prod.app.protobuff.Entity.StatusEnum getLifeTime();
+
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     boolean hasLogin();
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     com.prod.app.protobuff.Login.LoginPb getLogin();
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder();
   }
@@ -1569,6 +1578,7 @@ public final class Login {
       super(builder);
     }
     private LoginSearchRequestPb() {
+      lifeTime_ = 0;
     }
 
     @java.lang.Override
@@ -1601,7 +1611,13 @@ public final class Login {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+              int rawValue = input.readEnum();
+
+              lifeTime_ = rawValue;
+              break;
+            }
+            case 18: {
               com.prod.app.protobuff.Login.LoginPb.Builder subBuilder = null;
               if (login_ != null) {
                 subBuilder = login_.toBuilder();
@@ -1646,22 +1662,39 @@ public final class Login {
               com.prod.app.protobuff.Login.LoginSearchRequestPb.class, com.prod.app.protobuff.Login.LoginSearchRequestPb.Builder.class);
     }
 
-    public static final int LOGIN_FIELD_NUMBER = 1;
+    public static final int LIFETIME_FIELD_NUMBER = 1;
+    private int lifeTime_;
+    /**
+     * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+     */
+    public int getLifeTimeValue() {
+      return lifeTime_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+     */
+    public com.prod.app.protobuff.Entity.StatusEnum getLifeTime() {
+      @SuppressWarnings("deprecation")
+      com.prod.app.protobuff.Entity.StatusEnum result = com.prod.app.protobuff.Entity.StatusEnum.valueOf(lifeTime_);
+      return result == null ? com.prod.app.protobuff.Entity.StatusEnum.UNRECOGNIZED : result;
+    }
+
+    public static final int LOGIN_FIELD_NUMBER = 2;
     private com.prod.app.protobuff.Login.LoginPb login_;
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     public boolean hasLogin() {
       return login_ != null;
     }
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     public com.prod.app.protobuff.Login.LoginPb getLogin() {
       return login_ == null ? com.prod.app.protobuff.Login.LoginPb.getDefaultInstance() : login_;
     }
     /**
-     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
      */
     public com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder() {
       return getLogin();
@@ -1681,8 +1714,11 @@ public final class Login {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (lifeTime_ != com.prod.app.protobuff.Entity.StatusEnum.UNKNOWN_STATUS.getNumber()) {
+        output.writeEnum(1, lifeTime_);
+      }
       if (login_ != null) {
-        output.writeMessage(1, getLogin());
+        output.writeMessage(2, getLogin());
       }
       unknownFields.writeTo(output);
     }
@@ -1693,9 +1729,13 @@ public final class Login {
       if (size != -1) return size;
 
       size = 0;
+      if (lifeTime_ != com.prod.app.protobuff.Entity.StatusEnum.UNKNOWN_STATUS.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, lifeTime_);
+      }
       if (login_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLogin());
+          .computeMessageSize(2, getLogin());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1712,6 +1752,7 @@ public final class Login {
       }
       com.prod.app.protobuff.Login.LoginSearchRequestPb other = (com.prod.app.protobuff.Login.LoginSearchRequestPb) obj;
 
+      if (lifeTime_ != other.lifeTime_) return false;
       if (hasLogin() != other.hasLogin()) return false;
       if (hasLogin()) {
         if (!getLogin()
@@ -1728,6 +1769,8 @@ public final class Login {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LIFETIME_FIELD_NUMBER;
+      hash = (53 * hash) + lifeTime_;
       if (hasLogin()) {
         hash = (37 * hash) + LOGIN_FIELD_NUMBER;
         hash = (53 * hash) + getLogin().hashCode();
@@ -1847,7 +1890,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginSearchRequestPb.class, com.prod.app.protobuff.Login.LoginSearchRequestPb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.LoginData.LoginSearchRequestPb.newBuilder()
+      // Construct using com.prod.app.protobuff.Login.LoginSearchRequestPb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1865,6 +1908,8 @@ public final class Login {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        lifeTime_ = 0;
+
         if (loginBuilder_ == null) {
           login_ = null;
         } else {
@@ -1897,6 +1942,7 @@ public final class Login {
       @java.lang.Override
       public com.prod.app.protobuff.Login.LoginSearchRequestPb buildPartial() {
         com.prod.app.protobuff.Login.LoginSearchRequestPb result = new com.prod.app.protobuff.Login.LoginSearchRequestPb(this);
+        result.lifeTime_ = lifeTime_;
         if (loginBuilder_ == null) {
           result.login_ = login_;
         } else {
@@ -1950,6 +1996,9 @@ public final class Login {
 
       public Builder mergeFrom(com.prod.app.protobuff.Login.LoginSearchRequestPb other) {
         if (other == com.prod.app.protobuff.Login.LoginSearchRequestPb.getDefaultInstance()) return this;
+        if (other.lifeTime_ != 0) {
+          setLifeTimeValue(other.getLifeTimeValue());
+        }
         if (other.hasLogin()) {
           mergeLogin(other.getLogin());
         }
@@ -1982,17 +2031,62 @@ public final class Login {
         return this;
       }
 
+      private int lifeTime_ = 0;
+      /**
+       * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+       */
+      public int getLifeTimeValue() {
+        return lifeTime_;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+       */
+      public Builder setLifeTimeValue(int value) {
+        lifeTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+       */
+      public com.prod.app.protobuff.Entity.StatusEnum getLifeTime() {
+        @SuppressWarnings("deprecation")
+        com.prod.app.protobuff.Entity.StatusEnum result = com.prod.app.protobuff.Entity.StatusEnum.valueOf(lifeTime_);
+        return result == null ? com.prod.app.protobuff.Entity.StatusEnum.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+       */
+      public Builder setLifeTime(com.prod.app.protobuff.Entity.StatusEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        lifeTime_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.StatusEnum lifeTime = 1;</code>
+       */
+      public Builder clearLifeTime() {
+        
+        lifeTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.prod.app.protobuff.Login.LoginPb login_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.prod.app.protobuff.Login.LoginPb, com.prod.app.protobuff.Login.LoginPb.Builder, com.prod.app.protobuff.Login.LoginPbOrBuilder> loginBuilder_;
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public boolean hasLogin() {
         return loginBuilder_ != null || login_ != null;
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public com.prod.app.protobuff.Login.LoginPb getLogin() {
         if (loginBuilder_ == null) {
@@ -2002,7 +2096,7 @@ public final class Login {
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public Builder setLogin(com.prod.app.protobuff.Login.LoginPb value) {
         if (loginBuilder_ == null) {
@@ -2018,7 +2112,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public Builder setLogin(
           com.prod.app.protobuff.Login.LoginPb.Builder builderForValue) {
@@ -2032,7 +2126,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public Builder mergeLogin(com.prod.app.protobuff.Login.LoginPb value) {
         if (loginBuilder_ == null) {
@@ -2050,7 +2144,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public Builder clearLogin() {
         if (loginBuilder_ == null) {
@@ -2064,7 +2158,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public com.prod.app.protobuff.Login.LoginPb.Builder getLoginBuilder() {
         
@@ -2072,7 +2166,7 @@ public final class Login {
         return getLoginFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       public com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder() {
         if (loginBuilder_ != null) {
@@ -2083,7 +2177,7 @@ public final class Login {
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       * <code>.com.prod.app.protobuff.LoginPb login = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.prod.app.protobuff.Login.LoginPb, com.prod.app.protobuff.Login.LoginPb.Builder, com.prod.app.protobuff.Login.LoginPbOrBuilder> 
@@ -2545,7 +2639,7 @@ public final class Login {
                 com.prod.app.protobuff.Login.LoginSearchRespsonsePb.class, com.prod.app.protobuff.Login.LoginSearchRespsonsePb.Builder.class);
       }
 
-      // Construct using com.prod.app.protobuff.LoginData.LoginSearchRespsonsePb.newBuilder()
+      // Construct using com.prod.app.protobuff.Login.LoginSearchRespsonsePb.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3133,6 +3227,1618 @@ public final class Login {
 
   }
 
+  public interface LoginRequestPbOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.LoginRequestPb)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    boolean hasLogin();
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    com.prod.app.protobuff.Login.LoginPb getLogin();
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prod.app.protobuff.LoginRequestPb}
+   */
+  public  static final class LoginRequestPb extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.prod.app.protobuff.LoginRequestPb)
+      LoginRequestPbOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LoginRequestPb.newBuilder() to construct.
+    private LoginRequestPb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LoginRequestPb() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LoginRequestPb();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LoginRequestPb(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.prod.app.protobuff.Login.LoginPb.Builder subBuilder = null;
+              if (login_ != null) {
+                subBuilder = login_.toBuilder();
+              }
+              login_ = input.readMessage(com.prod.app.protobuff.Login.LoginPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(login_);
+                login_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginRequestPb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prod.app.protobuff.Login.LoginRequestPb.class, com.prod.app.protobuff.Login.LoginRequestPb.Builder.class);
+    }
+
+    public static final int LOGIN_FIELD_NUMBER = 1;
+    private com.prod.app.protobuff.Login.LoginPb login_;
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    public boolean hasLogin() {
+      return login_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    public com.prod.app.protobuff.Login.LoginPb getLogin() {
+      return login_ == null ? com.prod.app.protobuff.Login.LoginPb.getDefaultInstance() : login_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+     */
+    public com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder() {
+      return getLogin();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (login_ != null) {
+        output.writeMessage(1, getLogin());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (login_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getLogin());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prod.app.protobuff.Login.LoginRequestPb)) {
+        return super.equals(obj);
+      }
+      com.prod.app.protobuff.Login.LoginRequestPb other = (com.prod.app.protobuff.Login.LoginRequestPb) obj;
+
+      if (hasLogin() != other.hasLogin()) return false;
+      if (hasLogin()) {
+        if (!getLogin()
+            .equals(other.getLogin())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLogin()) {
+        hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+        hash = (53 * hash) + getLogin().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginRequestPb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prod.app.protobuff.Login.LoginRequestPb prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prod.app.protobuff.LoginRequestPb}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prod.app.protobuff.LoginRequestPb)
+        com.prod.app.protobuff.Login.LoginRequestPbOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginRequestPb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prod.app.protobuff.Login.LoginRequestPb.class, com.prod.app.protobuff.Login.LoginRequestPb.Builder.class);
+      }
+
+      // Construct using com.prod.app.protobuff.Login.LoginRequestPb.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (loginBuilder_ == null) {
+          login_ = null;
+        } else {
+          login_ = null;
+          loginBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginRequestPb getDefaultInstanceForType() {
+        return com.prod.app.protobuff.Login.LoginRequestPb.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginRequestPb build() {
+        com.prod.app.protobuff.Login.LoginRequestPb result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginRequestPb buildPartial() {
+        com.prod.app.protobuff.Login.LoginRequestPb result = new com.prod.app.protobuff.Login.LoginRequestPb(this);
+        if (loginBuilder_ == null) {
+          result.login_ = login_;
+        } else {
+          result.login_ = loginBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prod.app.protobuff.Login.LoginRequestPb) {
+          return mergeFrom((com.prod.app.protobuff.Login.LoginRequestPb)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prod.app.protobuff.Login.LoginRequestPb other) {
+        if (other == com.prod.app.protobuff.Login.LoginRequestPb.getDefaultInstance()) return this;
+        if (other.hasLogin()) {
+          mergeLogin(other.getLogin());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prod.app.protobuff.Login.LoginRequestPb parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prod.app.protobuff.Login.LoginRequestPb) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.prod.app.protobuff.Login.LoginPb login_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Login.LoginPb, com.prod.app.protobuff.Login.LoginPb.Builder, com.prod.app.protobuff.Login.LoginPbOrBuilder> loginBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public boolean hasLogin() {
+        return loginBuilder_ != null || login_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public com.prod.app.protobuff.Login.LoginPb getLogin() {
+        if (loginBuilder_ == null) {
+          return login_ == null ? com.prod.app.protobuff.Login.LoginPb.getDefaultInstance() : login_;
+        } else {
+          return loginBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public Builder setLogin(com.prod.app.protobuff.Login.LoginPb value) {
+        if (loginBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          login_ = value;
+          onChanged();
+        } else {
+          loginBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public Builder setLogin(
+          com.prod.app.protobuff.Login.LoginPb.Builder builderForValue) {
+        if (loginBuilder_ == null) {
+          login_ = builderForValue.build();
+          onChanged();
+        } else {
+          loginBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public Builder mergeLogin(com.prod.app.protobuff.Login.LoginPb value) {
+        if (loginBuilder_ == null) {
+          if (login_ != null) {
+            login_ =
+              com.prod.app.protobuff.Login.LoginPb.newBuilder(login_).mergeFrom(value).buildPartial();
+          } else {
+            login_ = value;
+          }
+          onChanged();
+        } else {
+          loginBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public Builder clearLogin() {
+        if (loginBuilder_ == null) {
+          login_ = null;
+          onChanged();
+        } else {
+          login_ = null;
+          loginBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public com.prod.app.protobuff.Login.LoginPb.Builder getLoginBuilder() {
+        
+        onChanged();
+        return getLoginFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      public com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder() {
+        if (loginBuilder_ != null) {
+          return loginBuilder_.getMessageOrBuilder();
+        } else {
+          return login_ == null ?
+              com.prod.app.protobuff.Login.LoginPb.getDefaultInstance() : login_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LoginPb login = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Login.LoginPb, com.prod.app.protobuff.Login.LoginPb.Builder, com.prod.app.protobuff.Login.LoginPbOrBuilder> 
+          getLoginFieldBuilder() {
+        if (loginBuilder_ == null) {
+          loginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Login.LoginPb, com.prod.app.protobuff.Login.LoginPb.Builder, com.prod.app.protobuff.Login.LoginPbOrBuilder>(
+                  getLogin(),
+                  getParentForChildren(),
+                  isClean());
+          login_ = null;
+        }
+        return loginBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.prod.app.protobuff.LoginRequestPb)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prod.app.protobuff.LoginRequestPb)
+    private static final com.prod.app.protobuff.Login.LoginRequestPb DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prod.app.protobuff.Login.LoginRequestPb();
+    }
+
+    public static com.prod.app.protobuff.Login.LoginRequestPb getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LoginRequestPb>
+        PARSER = new com.google.protobuf.AbstractParser<LoginRequestPb>() {
+      @java.lang.Override
+      public LoginRequestPb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LoginRequestPb(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LoginRequestPb> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginRequestPb> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prod.app.protobuff.Login.LoginRequestPb getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LoginResponsePbOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.LoginResponsePb)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    boolean hasWorker();
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    com.prod.app.protobuff.Worker.WorkerPb getWorker();
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    com.prod.app.protobuff.Worker.WorkerPbOrBuilder getWorkerOrBuilder();
+
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    boolean hasConsumer();
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    com.prod.app.protobuff.Consumer.ConsumerPb getConsumer();
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder();
+
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus();
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.prod.app.protobuff.LoginResponsePb}
+   */
+  public  static final class LoginResponsePb extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.prod.app.protobuff.LoginResponsePb)
+      LoginResponsePbOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LoginResponsePb.newBuilder() to construct.
+    private LoginResponsePb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LoginResponsePb() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LoginResponsePb();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LoginResponsePb(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.prod.app.protobuff.Worker.WorkerPb.Builder subBuilder = null;
+              if (worker_ != null) {
+                subBuilder = worker_.toBuilder();
+              }
+              worker_ = input.readMessage(com.prod.app.protobuff.Worker.WorkerPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(worker_);
+                worker_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.prod.app.protobuff.Consumer.ConsumerPb.Builder subBuilder = null;
+              if (consumer_ != null) {
+                subBuilder = consumer_.toBuilder();
+              }
+              consumer_ = input.readMessage(com.prod.app.protobuff.Consumer.ConsumerPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(consumer_);
+                consumer_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginResponsePb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prod.app.protobuff.Login.LoginResponsePb.class, com.prod.app.protobuff.Login.LoginResponsePb.Builder.class);
+    }
+
+    public static final int WORKER_FIELD_NUMBER = 1;
+    private com.prod.app.protobuff.Worker.WorkerPb worker_;
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    public boolean hasWorker() {
+      return worker_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    public com.prod.app.protobuff.Worker.WorkerPb getWorker() {
+      return worker_ == null ? com.prod.app.protobuff.Worker.WorkerPb.getDefaultInstance() : worker_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+     */
+    public com.prod.app.protobuff.Worker.WorkerPbOrBuilder getWorkerOrBuilder() {
+      return getWorker();
+    }
+
+    public static final int CONSUMER_FIELD_NUMBER = 2;
+    private com.prod.app.protobuff.Consumer.ConsumerPb consumer_;
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    public boolean hasConsumer() {
+      return consumer_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    public com.prod.app.protobuff.Consumer.ConsumerPb getConsumer() {
+      return consumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+     */
+    public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder() {
+      return getConsumer();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private com.prod.app.protobuff.Responsestatusenum.ResponseTypePb status_;
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
+      return status_ == null ? com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (worker_ != null) {
+        output.writeMessage(1, getWorker());
+      }
+      if (consumer_ != null) {
+        output.writeMessage(2, getConsumer());
+      }
+      if (status_ != null) {
+        output.writeMessage(4, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (worker_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getWorker());
+      }
+      if (consumer_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getConsumer());
+      }
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prod.app.protobuff.Login.LoginResponsePb)) {
+        return super.equals(obj);
+      }
+      com.prod.app.protobuff.Login.LoginResponsePb other = (com.prod.app.protobuff.Login.LoginResponsePb) obj;
+
+      if (hasWorker() != other.hasWorker()) return false;
+      if (hasWorker()) {
+        if (!getWorker()
+            .equals(other.getWorker())) return false;
+      }
+      if (hasConsumer() != other.hasConsumer()) return false;
+      if (hasConsumer()) {
+        if (!getConsumer()
+            .equals(other.getConsumer())) return false;
+      }
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWorker()) {
+        hash = (37 * hash) + WORKER_FIELD_NUMBER;
+        hash = (53 * hash) + getWorker().hashCode();
+      }
+      if (hasConsumer()) {
+        hash = (37 * hash) + CONSUMER_FIELD_NUMBER;
+        hash = (53 * hash) + getConsumer().hashCode();
+      }
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Login.LoginResponsePb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prod.app.protobuff.Login.LoginResponsePb prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prod.app.protobuff.LoginResponsePb}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prod.app.protobuff.LoginResponsePb)
+        com.prod.app.protobuff.Login.LoginResponsePbOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginResponsePb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prod.app.protobuff.Login.LoginResponsePb.class, com.prod.app.protobuff.Login.LoginResponsePb.Builder.class);
+      }
+
+      // Construct using com.prod.app.protobuff.Login.LoginResponsePb.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (workerBuilder_ == null) {
+          worker_ = null;
+        } else {
+          worker_ = null;
+          workerBuilder_ = null;
+        }
+        if (consumerBuilder_ == null) {
+          consumer_ = null;
+        } else {
+          consumer_ = null;
+          consumerBuilder_ = null;
+        }
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prod.app.protobuff.Login.internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginResponsePb getDefaultInstanceForType() {
+        return com.prod.app.protobuff.Login.LoginResponsePb.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginResponsePb build() {
+        com.prod.app.protobuff.Login.LoginResponsePb result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Login.LoginResponsePb buildPartial() {
+        com.prod.app.protobuff.Login.LoginResponsePb result = new com.prod.app.protobuff.Login.LoginResponsePb(this);
+        if (workerBuilder_ == null) {
+          result.worker_ = worker_;
+        } else {
+          result.worker_ = workerBuilder_.build();
+        }
+        if (consumerBuilder_ == null) {
+          result.consumer_ = consumer_;
+        } else {
+          result.consumer_ = consumerBuilder_.build();
+        }
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prod.app.protobuff.Login.LoginResponsePb) {
+          return mergeFrom((com.prod.app.protobuff.Login.LoginResponsePb)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prod.app.protobuff.Login.LoginResponsePb other) {
+        if (other == com.prod.app.protobuff.Login.LoginResponsePb.getDefaultInstance()) return this;
+        if (other.hasWorker()) {
+          mergeWorker(other.getWorker());
+        }
+        if (other.hasConsumer()) {
+          mergeConsumer(other.getConsumer());
+        }
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prod.app.protobuff.Login.LoginResponsePb parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prod.app.protobuff.Login.LoginResponsePb) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.prod.app.protobuff.Worker.WorkerPb worker_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Worker.WorkerPb, com.prod.app.protobuff.Worker.WorkerPb.Builder, com.prod.app.protobuff.Worker.WorkerPbOrBuilder> workerBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public boolean hasWorker() {
+        return workerBuilder_ != null || worker_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public com.prod.app.protobuff.Worker.WorkerPb getWorker() {
+        if (workerBuilder_ == null) {
+          return worker_ == null ? com.prod.app.protobuff.Worker.WorkerPb.getDefaultInstance() : worker_;
+        } else {
+          return workerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public Builder setWorker(com.prod.app.protobuff.Worker.WorkerPb value) {
+        if (workerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          worker_ = value;
+          onChanged();
+        } else {
+          workerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public Builder setWorker(
+          com.prod.app.protobuff.Worker.WorkerPb.Builder builderForValue) {
+        if (workerBuilder_ == null) {
+          worker_ = builderForValue.build();
+          onChanged();
+        } else {
+          workerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public Builder mergeWorker(com.prod.app.protobuff.Worker.WorkerPb value) {
+        if (workerBuilder_ == null) {
+          if (worker_ != null) {
+            worker_ =
+              com.prod.app.protobuff.Worker.WorkerPb.newBuilder(worker_).mergeFrom(value).buildPartial();
+          } else {
+            worker_ = value;
+          }
+          onChanged();
+        } else {
+          workerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public Builder clearWorker() {
+        if (workerBuilder_ == null) {
+          worker_ = null;
+          onChanged();
+        } else {
+          worker_ = null;
+          workerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public com.prod.app.protobuff.Worker.WorkerPb.Builder getWorkerBuilder() {
+        
+        onChanged();
+        return getWorkerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      public com.prod.app.protobuff.Worker.WorkerPbOrBuilder getWorkerOrBuilder() {
+        if (workerBuilder_ != null) {
+          return workerBuilder_.getMessageOrBuilder();
+        } else {
+          return worker_ == null ?
+              com.prod.app.protobuff.Worker.WorkerPb.getDefaultInstance() : worker_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.WorkerPb worker = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Worker.WorkerPb, com.prod.app.protobuff.Worker.WorkerPb.Builder, com.prod.app.protobuff.Worker.WorkerPbOrBuilder> 
+          getWorkerFieldBuilder() {
+        if (workerBuilder_ == null) {
+          workerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Worker.WorkerPb, com.prod.app.protobuff.Worker.WorkerPb.Builder, com.prod.app.protobuff.Worker.WorkerPbOrBuilder>(
+                  getWorker(),
+                  getParentForChildren(),
+                  isClean());
+          worker_ = null;
+        }
+        return workerBuilder_;
+      }
+
+      private com.prod.app.protobuff.Consumer.ConsumerPb consumer_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder> consumerBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public boolean hasConsumer() {
+        return consumerBuilder_ != null || consumer_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public com.prod.app.protobuff.Consumer.ConsumerPb getConsumer() {
+        if (consumerBuilder_ == null) {
+          return consumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
+        } else {
+          return consumerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public Builder setConsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
+        if (consumerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          consumer_ = value;
+          onChanged();
+        } else {
+          consumerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public Builder setConsumer(
+          com.prod.app.protobuff.Consumer.ConsumerPb.Builder builderForValue) {
+        if (consumerBuilder_ == null) {
+          consumer_ = builderForValue.build();
+          onChanged();
+        } else {
+          consumerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public Builder mergeConsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
+        if (consumerBuilder_ == null) {
+          if (consumer_ != null) {
+            consumer_ =
+              com.prod.app.protobuff.Consumer.ConsumerPb.newBuilder(consumer_).mergeFrom(value).buildPartial();
+          } else {
+            consumer_ = value;
+          }
+          onChanged();
+        } else {
+          consumerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public Builder clearConsumer() {
+        if (consumerBuilder_ == null) {
+          consumer_ = null;
+          onChanged();
+        } else {
+          consumer_ = null;
+          consumerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public com.prod.app.protobuff.Consumer.ConsumerPb.Builder getConsumerBuilder() {
+        
+        onChanged();
+        return getConsumerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder() {
+        if (consumerBuilder_ != null) {
+          return consumerBuilder_.getMessageOrBuilder();
+        } else {
+          return consumer_ == null ?
+              com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder> 
+          getConsumerFieldBuilder() {
+        if (consumerBuilder_ == null) {
+          consumerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder>(
+                  getConsumer(),
+                  getParentForChildren(),
+                  isClean());
+          consumer_ = null;
+        }
+        return consumerBuilder_;
+      }
+
+      private com.prod.app.protobuff.Responsestatusenum.ResponseTypePb status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> statusBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder setStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder setStatus(
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder mergeStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.prod.app.protobuff.LoginResponsePb)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prod.app.protobuff.LoginResponsePb)
+    private static final com.prod.app.protobuff.Login.LoginResponsePb DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prod.app.protobuff.Login.LoginResponsePb();
+    }
+
+    public static com.prod.app.protobuff.Login.LoginResponsePb getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LoginResponsePb>
+        PARSER = new com.google.protobuf.AbstractParser<LoginResponsePb>() {
+      @java.lang.Override
+      public LoginResponsePb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LoginResponsePb(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LoginResponsePb> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginResponsePb> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prod.app.protobuff.Login.LoginResponsePb getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prod_app_protobuff_LoginPb_descriptor;
   private static final 
@@ -3148,6 +4854,16 @@ public final class Login {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_prod_app_protobuff_LoginRequestPb_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_prod_app_protobuff_LoginResponsePb_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3160,20 +4876,29 @@ public final class Login {
       "\n\013login.proto\022\026com.prod.app.protobuff\032\014e" +
       "ntity.proto\032\024persontypeenum.proto\032\rsumma" +
       "ry.proto\032\013names.proto\032\024contactdetails.pr" +
-      "oto\032\ntime.proto\032\014worker.proto\"\267\002\n\007LoginP" +
-      "b\0220\n\006dbInfo\030\001 \001(\0132 .com.prod.app.protobu" +
-      "ff.EntityPb\022@\n\016contactDetails\030\002 \001(\0132(.co" +
-      "m.prod.app.protobuff.ContactDetailsPb\022\020\n" +
-      "\010password\030\003 \001(\t\0228\n\npersonType\030\004 \001(\0132$.co" +
-      "m.prod.app.protobuff.PersonTypePb\0226\n\twor" +
-      "kerRef\030\005 \001(\0132#.com.prod.app.protobuff.Wo" +
-      "rkerPbRef\0224\n\014timeCreation\030\006 \001(\0132\036.com.pr" +
-      "od.app.protobuff.TimePb\"F\n\024LoginSearchRe" +
-      "questPb\022.\n\005login\030\001 \001(\0132\037.com.prod.app.pr" +
-      "otobuff.LoginPb\"~\n\026LoginSearchRespsonseP" +
-      "b\0222\n\007summary\030\001 \001(\0132!.com.prod.app.protob" +
-      "uff.SummaryPb\0220\n\007results\030\002 \003(\0132\037.com.pro" +
-      "d.app.protobuff.LoginPbb\006proto3"
+      "oto\032\016consumer.proto\032\030responsestatusenum." +
+      "proto\032\ntime.proto\032\014worker.proto\"\267\002\n\007Logi" +
+      "nPb\0220\n\006dbInfo\030\001 \001(\0132 .com.prod.app.proto" +
+      "buff.EntityPb\022@\n\016contactDetails\030\002 \001(\0132(." +
+      "com.prod.app.protobuff.ContactDetailsPb\022" +
+      "\020\n\010password\030\003 \001(\t\0228\n\npersonType\030\004 \001(\0132$." +
+      "com.prod.app.protobuff.PersonTypePb\0226\n\tw" +
+      "orkerRef\030\005 \001(\0132#.com.prod.app.protobuff." +
+      "WorkerPbRef\0224\n\014timeCreation\030\006 \001(\0132\036.com." +
+      "prod.app.protobuff.TimePb\"|\n\024LoginSearch" +
+      "RequestPb\0224\n\010lifeTime\030\001 \001(\0162\".com.prod.a" +
+      "pp.protobuff.StatusEnum\022.\n\005login\030\002 \001(\0132\037" +
+      ".com.prod.app.protobuff.LoginPb\"~\n\026Login" +
+      "SearchRespsonsePb\0222\n\007summary\030\001 \001(\0132!.com" +
+      ".prod.app.protobuff.SummaryPb\0220\n\007results" +
+      "\030\002 \003(\0132\037.com.prod.app.protobuff.LoginPb\"" +
+      "@\n\016LoginRequestPb\022.\n\005login\030\001 \001(\0132\037.com.p" +
+      "rod.app.protobuff.LoginPb\"\261\001\n\017LoginRespo" +
+      "nsePb\0220\n\006worker\030\001 \001(\0132 .com.prod.app.pro" +
+      "tobuff.WorkerPb\0224\n\010consumer\030\002 \001(\0132\".com." +
+      "prod.app.protobuff.ConsumerPb\0226\n\006status\030" +
+      "\004 \001(\0132&.com.prod.app.protobuff.ResponseT" +
+      "ypePbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3183,6 +4908,8 @@ public final class Login {
           com.prod.app.protobuff.Summary.getDescriptor(),
           com.prod.app.protobuff.Names.getDescriptor(),
           com.prod.app.protobuff.Contactdetails.getDescriptor(),
+          com.prod.app.protobuff.Consumer.getDescriptor(),
+          com.prod.app.protobuff.Responsestatusenum.getDescriptor(),
           com.prod.app.protobuff.Time.getDescriptor(),
           com.prod.app.protobuff.Worker.getDescriptor(),
         });
@@ -3197,18 +4924,32 @@ public final class Login {
     internal_static_com_prod_app_protobuff_LoginSearchRequestPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_LoginSearchRequestPb_descriptor,
-        new java.lang.String[] { "LoginData", });
+        new java.lang.String[] { "LifeTime", "Login", });
     internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_LoginSearchRespsonsePb_descriptor,
         new java.lang.String[] { "Summary", "Results", });
+    internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_prod_app_protobuff_LoginRequestPb_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_prod_app_protobuff_LoginRequestPb_descriptor,
+        new java.lang.String[] { "Login", });
+    internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_prod_app_protobuff_LoginResponsePb_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_prod_app_protobuff_LoginResponsePb_descriptor,
+        new java.lang.String[] { "Worker", "Consumer", "Status", });
     com.prod.app.protobuff.Entity.getDescriptor();
     com.prod.app.protobuff.Persontypeenum.getDescriptor();
     com.prod.app.protobuff.Summary.getDescriptor();
     com.prod.app.protobuff.Names.getDescriptor();
     com.prod.app.protobuff.Contactdetails.getDescriptor();
+    com.prod.app.protobuff.Consumer.getDescriptor();
+    com.prod.app.protobuff.Responsestatusenum.getDescriptor();
     com.prod.app.protobuff.Time.getDescriptor();
     com.prod.app.protobuff.Worker.getDescriptor();
   }

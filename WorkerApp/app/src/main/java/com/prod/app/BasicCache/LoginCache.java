@@ -8,11 +8,11 @@ import com.prod.basic.common.cache.CacheWithRefresh;
 
 public class LoginCache extends ACache<CacheWithRefresh, String, Registration.RegistrationResponsePb> {
 
-    private final RegistrationClientService m_service;
+   // private final RegistrationClientService m_service;
 
     public LoginCache(CacheWithRefresh cache) {
         super("Registration", cache);
-        m_service = new RegistrationClientService();
+       // m_service = new RegistrationClientService();
     }
 
 
@@ -23,7 +23,7 @@ public class LoginCache extends ACache<CacheWithRefresh, String, Registration.Re
             @Override
             public void done() {
                 try {
-                    future[0] = m_service.get();
+                  //  future[0] = m_service.get();
                 } catch (Throwable t) {
                     invalidate(key);
                 }

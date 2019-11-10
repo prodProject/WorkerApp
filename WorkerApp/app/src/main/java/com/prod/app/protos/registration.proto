@@ -4,6 +4,7 @@ package com.prod.app.protobuff;
 
 import "worker.proto";
 import "consumer.proto";
+import "responsestatusenum.proto";
 import "login.proto";
 
 message RegistrationRequestPb {
@@ -14,17 +15,8 @@ message RegistrationRequestPb {
 
 message RegistrationResponsePb {
     WorkerPb worker = 1;
-    ConsumerPb comsumer = 2;
+    ConsumerPb consumer = 2;
     LoginPb login = 3;
-    ResponseStatusEnum status = 4;
+    ResponseTypePb status = 4;
 }
 
-enum ResponseStatusEnum {
-    UNKNOWN_RESPONSE_STATUS = 0;
-    SUCCESS = 1;
-    FAILED = 2;
-    ERROR = 3;
-    USER_EXIST = 4;
-    USER_NOT_REGISTRED = 5;
-    UNEXP_ERROR = 6;
-}

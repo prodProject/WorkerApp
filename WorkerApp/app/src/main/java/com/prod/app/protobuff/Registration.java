@@ -14,149 +14,6 @@ public final class Registration {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code com.prod.app.protobuff.ResponseStatusEnum}
-   */
-  public enum ResponseStatusEnum
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNKNOWN_RESPONSE_STATUS = 0;</code>
-     */
-    UNKNOWN_RESPONSE_STATUS(0),
-    /**
-     * <code>SUCCESS = 1;</code>
-     */
-    SUCCESS(1),
-    /**
-     * <code>FAILED = 2;</code>
-     */
-    FAILED(2),
-    /**
-     * <code>ERROR = 3;</code>
-     */
-    ERROR(3),
-    /**
-     * <code>USER_EXIST = 4;</code>
-     */
-    USER_EXIST(4),
-    /**
-     * <code>USER_NOT_REGISTRED = 5;</code>
-     */
-    USER_NOT_REGISTRED(5),
-    /**
-     * <code>UNEXP_ERROR = 6;</code>
-     */
-    UNEXP_ERROR(6),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNKNOWN_RESPONSE_STATUS = 0;</code>
-     */
-    public static final int UNKNOWN_RESPONSE_STATUS_VALUE = 0;
-    /**
-     * <code>SUCCESS = 1;</code>
-     */
-    public static final int SUCCESS_VALUE = 1;
-    /**
-     * <code>FAILED = 2;</code>
-     */
-    public static final int FAILED_VALUE = 2;
-    /**
-     * <code>ERROR = 3;</code>
-     */
-    public static final int ERROR_VALUE = 3;
-    /**
-     * <code>USER_EXIST = 4;</code>
-     */
-    public static final int USER_EXIST_VALUE = 4;
-    /**
-     * <code>USER_NOT_REGISTRED = 5;</code>
-     */
-    public static final int USER_NOT_REGISTRED_VALUE = 5;
-    /**
-     * <code>UNEXP_ERROR = 6;</code>
-     */
-    public static final int UNEXP_ERROR_VALUE = 6;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ResponseStatusEnum valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ResponseStatusEnum forNumber(int value) {
-      switch (value) {
-        case 0: return UNKNOWN_RESPONSE_STATUS;
-        case 1: return SUCCESS;
-        case 2: return FAILED;
-        case 3: return ERROR;
-        case 4: return USER_EXIST;
-        case 5: return USER_NOT_REGISTRED;
-        case 6: return UNEXP_ERROR;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ResponseStatusEnum>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ResponseStatusEnum> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ResponseStatusEnum>() {
-            public ResponseStatusEnum findValueByNumber(int number) {
-              return ResponseStatusEnum.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.prod.app.protobuff.Registration.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ResponseStatusEnum[] VALUES = values();
-
-    public static ResponseStatusEnum valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ResponseStatusEnum(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.prod.app.protobuff.ResponseStatusEnum)
-  }
-
   public interface RegistrationRequestPbOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.RegistrationRequestPb)
       com.google.protobuf.MessageOrBuilder {
@@ -1118,17 +975,17 @@ public final class Registration {
     com.prod.app.protobuff.Worker.WorkerPbOrBuilder getWorkerOrBuilder();
 
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    boolean hasComsumer();
+    boolean hasConsumer();
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    com.prod.app.protobuff.Consumer.ConsumerPb getComsumer();
+    com.prod.app.protobuff.Consumer.ConsumerPb getConsumer();
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getComsumerOrBuilder();
+    com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder();
 
     /**
      * <code>.com.prod.app.protobuff.LoginPb login = 3;</code>
@@ -1144,13 +1001,17 @@ public final class Registration {
     com.prod.app.protobuff.Login.LoginPbOrBuilder getLoginOrBuilder();
 
     /**
-     * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
      */
-    int getStatusValue();
+    boolean hasStatus();
     /**
-     * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
      */
-    com.prod.app.protobuff.Registration.ResponseStatusEnum getStatus();
+    com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus();
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder();
   }
   /**
    * Protobuf type {@code com.prod.app.protobuff.RegistrationResponsePb}
@@ -1165,7 +1026,6 @@ public final class Registration {
       super(builder);
     }
     private RegistrationResponsePb() {
-      status_ = 0;
     }
 
     @java.lang.Override
@@ -1213,13 +1073,13 @@ public final class Registration {
             }
             case 18: {
               com.prod.app.protobuff.Consumer.ConsumerPb.Builder subBuilder = null;
-              if (comsumer_ != null) {
-                subBuilder = comsumer_.toBuilder();
+              if (consumer_ != null) {
+                subBuilder = consumer_.toBuilder();
               }
-              comsumer_ = input.readMessage(com.prod.app.protobuff.Consumer.ConsumerPb.parser(), extensionRegistry);
+              consumer_ = input.readMessage(com.prod.app.protobuff.Consumer.ConsumerPb.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(comsumer_);
-                comsumer_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(consumer_);
+                consumer_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1237,10 +1097,17 @@ public final class Registration {
 
               break;
             }
-            case 32: {
-              int rawValue = input.readEnum();
+            case 34: {
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
 
-              status_ = rawValue;
               break;
             }
             default: {
@@ -1296,25 +1163,25 @@ public final class Registration {
       return getWorker();
     }
 
-    public static final int COMSUMER_FIELD_NUMBER = 2;
-    private com.prod.app.protobuff.Consumer.ConsumerPb comsumer_;
+    public static final int CONSUMER_FIELD_NUMBER = 2;
+    private com.prod.app.protobuff.Consumer.ConsumerPb consumer_;
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    public boolean hasComsumer() {
-      return comsumer_ != null;
+    public boolean hasConsumer() {
+      return consumer_ != null;
     }
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    public com.prod.app.protobuff.Consumer.ConsumerPb getComsumer() {
-      return comsumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : comsumer_;
+    public com.prod.app.protobuff.Consumer.ConsumerPb getConsumer() {
+      return consumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
     }
     /**
-     * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+     * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
      */
-    public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getComsumerOrBuilder() {
-      return getComsumer();
+    public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder() {
+      return getConsumer();
     }
 
     public static final int LOGIN_FIELD_NUMBER = 3;
@@ -1339,20 +1206,24 @@ public final class Registration {
     }
 
     public static final int STATUS_FIELD_NUMBER = 4;
-    private int status_;
+    private com.prod.app.protobuff.Responsestatusenum.ResponseTypePb status_;
     /**
-     * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
      */
-    public int getStatusValue() {
-      return status_;
+    public boolean hasStatus() {
+      return status_ != null;
     }
     /**
-     * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
      */
-    public com.prod.app.protobuff.Registration.ResponseStatusEnum getStatus() {
-      @SuppressWarnings("deprecation")
-      com.prod.app.protobuff.Registration.ResponseStatusEnum result = com.prod.app.protobuff.Registration.ResponseStatusEnum.valueOf(status_);
-      return result == null ? com.prod.app.protobuff.Registration.ResponseStatusEnum.UNRECOGNIZED : result;
+    public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
+      return status_ == null ? com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     */
+    public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
+      return getStatus();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1372,14 +1243,14 @@ public final class Registration {
       if (worker_ != null) {
         output.writeMessage(1, getWorker());
       }
-      if (comsumer_ != null) {
-        output.writeMessage(2, getComsumer());
+      if (consumer_ != null) {
+        output.writeMessage(2, getConsumer());
       }
       if (login_ != null) {
         output.writeMessage(3, getLogin());
       }
-      if (status_ != com.prod.app.protobuff.Registration.ResponseStatusEnum.UNKNOWN_RESPONSE_STATUS.getNumber()) {
-        output.writeEnum(4, status_);
+      if (status_ != null) {
+        output.writeMessage(4, getStatus());
       }
       unknownFields.writeTo(output);
     }
@@ -1394,17 +1265,17 @@ public final class Registration {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getWorker());
       }
-      if (comsumer_ != null) {
+      if (consumer_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getComsumer());
+          .computeMessageSize(2, getConsumer());
       }
       if (login_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getLogin());
       }
-      if (status_ != com.prod.app.protobuff.Registration.ResponseStatusEnum.UNKNOWN_RESPONSE_STATUS.getNumber()) {
+      if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, status_);
+          .computeMessageSize(4, getStatus());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1426,17 +1297,21 @@ public final class Registration {
         if (!getWorker()
             .equals(other.getWorker())) return false;
       }
-      if (hasComsumer() != other.hasComsumer()) return false;
-      if (hasComsumer()) {
-        if (!getComsumer()
-            .equals(other.getComsumer())) return false;
+      if (hasConsumer() != other.hasConsumer()) return false;
+      if (hasConsumer()) {
+        if (!getConsumer()
+            .equals(other.getConsumer())) return false;
       }
       if (hasLogin() != other.hasLogin()) return false;
       if (hasLogin()) {
         if (!getLogin()
             .equals(other.getLogin())) return false;
       }
-      if (status_ != other.status_) return false;
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus()
+            .equals(other.getStatus())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1452,16 +1327,18 @@ public final class Registration {
         hash = (37 * hash) + WORKER_FIELD_NUMBER;
         hash = (53 * hash) + getWorker().hashCode();
       }
-      if (hasComsumer()) {
-        hash = (37 * hash) + COMSUMER_FIELD_NUMBER;
-        hash = (53 * hash) + getComsumer().hashCode();
+      if (hasConsumer()) {
+        hash = (37 * hash) + CONSUMER_FIELD_NUMBER;
+        hash = (53 * hash) + getConsumer().hashCode();
       }
       if (hasLogin()) {
         hash = (37 * hash) + LOGIN_FIELD_NUMBER;
         hash = (53 * hash) + getLogin().hashCode();
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1601,11 +1478,11 @@ public final class Registration {
           worker_ = null;
           workerBuilder_ = null;
         }
-        if (comsumerBuilder_ == null) {
-          comsumer_ = null;
+        if (consumerBuilder_ == null) {
+          consumer_ = null;
         } else {
-          comsumer_ = null;
-          comsumerBuilder_ = null;
+          consumer_ = null;
+          consumerBuilder_ = null;
         }
         if (loginBuilder_ == null) {
           login_ = null;
@@ -1613,8 +1490,12 @@ public final class Registration {
           login_ = null;
           loginBuilder_ = null;
         }
-        status_ = 0;
-
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
         return this;
       }
 
@@ -1646,17 +1527,21 @@ public final class Registration {
         } else {
           result.worker_ = workerBuilder_.build();
         }
-        if (comsumerBuilder_ == null) {
-          result.comsumer_ = comsumer_;
+        if (consumerBuilder_ == null) {
+          result.consumer_ = consumer_;
         } else {
-          result.comsumer_ = comsumerBuilder_.build();
+          result.consumer_ = consumerBuilder_.build();
         }
         if (loginBuilder_ == null) {
           result.login_ = login_;
         } else {
           result.login_ = loginBuilder_.build();
         }
-        result.status_ = status_;
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1708,14 +1593,14 @@ public final class Registration {
         if (other.hasWorker()) {
           mergeWorker(other.getWorker());
         }
-        if (other.hasComsumer()) {
-          mergeComsumer(other.getComsumer());
+        if (other.hasConsumer()) {
+          mergeConsumer(other.getConsumer());
         }
         if (other.hasLogin()) {
           mergeLogin(other.getLogin());
         }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1863,121 +1748,121 @@ public final class Registration {
         return workerBuilder_;
       }
 
-      private com.prod.app.protobuff.Consumer.ConsumerPb comsumer_;
+      private com.prod.app.protobuff.Consumer.ConsumerPb consumer_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder> comsumerBuilder_;
+          com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder> consumerBuilder_;
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public boolean hasComsumer() {
-        return comsumerBuilder_ != null || comsumer_ != null;
+      public boolean hasConsumer() {
+        return consumerBuilder_ != null || consumer_ != null;
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public com.prod.app.protobuff.Consumer.ConsumerPb getComsumer() {
-        if (comsumerBuilder_ == null) {
-          return comsumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : comsumer_;
+      public com.prod.app.protobuff.Consumer.ConsumerPb getConsumer() {
+        if (consumerBuilder_ == null) {
+          return consumer_ == null ? com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
         } else {
-          return comsumerBuilder_.getMessage();
+          return consumerBuilder_.getMessage();
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public Builder setComsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
-        if (comsumerBuilder_ == null) {
+      public Builder setConsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
+        if (consumerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          comsumer_ = value;
+          consumer_ = value;
           onChanged();
         } else {
-          comsumerBuilder_.setMessage(value);
+          consumerBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public Builder setComsumer(
+      public Builder setConsumer(
           com.prod.app.protobuff.Consumer.ConsumerPb.Builder builderForValue) {
-        if (comsumerBuilder_ == null) {
-          comsumer_ = builderForValue.build();
+        if (consumerBuilder_ == null) {
+          consumer_ = builderForValue.build();
           onChanged();
         } else {
-          comsumerBuilder_.setMessage(builderForValue.build());
+          consumerBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public Builder mergeComsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
-        if (comsumerBuilder_ == null) {
-          if (comsumer_ != null) {
-            comsumer_ =
-              com.prod.app.protobuff.Consumer.ConsumerPb.newBuilder(comsumer_).mergeFrom(value).buildPartial();
+      public Builder mergeConsumer(com.prod.app.protobuff.Consumer.ConsumerPb value) {
+        if (consumerBuilder_ == null) {
+          if (consumer_ != null) {
+            consumer_ =
+              com.prod.app.protobuff.Consumer.ConsumerPb.newBuilder(consumer_).mergeFrom(value).buildPartial();
           } else {
-            comsumer_ = value;
+            consumer_ = value;
           }
           onChanged();
         } else {
-          comsumerBuilder_.mergeFrom(value);
+          consumerBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public Builder clearComsumer() {
-        if (comsumerBuilder_ == null) {
-          comsumer_ = null;
+      public Builder clearConsumer() {
+        if (consumerBuilder_ == null) {
+          consumer_ = null;
           onChanged();
         } else {
-          comsumer_ = null;
-          comsumerBuilder_ = null;
+          consumer_ = null;
+          consumerBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public com.prod.app.protobuff.Consumer.ConsumerPb.Builder getComsumerBuilder() {
+      public com.prod.app.protobuff.Consumer.ConsumerPb.Builder getConsumerBuilder() {
         
         onChanged();
-        return getComsumerFieldBuilder().getBuilder();
+        return getConsumerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
-      public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getComsumerOrBuilder() {
-        if (comsumerBuilder_ != null) {
-          return comsumerBuilder_.getMessageOrBuilder();
+      public com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder() {
+        if (consumerBuilder_ != null) {
+          return consumerBuilder_.getMessageOrBuilder();
         } else {
-          return comsumer_ == null ?
-              com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : comsumer_;
+          return consumer_ == null ?
+              com.prod.app.protobuff.Consumer.ConsumerPb.getDefaultInstance() : consumer_;
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.ConsumerPb comsumer = 2;</code>
+       * <code>.com.prod.app.protobuff.ConsumerPb consumer = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder> 
-          getComsumerFieldBuilder() {
-        if (comsumerBuilder_ == null) {
-          comsumerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getConsumerFieldBuilder() {
+        if (consumerBuilder_ == null) {
+          consumerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.prod.app.protobuff.Consumer.ConsumerPb, com.prod.app.protobuff.Consumer.ConsumerPb.Builder, com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder>(
-                  getComsumer(),
+                  getConsumer(),
                   getParentForChildren(),
                   isClean());
-          comsumer_ = null;
+          consumer_ = null;
         }
-        return comsumerBuilder_;
+        return consumerBuilder_;
       }
 
       private com.prod.app.protobuff.Login.LoginPb login_;
@@ -2097,49 +1982,121 @@ public final class Registration {
         return loginBuilder_;
       }
 
-      private int status_ = 0;
+      private com.prod.app.protobuff.Responsestatusenum.ResponseTypePb status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> statusBuilder_;
       /**
-       * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
        */
-      public int getStatusValue() {
-        return status_;
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
        */
-      public Builder setStatusValue(int value) {
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
-       */
-      public com.prod.app.protobuff.Registration.ResponseStatusEnum getStatus() {
-        @SuppressWarnings("deprecation")
-        com.prod.app.protobuff.Registration.ResponseStatusEnum result = com.prod.app.protobuff.Registration.ResponseStatusEnum.valueOf(status_);
-        return result == null ? com.prod.app.protobuff.Registration.ResponseStatusEnum.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
-       */
-      public Builder setStatus(com.prod.app.protobuff.Registration.ResponseStatusEnum value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
         }
-        
-        status_ = value.getNumber();
-        onChanged();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder setStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseStatusEnum status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder setStatus(
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public Builder mergeStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ =
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
        */
       public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder getStatusBuilder() {
+        
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ?
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> 
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder>(
+                  getStatus(),
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2214,27 +2171,25 @@ public final class Registration {
   static {
     java.lang.String[] descriptorData = {
       "\n\022registration.proto\022\026com.prod.app.proto" +
-      "buff\032\014worker.proto\032\016consumer.proto\032\013logi" +
-      "n.proto\"\221\001\n\025RegistrationRequestPb\0220\n\006wor" +
-      "ker\030\001 \001(\0132 .com.prod.app.protobuff.Worke" +
-      "rPb\0224\n\010comsumer\030\002 \001(\0132\".com.prod.app.pro" +
-      "tobuff.ConsumerPb\022\020\n\010password\030\003 \001(\t\"\354\001\n\026" +
-      "RegistrationResponsePb\0220\n\006worker\030\001 \001(\0132 " +
-      ".com.prod.app.protobuff.WorkerPb\0224\n\010coms" +
-      "umer\030\002 \001(\0132\".com.prod.app.protobuff.Cons" +
-      "umerPb\022.\n\005login\030\003 \001(\0132\037.com.prod.app.pro" +
-      "tobuff.LoginPb\022:\n\006status\030\004 \001(\0162*.com.pro" +
-      "d.app.protobuff.ResponseStatusEnum*\216\001\n\022R" +
-      "esponseStatusEnum\022\033\n\027UNKNOWN_RESPONSE_ST" +
-      "ATUS\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\t\n\005ERROR" +
-      "\020\003\022\016\n\nUSER_EXIST\020\004\022\026\n\022USER_NOT_REGISTRED" +
-      "\020\005\022\017\n\013UNEXP_ERROR\020\006b\006proto3"
+      "buff\032\014worker.proto\032\016consumer.proto\032\030resp" +
+      "onsestatusenum.proto\032\013login.proto\"\221\001\n\025Re" +
+      "gistrationRequestPb\0220\n\006worker\030\001 \001(\0132 .co" +
+      "m.prod.app.protobuff.WorkerPb\0224\n\010comsume" +
+      "r\030\002 \001(\0132\".com.prod.app.protobuff.Consume" +
+      "rPb\022\020\n\010password\030\003 \001(\t\"\350\001\n\026RegistrationRe" +
+      "sponsePb\0220\n\006worker\030\001 \001(\0132 .com.prod.app." +
+      "protobuff.WorkerPb\0224\n\010consumer\030\002 \001(\0132\".c" +
+      "om.prod.app.protobuff.ConsumerPb\022.\n\005logi" +
+      "n\030\003 \001(\0132\037.com.prod.app.protobuff.LoginPb" +
+      "\0226\n\006status\030\004 \001(\0132&.com.prod.app.protobuf" +
+      "f.ResponseTypePbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.prod.app.protobuff.Worker.getDescriptor(),
           com.prod.app.protobuff.Consumer.getDescriptor(),
+          com.prod.app.protobuff.Responsestatusenum.getDescriptor(),
           com.prod.app.protobuff.Login.getDescriptor(),
         });
     internal_static_com_prod_app_protobuff_RegistrationRequestPb_descriptor =
@@ -2248,9 +2203,10 @@ public final class Registration {
     internal_static_com_prod_app_protobuff_RegistrationResponsePb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_RegistrationResponsePb_descriptor,
-        new java.lang.String[] { "Worker", "Comsumer", "LoginData", "Status", });
+        new java.lang.String[] { "Worker", "Consumer", "Login", "Status", });
     com.prod.app.protobuff.Worker.getDescriptor();
     com.prod.app.protobuff.Consumer.getDescriptor();
+    com.prod.app.protobuff.Responsestatusenum.getDescriptor();
     com.prod.app.protobuff.Login.getDescriptor();
   }
 
