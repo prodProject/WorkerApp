@@ -6,7 +6,7 @@ import "entity.proto";
 import "names.proto";
 import "summary.proto";
 
-message WorkertypePb {
+message WorkerTypePb {
     EntityPb dbInfo = 1;
     WorkerTypeEnum workerType = 2;
     repeated NamesPb categories = 3;
@@ -19,7 +19,7 @@ message WorkerTypeSearchRequestPb {
 
 message WorkerTypeSearchResponsePb {
     SummaryPb summary = 1;
-    repeated WorkertypePb results = 2;
+    repeated WorkerTypePb results = 2;
 }
 
 enum WorkerTypeEnum {

@@ -37,5 +37,5 @@ message LoginRequestPb {
 message LoginResponsePb {
     WorkerPb worker = 1;
     ConsumerPb consumer = 2;
-    ResponseTypePb status = 4;
+    ResponseTypePb status = 3;
 }

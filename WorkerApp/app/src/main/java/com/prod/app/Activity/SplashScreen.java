@@ -22,6 +22,7 @@ import com.prod.app.R;
 import com.prod.app.ServerConfig.ServerUrlManeger;
 import com.prod.app.Session.SessionManager;
 import com.prod.app.SessionsManger.WorkerSession;
+import com.prod.app.Utility.AndroidUtility;
 import com.prod.app.clientServices.RegistrationClientService;
 import com.prod.app.clientServices.WorkerClientService;
 import com.prod.app.protobuff.Entity;
@@ -41,8 +42,6 @@ public class SplashScreen extends AppCompatActivity {
     private ServerUrlManeger m_serverManeger;
     private Button click;
     private RegistrationClientService m_service;
-    private static Context context;
-    private static RequestQueue mRequestQueue;
     private DatabaseInitHandler databaseInitHandler;
     private DaoSession daoSession;
     private WorkerSession m_session;
@@ -77,6 +76,7 @@ public class SplashScreen extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+               // AndroidUtility.startActivity(getApplicationContext(),WorkerDataActivity.class);
             }
         });
     }

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.prod.app.Activity.HomeActivity;
+import com.prod.app.Activity.WorkerDataActivity;
 import com.prod.app.Async.AsyncJob;
 import com.prod.app.Helper.DeviceHelper;
 import com.prod.app.SessionsManger.WorkerSession;
@@ -12,6 +13,7 @@ import com.prod.app.Utility.AndroidUtility;
 import com.prod.app.clientServices.LoginClientService;
 import com.prod.app.protobuff.Login;
 import com.prod.app.protobuff.Responsestatusenum;
+import com.prod.app.protobuff.Workertype;
 import com.prod.basic.common.httpCommon.Enums.RequestMethodEnum;
 
 import java.util.concurrent.ExecutionException;
@@ -61,7 +63,11 @@ public class DeviceAutoLogin {
                         if (result.getStatus().getStatusType() == Responsestatusenum.ResponseSatusEnum.SUCCESS) {
                             m_workerSession.setSession(result.getWorker());
                             Log.e("workerSession", m_workerSession.getSession().toString());
-                            AndroidUtility.startActivity(m_Context, HomeActivity.class);
+                            if (m_workerSession.getSession().getWorkerTypeConfig().getWorkerType() == Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE) {
+                                AndroidUtility.startActivity(m_Context, WorkerDataActivity.class);
+                            } else {
+                                AndroidUtility.startActivity(m_Context, HomeActivity.class);
+                            }
                         } else {
                             Toast.makeText(m_Context, result.getStatus().getStatusType().name(), Toast.LENGTH_SHORT).show();
                         }

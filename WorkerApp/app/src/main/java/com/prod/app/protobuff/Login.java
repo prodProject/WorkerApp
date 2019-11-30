@@ -3870,15 +3870,15 @@ public final class Login {
     com.prod.app.protobuff.Consumer.ConsumerPbOrBuilder getConsumerOrBuilder();
 
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     boolean hasStatus();
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus();
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder();
   }
@@ -3953,7 +3953,7 @@ public final class Login {
 
               break;
             }
-            case 34: {
+            case 26: {
               com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder subBuilder = null;
               if (status_ != null) {
                 subBuilder = status_.toBuilder();
@@ -4040,22 +4040,22 @@ public final class Login {
       return getConsumer();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 4;
+    public static final int STATUS_FIELD_NUMBER = 3;
     private com.prod.app.protobuff.Responsestatusenum.ResponseTypePb status_;
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     public boolean hasStatus() {
       return status_ != null;
     }
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
       return status_ == null ? com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.getDefaultInstance() : status_;
     }
     /**
-     * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+     * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
      */
     public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
       return getStatus();
@@ -4082,7 +4082,7 @@ public final class Login {
         output.writeMessage(2, getConsumer());
       }
       if (status_ != null) {
-        output.writeMessage(4, getStatus());
+        output.writeMessage(3, getStatus());
       }
       unknownFields.writeTo(output);
     }
@@ -4103,7 +4103,7 @@ public final class Login {
       }
       if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getStatus());
+          .computeMessageSize(3, getStatus());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4674,13 +4674,13 @@ public final class Login {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> statusBuilder_;
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb getStatus() {
         if (statusBuilder_ == null) {
@@ -4690,7 +4690,7 @@ public final class Login {
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public Builder setStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
         if (statusBuilder_ == null) {
@@ -4706,7 +4706,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public Builder setStatus(
           com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder builderForValue) {
@@ -4720,7 +4720,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public Builder mergeStatus(com.prod.app.protobuff.Responsestatusenum.ResponseTypePb value) {
         if (statusBuilder_ == null) {
@@ -4738,7 +4738,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -4752,7 +4752,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder getStatusBuilder() {
         
@@ -4760,7 +4760,7 @@ public final class Login {
         return getStatusFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       public com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -4771,7 +4771,7 @@ public final class Login {
         }
       }
       /**
-       * <code>.com.prod.app.protobuff.ResponseTypePb status = 4;</code>
+       * <code>.com.prod.app.protobuff.ResponseTypePb status = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.prod.app.protobuff.Responsestatusenum.ResponseTypePb, com.prod.app.protobuff.Responsestatusenum.ResponseTypePb.Builder, com.prod.app.protobuff.Responsestatusenum.ResponseTypePbOrBuilder> 
@@ -4897,7 +4897,7 @@ public final class Login {
       "nsePb\0220\n\006worker\030\001 \001(\0132 .com.prod.app.pro" +
       "tobuff.WorkerPb\0224\n\010consumer\030\002 \001(\0132\".com." +
       "prod.app.protobuff.ConsumerPb\0226\n\006status\030" +
-      "\004 \001(\0132&.com.prod.app.protobuff.ResponseT" +
+      "\003 \001(\0132&.com.prod.app.protobuff.ResponseT" +
       "ypePbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

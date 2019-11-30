@@ -10,16 +10,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.prod.app.Async.AsyncJob;
-import com.prod.app.DatabaseEnitityHelper.LoginEntityDaoHelper;
 import com.prod.app.Helper.LoginHelper;
-import com.prod.app.Helper.RegistrationHelper;
 import com.prod.app.R;
 import com.prod.app.SessionsManger.WorkerSession;
 import com.prod.app.Utility.AndroidUtility;
 import com.prod.app.clientServices.LoginClientService;
-import com.prod.app.clientServices.RegistrationClientService;
 import com.prod.app.protobuff.Login;
-import com.prod.app.protobuff.Registration;
 import com.prod.app.protobuff.Responsestatusenum;
 import com.prod.basic.common.httpCommon.Enums.RequestMethodEnum;
 
