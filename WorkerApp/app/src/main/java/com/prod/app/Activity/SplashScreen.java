@@ -23,6 +23,7 @@ import com.prod.app.ServerConfig.ServerUrlManeger;
 import com.prod.app.Session.SessionManager;
 import com.prod.app.SessionsManger.WorkerSession;
 import com.prod.app.Utility.AndroidUtility;
+import com.prod.app.Widget.OtpVerificationWidget.OtpVerificationWidget;
 import com.prod.app.clientServices.RegistrationClientService;
 import com.prod.app.clientServices.WorkerClientService;
 import com.prod.app.protobuff.Entity;
@@ -40,12 +41,14 @@ import javax.inject.Inject;
 public class SplashScreen extends AppCompatActivity {
 
     private ServerUrlManeger m_serverManeger;
-    private Button click;
+ //   private Button click;
     private RegistrationClientService m_service;
     private DatabaseInitHandler databaseInitHandler;
     private DaoSession daoSession;
     private WorkerSession m_session;
     private SessionManager m_maneger;
+
+    private OtpVerificationWidget otpVerificationWidget;
 
     @Inject
     private LoginEntityDaoHelper m_LoginEntityDaoHelper;
@@ -57,14 +60,16 @@ public class SplashScreen extends AppCompatActivity {
         //  onViewCreated(new View(this),savedInstanceState);
         m_LoginEntityDaoHelper = new LoginEntityDaoHelper(getApplicationContext());
         m_serverManeger = new ServerUrlManeger();
+        otpVerificationWidget = findViewById(R.id.otpWidget);
+        otpVerificationWidget.setVisibility(View.VISIBLE);
         m_maneger = new SessionManager(getApplicationContext());
-        click = (Button) findViewById(R.id.button);
+     //   click = (Button) findViewById(R.id.button);
         m_service = new RegistrationClientService(RequestMethodEnum.POST);
         Worker.WorkerPb.Builder bu = Worker.WorkerPb.newBuilder();
         bu.getTypeBuilder().setPersonType(Persontypeenum.PersonTypeEnum.WORKER);
         m_session = new WorkerSession();
         m_session.setSession(bu.build());
-        click.setOnClickListener(new View.OnClickListener() {
+        /*click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -78,7 +83,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
                // AndroidUtility.startActivity(getApplicationContext(),WorkerDataActivity.class);
             }
-        });
+        });*/
     }
 
 
