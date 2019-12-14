@@ -47,6 +47,7 @@ public class SplashScreen extends AppCompatActivity {
     private DaoSession daoSession;
     private WorkerSession m_session;
     private SessionManager m_maneger;
+    private WorkerClientService m_workerClientService;
 
     private OtpVerificationWidget otpVerificationWidget;
 
@@ -69,6 +70,8 @@ public class SplashScreen extends AppCompatActivity {
         bu.getTypeBuilder().setPersonType(Persontypeenum.PersonTypeEnum.WORKER);
         m_session = new WorkerSession();
         m_session.setSession(bu.build());
+        m_workerClientService =new WorkerClientService();
+        Log.e("pb", String.valueOf(m_workerClientService.get("ku")));
         /*click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

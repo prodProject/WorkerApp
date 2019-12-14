@@ -35,7 +35,6 @@ public class HomeActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
     private String[] screenTitles;
     private Drawable[] screenIcons;
-
     private SlidingRootNav slidingRootNav;
 
 
