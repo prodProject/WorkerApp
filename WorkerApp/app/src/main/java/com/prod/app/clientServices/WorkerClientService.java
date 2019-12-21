@@ -29,7 +29,7 @@ public class WorkerClientService implements IClientServices<Worker.WorkerPb, Wor
         m_workerUpdateService = new WorkerUpdateService();
         m_workerGetService = new WorkerGetService();
         m_workerCreateService = new WorkerCreateService();
-        m_workerSearchService =new WorkerSearchService();
+        m_workerSearchService = new WorkerSearchService();
     }
 
     @Override
@@ -131,11 +131,12 @@ public class WorkerClientService implements IClientServices<Worker.WorkerPb, Wor
             return null;
         }
     }
+
     private class WorkerSearchService extends AsyncTask<Workersearch.WorkerSearchRequestPb, Void, Workersearch.WorkerSearchResponsePb> {
 
 
         @Override
-        protected   Workersearch.WorkerSearchResponsePb doInBackground(Workersearch.WorkerSearchRequestPb...workerSearchRequestPb ) {
+        protected Workersearch.WorkerSearchResponsePb doInBackground(Workersearch.WorkerSearchRequestPb... workerSearchRequestPb) {
             ServerUrlManeger urlManeger = new ServerUrlManeger();
             ProtoSerilizerAndDeserilizer serilizer = new ProtoSerilizerAndDeserilizer();
             HttpCaller caller = new HttpCaller(RequestMethodEnum.GET, RequestContentTypeEnum.CONTENT_TYPE_JSON, GetUrlMaker.getUrlWIthQuery(urlManeger.getServerUrl(UrlPathProvider.UrlPathEnum.WORKER_TYPE), URlEncoder.encodeJson(serilizer.getJsonObject(workerSearchRequestPb[0]).toString())), null);
