@@ -134,6 +134,19 @@ public final class Worker {
      * <code>.com.prod.app.protobuff.DeviceInfoPb device = 9;</code>
      */
     com.prod.app.protobuff.Deviceinfo.DeviceInfoPbOrBuilder getDeviceOrBuilder();
+
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    boolean hasProfilePics();
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    com.prod.app.protobuff.Image.ImagePb getProfilePics();
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    com.prod.app.protobuff.Image.ImagePbOrBuilder getProfilePicsOrBuilder();
   }
   /**
    * Protobuf type {@code com.prod.app.protobuff.WorkerPb}
@@ -293,6 +306,19 @@ public final class Worker {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(device_);
                 device_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.prod.app.protobuff.Image.ImagePb.Builder subBuilder = null;
+              if (profilePics_ != null) {
+                subBuilder = profilePics_.toBuilder();
+              }
+              profilePics_ = input.readMessage(com.prod.app.protobuff.Image.ImagePb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(profilePics_);
+                profilePics_ = subBuilder.buildPartial();
               }
 
               break;
@@ -518,6 +544,27 @@ public final class Worker {
       return getDevice();
     }
 
+    public static final int PROFILEPICS_FIELD_NUMBER = 10;
+    private com.prod.app.protobuff.Image.ImagePb profilePics_;
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    public boolean hasProfilePics() {
+      return profilePics_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    public com.prod.app.protobuff.Image.ImagePb getProfilePics() {
+      return profilePics_ == null ? com.prod.app.protobuff.Image.ImagePb.getDefaultInstance() : profilePics_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+     */
+    public com.prod.app.protobuff.Image.ImagePbOrBuilder getProfilePicsOrBuilder() {
+      return getProfilePics();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -558,6 +605,9 @@ public final class Worker {
       }
       if (device_ != null) {
         output.writeMessage(9, getDevice());
+      }
+      if (profilePics_ != null) {
+        output.writeMessage(10, getProfilePics());
       }
       unknownFields.writeTo(output);
     }
@@ -603,6 +653,10 @@ public final class Worker {
       if (device_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getDevice());
+      }
+      if (profilePics_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getProfilePics());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -664,6 +718,11 @@ public final class Worker {
         if (!getDevice()
             .equals(other.getDevice())) return false;
       }
+      if (hasProfilePics() != other.hasProfilePics()) return false;
+      if (hasProfilePics()) {
+        if (!getProfilePics()
+            .equals(other.getProfilePics())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -710,6 +769,10 @@ public final class Worker {
       if (hasDevice()) {
         hash = (37 * hash) + DEVICE_FIELD_NUMBER;
         hash = (53 * hash) + getDevice().hashCode();
+      }
+      if (hasProfilePics()) {
+        hash = (37 * hash) + PROFILEPICS_FIELD_NUMBER;
+        hash = (53 * hash) + getProfilePics().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -898,6 +961,12 @@ public final class Worker {
           device_ = null;
           deviceBuilder_ = null;
         }
+        if (profilePicsBuilder_ == null) {
+          profilePics_ = null;
+        } else {
+          profilePics_ = null;
+          profilePicsBuilder_ = null;
+        }
         return this;
       }
 
@@ -968,6 +1037,11 @@ public final class Worker {
           result.device_ = device_;
         } else {
           result.device_ = deviceBuilder_.build();
+        }
+        if (profilePicsBuilder_ == null) {
+          result.profilePics_ = profilePics_;
+        } else {
+          result.profilePics_ = profilePicsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1043,6 +1117,9 @@ public final class Worker {
         }
         if (other.hasDevice()) {
           mergeDevice(other.getDevice());
+        }
+        if (other.hasProfilePics()) {
+          mergeProfilePics(other.getProfilePics());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2124,6 +2201,123 @@ public final class Worker {
           device_ = null;
         }
         return deviceBuilder_;
+      }
+
+      private com.prod.app.protobuff.Image.ImagePb profilePics_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Image.ImagePb, com.prod.app.protobuff.Image.ImagePb.Builder, com.prod.app.protobuff.Image.ImagePbOrBuilder> profilePicsBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public boolean hasProfilePics() {
+        return profilePicsBuilder_ != null || profilePics_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public com.prod.app.protobuff.Image.ImagePb getProfilePics() {
+        if (profilePicsBuilder_ == null) {
+          return profilePics_ == null ? com.prod.app.protobuff.Image.ImagePb.getDefaultInstance() : profilePics_;
+        } else {
+          return profilePicsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public Builder setProfilePics(com.prod.app.protobuff.Image.ImagePb value) {
+        if (profilePicsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          profilePics_ = value;
+          onChanged();
+        } else {
+          profilePicsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public Builder setProfilePics(
+          com.prod.app.protobuff.Image.ImagePb.Builder builderForValue) {
+        if (profilePicsBuilder_ == null) {
+          profilePics_ = builderForValue.build();
+          onChanged();
+        } else {
+          profilePicsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public Builder mergeProfilePics(com.prod.app.protobuff.Image.ImagePb value) {
+        if (profilePicsBuilder_ == null) {
+          if (profilePics_ != null) {
+            profilePics_ =
+              com.prod.app.protobuff.Image.ImagePb.newBuilder(profilePics_).mergeFrom(value).buildPartial();
+          } else {
+            profilePics_ = value;
+          }
+          onChanged();
+        } else {
+          profilePicsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public Builder clearProfilePics() {
+        if (profilePicsBuilder_ == null) {
+          profilePics_ = null;
+          onChanged();
+        } else {
+          profilePics_ = null;
+          profilePicsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public com.prod.app.protobuff.Image.ImagePb.Builder getProfilePicsBuilder() {
+        
+        onChanged();
+        return getProfilePicsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      public com.prod.app.protobuff.Image.ImagePbOrBuilder getProfilePicsOrBuilder() {
+        if (profilePicsBuilder_ != null) {
+          return profilePicsBuilder_.getMessageOrBuilder();
+        } else {
+          return profilePics_ == null ?
+              com.prod.app.protobuff.Image.ImagePb.getDefaultInstance() : profilePics_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Image.ImagePb, com.prod.app.protobuff.Image.ImagePb.Builder, com.prod.app.protobuff.Image.ImagePbOrBuilder> 
+          getProfilePicsFieldBuilder() {
+        if (profilePicsBuilder_ == null) {
+          profilePicsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Image.ImagePb, com.prod.app.protobuff.Image.ImagePb.Builder, com.prod.app.protobuff.Image.ImagePbOrBuilder>(
+                  getProfilePics(),
+                  getParentForChildren(),
+                  isClean());
+          profilePics_ = null;
+        }
+        return profilePicsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3894,26 +4088,28 @@ public final class Worker {
       "entity.proto\032\020deviceinfo.proto\032\024personty" +
       "peenum.proto\032\013names.proto\032\024contactdetail" +
       "s.proto\032\ntime.proto\032\014gender.proto\032\raddre" +
-      "ss.proto\032\020workertype.proto\"\360\003\n\010WorkerPb\022" +
-      "0\n\006dbInfo\030\001 \001(\0132 .com.prod.app.protobuff" +
-      ".EntityPb\022-\n\004name\030\002 \001(\0132\037.com.prod.app.p" +
-      "rotobuff.NamesPb\022@\n\016contactDetails\030\003 \001(\013" +
-      "2(.com.prod.app.protobuff.ContactDetails" +
-      "Pb\022+\n\003dob\030\004 \001(\0132\036.com.prod.app.protobuff" +
-      ".TimePb\0220\n\006gender\030\005 \001(\0132 .com.prod.app.p" +
-      "rotobuff.GenderPb\0222\n\007address\030\006 \001(\0132!.com" +
-      ".prod.app.protobuff.AddressPb\022D\n\020workerT" +
-      "ypeConfig\030\007 \001(\0132*.com.prod.app.protobuff" +
-      ".WorkerTypeConfigPb\0222\n\004type\030\010 \001(\0132$.com." +
-      "prod.app.protobuff.PersonTypePb\0224\n\006devic" +
-      "e\030\t \001(\0132$.com.prod.app.protobuff.DeviceI" +
-      "nfoPb\"\205\001\n\022WorkerTypeConfigPb\022:\n\nworkerTy" +
-      "pe\030\001 \001(\0162&.com.prod.app.protobuff.Worker" +
-      "TypeEnum\0223\n\ncategories\030\002 \003(\0132\037.com.prod." +
-      "app.protobuff.NamesPb\"n\n\013WorkerPbRef\0220\n\006" +
-      "dbInfo\030\001 \001(\0132 .com.prod.app.protobuff.En" +
-      "tityPb\022-\n\004name\030\002 \001(\0132\037.com.prod.app.prot" +
-      "obuff.NamesPbb\006proto3"
+      "ss.proto\032\020workertype.proto\032\013image.proto\"" +
+      "\246\004\n\010WorkerPb\0220\n\006dbInfo\030\001 \001(\0132 .com.prod." +
+      "app.protobuff.EntityPb\022-\n\004name\030\002 \001(\0132\037.c" +
+      "om.prod.app.protobuff.NamesPb\022@\n\016contact" +
+      "Details\030\003 \001(\0132(.com.prod.app.protobuff.C" +
+      "ontactDetailsPb\022+\n\003dob\030\004 \001(\0132\036.com.prod." +
+      "app.protobuff.TimePb\0220\n\006gender\030\005 \001(\0132 .c" +
+      "om.prod.app.protobuff.GenderPb\0222\n\007addres" +
+      "s\030\006 \001(\0132!.com.prod.app.protobuff.Address" +
+      "Pb\022D\n\020workerTypeConfig\030\007 \001(\0132*.com.prod." +
+      "app.protobuff.WorkerTypeConfigPb\0222\n\004type" +
+      "\030\010 \001(\0132$.com.prod.app.protobuff.PersonTy" +
+      "pePb\0224\n\006device\030\t \001(\0132$.com.prod.app.prot" +
+      "obuff.DeviceInfoPb\0224\n\013profilePics\030\n \001(\0132" +
+      "\037.com.prod.app.protobuff.ImagePb\"\205\001\n\022Wor" +
+      "kerTypeConfigPb\022:\n\nworkerType\030\001 \001(\0162&.co" +
+      "m.prod.app.protobuff.WorkerTypeEnum\0223\n\nc" +
+      "ategories\030\002 \003(\0132\037.com.prod.app.protobuff" +
+      ".NamesPb\"n\n\013WorkerPbRef\0220\n\006dbInfo\030\001 \001(\0132" +
+      " .com.prod.app.protobuff.EntityPb\022-\n\004nam" +
+      "e\030\002 \001(\0132\037.com.prod.app.protobuff.NamesPb" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3927,13 +4123,14 @@ public final class Worker {
           com.prod.app.protobuff.Gender.getDescriptor(),
           com.prod.app.protobuff.Address.getDescriptor(),
           com.prod.app.protobuff.Workertype.getDescriptor(),
+          com.prod.app.protobuff.Image.getDescriptor(),
         });
     internal_static_com_prod_app_protobuff_WorkerPb_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_prod_app_protobuff_WorkerPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_WorkerPb_descriptor,
-        new java.lang.String[] { "DbInfo", "Name", "ContactDetails", "Dob", "Gender", "Address", "WorkerTypeConfig", "Type", "Device", });
+        new java.lang.String[] { "DbInfo", "Name", "ContactDetails", "Dob", "Gender", "Address", "WorkerTypeConfig", "Type", "Device", "ProfilePics", });
     internal_static_com_prod_app_protobuff_WorkerTypeConfigPb_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_prod_app_protobuff_WorkerTypeConfigPb_fieldAccessorTable = new
@@ -3955,6 +4152,7 @@ public final class Worker {
     com.prod.app.protobuff.Gender.getDescriptor();
     com.prod.app.protobuff.Address.getDescriptor();
     com.prod.app.protobuff.Workertype.getDescriptor();
+    com.prod.app.protobuff.Image.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

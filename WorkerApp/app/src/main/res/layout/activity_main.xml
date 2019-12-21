@@ -12,15 +12,13 @@
         android:id="@+id/button"></Button>
 
 
-    <com.prod.app.Widget.OtpVerificationWidget.OtpVerificationWidget
-        android:id="@+id/otpWidget"
+    <com.prod.app.Widget.DownloadImageWidget.DownloadImageWidget
+        android:id="@+id/firebaseWidget"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
-
-
-    </com.prod.app.Widget.OtpVerificationWidget.OtpVerificationWidget>
+    </com.prod.app.Widget.DownloadImageWidget.DownloadImageWidget>
 
 </LinearLayout>
