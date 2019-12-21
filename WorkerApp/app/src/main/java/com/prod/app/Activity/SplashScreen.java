@@ -41,7 +41,7 @@ import javax.inject.Inject;
 public class SplashScreen extends AppCompatActivity {
 
     private ServerUrlManeger m_serverManeger;
- //   private Button click;
+    private Button click;
     private RegistrationClientService m_service;
     private DatabaseInitHandler databaseInitHandler;
     private DaoSession daoSession;
@@ -64,29 +64,29 @@ public class SplashScreen extends AppCompatActivity {
         otpVerificationWidget = findViewById(R.id.otpWidget);
         otpVerificationWidget.setVisibility(View.VISIBLE);
         m_maneger = new SessionManager(getApplicationContext());
-     //   click = (Button) findViewById(R.id.button);
+        click = (Button) findViewById(R.id.button);
         m_service = new RegistrationClientService(RequestMethodEnum.POST);
         Worker.WorkerPb.Builder bu = Worker.WorkerPb.newBuilder();
         bu.getTypeBuilder().setPersonType(Persontypeenum.PersonTypeEnum.WORKER);
         m_session = new WorkerSession();
         m_session.setSession(bu.build());
-        m_workerClientService =new WorkerClientService();
-        Log.e("pb", String.valueOf(m_workerClientService.get("ku")));
-        /*click.setOnClickListener(new View.OnClickListener() {
+        m_workerClientService = new WorkerClientService();
+        //Log.e("pb", String.valueOf(m_workerClientService.get("ku")));
+        click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                try {
-                    if (m_LoginEntityDaoHelper.getLoginPbFromInternalStorage(1l) != null) {
-                        Log.e("Msg", "Login Present" + m_LoginEntityDaoHelper.getDeoEntity().load(1l).getData());
-                        new DeviceAutoLogin(m_LoginEntityDaoHelper.getLoginPbFromInternalStorage(1l), getApplicationContext());
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+
+                if (false && m_LoginEntityDaoHelper.getLoginPbFromInternalStorage(1l) != null ) {
+                    Log.e("Msg", "Login Present" + m_LoginEntityDaoHelper.getDeoEntity().load(1l).getData());
+                    new DeviceAutoLogin(m_LoginEntityDaoHelper.getLoginPbFromInternalStorage(1l), getApplicationContext());
+                } else {
+                    AndroidUtility.startActivity(getApplicationContext(), LoginActivity.class);
                 }
-               // AndroidUtility.startActivity(getApplicationContext(),WorkerDataActivity.class);
+
+                // AndroidUtility.startActivity(getApplicationContext(),WorkerDataActivity.class);
             }
-        });*/
+        });
     }
 
 

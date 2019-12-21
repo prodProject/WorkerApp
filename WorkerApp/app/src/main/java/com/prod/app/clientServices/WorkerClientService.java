@@ -103,8 +103,6 @@ public class WorkerClientService implements IClientServices<Worker.WorkerPb, Wor
         @Override
         protected Worker.WorkerPb doInBackground(String... id) {
             ServerUrlManeger urlManeger = new ServerUrlManeger();
-            ProtoSerilizerAndDeserilizer serilizer = new ProtoSerilizerAndDeserilizer();
-
             HttpCaller caller = new HttpCaller(RequestMethodEnum.GET, RequestContentTypeEnum.CONTENT_TYPE_JSON, GetUrlMaker.getUrlWIthQuery(urlManeger.getServerUrl(UrlPathProvider.UrlPathEnum.WORKER), id[0]), null);
             try {
                 Worker.WorkerPb.Builder resBuilder1 = Worker.WorkerPb.newBuilder(ProtoJsonUtil.fromJson(caller.execute().toString(), Worker.WorkerPb.class));

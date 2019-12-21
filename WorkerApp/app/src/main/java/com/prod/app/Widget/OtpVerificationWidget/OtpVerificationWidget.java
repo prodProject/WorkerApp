@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -16,7 +15,6 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.prod.app.Interfaces.IView;
 import com.prod.app.R;
 import com.prod.app.Utility.AndroidUtility;
-import com.prod.app.Veiw.OtpVerificationView;
 
 public class OtpVerificationWidget extends LinearLayout implements IView<OtpVerificationView> {
 

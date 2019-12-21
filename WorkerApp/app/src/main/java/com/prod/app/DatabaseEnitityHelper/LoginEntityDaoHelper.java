@@ -44,7 +44,14 @@ public class LoginEntityDaoHelper implements IDatabaseEntity<LoginEntityDao> {
         return m_daoSession;
     }
 
-    public Login.LoginPb getLoginPbFromInternalStorage(long id) throws IOException {
-        return ProtoJsonUtil.fromJson(getDeoEntity().load(id).getData(), Login.LoginPb.class);
+    public Login.LoginPb getLoginPbFromInternalStorage(long id) {
+        try {
+            if (getDeoEntity().load(id).getData() != null) {
+                return ProtoJsonUtil.fromJson(getDeoEntity().load(id).getData(), Login.LoginPb.class);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

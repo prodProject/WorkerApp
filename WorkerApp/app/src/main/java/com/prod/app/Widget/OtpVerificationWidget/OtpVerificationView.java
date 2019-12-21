@@ -1,4 +1,4 @@
-package com.prod.app.Veiw;
+package com.prod.app.Widget.OtpVerificationWidget;
 
 import android.content.Context;
 import android.util.Log;

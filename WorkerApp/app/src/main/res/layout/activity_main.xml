@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Activity.SplashScreen">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"></Button>
+
 
     <com.prod.app.Widget.OtpVerificationWidget.OtpVerificationWidget
         android:id="@+id/otpWidget"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
+
 
     </com.prod.app.Widget.OtpVerificationWidget.OtpVerificationWidget>
 
