@@ -6,15 +6,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.prod.app.Activity.VerifyPhoneByFirebase;
 import com.prod.app.Interfaces.IView;
 import com.prod.app.R;
 import com.prod.app.Utility.AndroidUtility;
+
+import org.greenrobot.greendao.annotation.Id;
 
 public class OtpVerificationWidget extends LinearLayout implements IView<OtpVerificationView> {
 
@@ -22,6 +26,7 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
     private EditText m_phoneNumber, m_otpcode;
     private LinearLayout m_sendOtpLayout, m_verifyOtpLayout;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+    private String verificationId;
 
 
     private OtpVerificationView m_view;
@@ -56,18 +61,23 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
     private void initWidget() {
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
-            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
                 String code = phoneAuthCredential.getSmsCode();
                 if (code != null) {
-                    m_otpcode.setText(code);
-                    getView().verifyVerificationCode(AndroidUtility.getTextFromEditText(m_phoneNumber), code);
+                    editTextCode.setText(code);
+                    verifySignInCode(code);
                 }
-
             }
 
             @Override
-            public void onVerificationFailed(@NonNull FirebaseException e) {
+            public void onVerificationFailed(FirebaseException e) {
+                Toast.makeText(VerifyPhoneByFirebase.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            }
 
+            @Override
+            public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(s, forceResendingToken);
+                verificationId = s;
             }
         };
 
