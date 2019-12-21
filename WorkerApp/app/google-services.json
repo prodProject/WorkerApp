@@ -15,17 +15,6 @@
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
-          "client_id": "647760083051-r989urf549jk95vd2mr3402pb77gq03i.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.prod.app",
-            "certificate_hash": "b504e9bcacd938398eb11c4febe034adace0893f"
-          }
-        },
-        {
-=======
->>>>>>> masterShubham
           "client_id": "647760083051-2uuejglaagr2fhk28clqi2j7d449pqjm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

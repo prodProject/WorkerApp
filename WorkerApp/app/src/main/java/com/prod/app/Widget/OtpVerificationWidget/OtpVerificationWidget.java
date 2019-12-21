@@ -33,7 +33,7 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
     }
 
     private void init(Context context, AttributeSet attrs) {
-        inflate(context, R.layout.otp_verification_layout, this);
+        inflate(context, R.layout.activity_verify_phone_by_firebase, this);
         inflateLayout();
         if (!isInEditMode()) {
             initWidget();
@@ -41,13 +41,13 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
     }
 
     private void inflateLayout() {
-        inflate(getContext(), R.layout.otp_verification_layout, this);
-        m_sendOtpLayout = (LinearLayout) findViewById(R.id.numberPanel);
-        m_verifyOtpLayout = (LinearLayout) findViewById(R.id.verify);
-        m_otpcode = (EditText) findViewById(R.id.otpcode);
-        m_phoneNumber = (EditText) findViewById(R.id.mobileNumber);
-        m_verifyButton = (Button) findViewById(R.id.verificationbutton);
-        m_sendCodeButton = (Button) findViewById(R.id.sendCodeButton);
+        inflate(getContext(), R.layout.activity_verify_phone_by_firebase, this);
+        /*m_sendOtpLayout = (LinearLayout) findViewById(R.id.numberPanel);
+        m_verifyOtpLayout = (LinearLayout) findViewById(R.id.verify);*/
+        m_otpcode = (EditText) findViewById(R.id.editTextCode);
+        m_phoneNumber = (EditText) findViewById(R.id.editTextPhone);
+        m_verifyButton = (Button) findViewById(R.id.BUTTON1);
+        m_sendCodeButton = (Button) findViewById(R.id.getverificationcode);
         m_view = new OtpVerificationView(getContext());
         m_verifyOtpLayout.setVisibility(GONE);
         m_sendOtpLayout.setVisibility(VISIBLE);
