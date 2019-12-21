@@ -11,6 +11,7 @@ import "time.proto";
 import "gender.proto";
 import "address.proto";
 import "workertype.proto";
+import "image.proto";
 
 message WorkerPb {
     EntityPb dbInfo = 1;
@@ -22,6 +23,7 @@ message WorkerPb {
     WorkerTypeConfigPb workerTypeConfig = 7;
     PersonTypePb type = 8;
     DeviceInfoPb device = 9;
+    ImagePb profilePics = 10;
 }
 
 message WorkerTypeConfigPb {

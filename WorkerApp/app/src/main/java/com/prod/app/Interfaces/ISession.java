@@ -9,4 +9,6 @@ public interface ISession<T> {
     public void clear();
 
     public boolean sessionExixts();
+
+    public T updateSession(T value);
 }

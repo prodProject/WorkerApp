@@ -1,6 +1,7 @@
 cd app\src\main\java\com\prod\app\protos
 echo [COMPILEING..........]
 protoc deviceinfo.proto --java_out=..\..\..\..\
+protoc image.proto --java_out=..\..\..\..\
 protoc responsestatusenum.proto --java_out=..\..\..\..\
 protoc address.proto --java_out=..\..\..\..\
 protoc persontypeenum.proto --java_out=..\..\..\..\
