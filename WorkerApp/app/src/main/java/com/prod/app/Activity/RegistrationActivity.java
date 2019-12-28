@@ -52,7 +52,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         m_helper = new RegistrationHelper();
-        m_registrationService = new RegistrationClientService(RequestMethodEnum.POST);
+        m_registrationService = new RegistrationClientService();
         m_loginEntityDaoHelper = new LoginEntityDaoHelper(getApplicationContext());
         m_workerSession = new WorkerSession();
         click = (Button) findViewById(R.id.signUp);
@@ -77,10 +77,8 @@ public class RegistrationActivity extends AppCompatActivity {
                                             AndroidUtility.getTextFromEditText(email),
                                             AndroidUtility.getTextFromEditText(number),
                                             AndroidUtility.getTextFromEditText(password));
-                                    return m_registrationService.execute(req).get();
-                                } catch (ExecutionException e) {
-                                    e.printStackTrace();
-                                } catch (InterruptedException e) {
+                                    return m_registrationService.doRegistration(req);
+                                }catch (Exception e){
                                     e.printStackTrace();
                                 }
                                 return null;

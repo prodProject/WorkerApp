@@ -8,6 +8,7 @@ public class UrlPathProvider {
         WORKER,
         LOGIN,
         WORKER_TYPE,
+        PUSH_NOTIFICATION,
     }
 
     public static String getPath(UrlPathEnum data) {
@@ -23,6 +24,8 @@ public class UrlPathProvider {
                 return "loginMain";
             case WORKER_TYPE:
                 return "workerTypeMain";
+            case PUSH_NOTIFICATION:
+                return "pushNotificationMain";
             default:
                 throw new IllegalStateException("Unexpected value: " + data);
         }

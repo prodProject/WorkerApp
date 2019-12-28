@@ -35,7 +35,7 @@ public class DeviceAutoLogin {
         m_Context = context;
         m_loginPb = loginPb;
         m_helper = new DeviceHelper();
-        m_loginService = new LoginClientService(RequestMethodEnum.POST);
+        m_loginService = new LoginClientService();
         m_workerSession = new WorkerSession();
         performLogin();
     }
@@ -45,15 +45,9 @@ public class DeviceAutoLogin {
                 .doInBackground(new AsyncJob.AsyncAction<Login.LoginResponsePb>() {
                     @Override
                     public Login.LoginResponsePb doAsync() {
-                        try {
+
                             Login.LoginRequestPb req = m_helper.getLoginRequestPbFromLoginPb(m_loginPb);
-                            return m_loginService.execute(req).get();
-                        } catch (ExecutionException e) {
-                            e.printStackTrace();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        return null;
+                            return null;
                     }
 
                 })

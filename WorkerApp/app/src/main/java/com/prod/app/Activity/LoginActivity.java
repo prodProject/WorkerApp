@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         m_password = (EditText) findViewById(R.id.password);
         m_login = (Button) findViewById(R.id.login);
         m_helper = new LoginHelper();
-        m_loginService = new LoginClientService(RequestMethodEnum.POST);
+        m_loginService = new LoginClientService();
         m_workerSession = new WorkerSession();
         m_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,16 +54,9 @@ public class LoginActivity extends AppCompatActivity {
                         .doInBackground(new AsyncJob.AsyncAction<Login.LoginResponsePb>() {
                             @Override
                             public Login.LoginResponsePb doAsync() {
-                                try {
                                     Login.LoginRequestPb req = m_helper.getLoginRequestPb(AndroidUtility.getTextFromEditText(m_emailOrPhone),
                                             AndroidUtility.getTextFromEditText(m_password));
-                                    return m_loginService.execute(req).get();
-                                } catch (ExecutionException e) {
-                                    e.printStackTrace();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                return null;
+                                    return m_loginService.doLogin(req);
                             }
 
                         })

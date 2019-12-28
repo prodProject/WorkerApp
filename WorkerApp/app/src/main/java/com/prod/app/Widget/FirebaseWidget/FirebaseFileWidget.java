@@ -75,7 +75,6 @@ public class FirebaseFileWidget extends LinearLayout implements IView<FirebaseFi
     }
 
     private void inflateLayout() {
-        inflate(getContext(), R.layout.otp_verification_layout, this);
         m_chooseButton = findViewById(R.id.chooseButton);
         m_uplaodButton = findViewById(R.id.uploadButton);
         m_imageName = findViewById(R.id.imageNmae);

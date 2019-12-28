@@ -4,18 +4,13 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.webkit.MimeTypeMap;
 
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.prod.app.Interfaces.IContext;
 import com.prod.app.SessionsManger.WorkerSession;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 class FirebaseFileView implements IContext {
 

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+import "persontypeenum.proto";
+import "worker.proto";
+import "names.proto";
+import "summary.proto";
+
+
+message PushNotificationPb {
+    EntityPb dbInfo = 1;
+    WorkerPbRef workerRef = 2;
+    PersonTypePb type = 3;
+    string tokenId = 4;
+}
+
+message PushNotifiactionBuilderPb {
+    string registrationId = 1;
+    repeated string registrationIds = 2;
+    SendNotificationTypeEnum sendType = 3;
+    string subject = 4;
+    string body = 5;
+    string imageUrl = 6;
+}
+
+enum SendNotificationTypeEnum {
+    UNKNOWN_TYPE = 0;
+    SINGLE = 1;
+    MULTIPLE = 2;
+}
+
+message PushNotificationRequestPb {
+    WorkerPbRef workerRef = 1;
+    SendNotificationTypeEnum sendType = 3;
+}
+
+message PushNotificationSearchRequestPb {
+    WorkerPbRef workerRef = 1;
+    PersonTypePb type = 2;
+}
+
+message PushNotificationSearchResponsePb {
+    SummaryPb summary = 1;
+    repeated PushNotificationPb results = 2;
+}

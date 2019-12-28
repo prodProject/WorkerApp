@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.prod.app.protobuff;
+
+import "entity.proto";
+import "names.proto";
+
+message GenericRefPb {
+    EntityPb dbInfo = 1;
+    NamesPb name = 2;
+}

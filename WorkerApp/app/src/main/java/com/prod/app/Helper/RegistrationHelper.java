@@ -34,6 +34,14 @@ public class RegistrationHelper {
         return builder.build();
     }
 
+    public Registration.RegistrationRequestPb getRegistrationRequestPb(Registration.RegistrationRequestPb registrationRequestPb) {
+        Registration.RegistrationRequestPb.Builder builder = registrationRequestPb.toBuilder();
+        Worker.WorkerPb.Builder workerBuilder = builder.getWorkerBuilder();
+        workerBuilder.getTypeBuilder().setPersonType(Persontypeenum.PersonTypeEnum.WORKER);
+        workerBuilder.getDeviceBuilder().setOsType(OSTypeEnum.ANDROID.name()).setModel(DeviceInfo.getDeviceName()).setDeviceName(DeviceInfo.getBrand()).setMacId(DeviceInfo.getMacAddr());
+        return builder.build();
+    }
+
     public LoginEntity getLoginEntityFromLoginPb(Login.LoginPb pb) {
         LoginEntity entity = new LoginEntity();
         entity.setId(1l);

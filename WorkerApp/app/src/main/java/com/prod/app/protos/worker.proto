@@ -6,12 +6,13 @@ import "entity.proto";
 import "deviceinfo.proto";
 import "persontypeenum.proto";
 import "names.proto";
+import "genericref.proto";
 import "contactdetails.proto";
+import "image.proto";
 import "time.proto";
 import "gender.proto";
 import "address.proto";
 import "workertype.proto";
-import "image.proto";
 
 message WorkerPb {
     EntityPb dbInfo = 1;
@@ -24,6 +25,7 @@ message WorkerPb {
     PersonTypePb type = 8;
     DeviceInfoPb device = 9;
     ImagePb profilePics = 10;
+    GenericRefPb pushNotificationRef = 11;
 }
 
 message WorkerTypeConfigPb {

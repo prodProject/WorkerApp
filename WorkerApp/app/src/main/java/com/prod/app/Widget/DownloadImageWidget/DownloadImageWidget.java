@@ -1,9 +1,12 @@
 package com.prod.app.Widget.DownloadImageWidget;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
 import com.prod.app.Interfaces.IView;
@@ -30,8 +33,8 @@ public class DownloadImageWidget extends LinearLayout implements IView<DownloadI
     }
 
     private void inflateLayout() {
-        inflate(getContext(), R.layout.otp_verification_layout, this);
         m_imageView = findViewById(R.id.imangeview);
+        FragmentActivity activity = (FragmentActivity)getActivityContext();
     }
 
     private void initWidget() {

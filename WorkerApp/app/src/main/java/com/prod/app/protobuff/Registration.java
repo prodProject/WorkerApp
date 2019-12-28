@@ -53,6 +53,16 @@ public final class Registration {
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
+
+    /**
+     * <code>string pushNotificationToken = 4;</code>
+     */
+    java.lang.String getPushNotificationToken();
+    /**
+     * <code>string pushNotificationToken = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPushNotificationTokenBytes();
   }
   /**
    * Protobuf type {@code com.prod.app.protobuff.RegistrationRequestPb}
@@ -68,6 +78,7 @@ public final class Registration {
     }
     private RegistrationRequestPb() {
       password_ = "";
+      pushNotificationToken_ = "";
     }
 
     @java.lang.Override
@@ -130,6 +141,12 @@ public final class Registration {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pushNotificationToken_ = s;
               break;
             }
             default: {
@@ -240,6 +257,40 @@ public final class Registration {
       }
     }
 
+    public static final int PUSHNOTIFICATIONTOKEN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object pushNotificationToken_;
+    /**
+     * <code>string pushNotificationToken = 4;</code>
+     */
+    public java.lang.String getPushNotificationToken() {
+      java.lang.Object ref = pushNotificationToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pushNotificationToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pushNotificationToken = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPushNotificationTokenBytes() {
+      java.lang.Object ref = pushNotificationToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pushNotificationToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -263,6 +314,9 @@ public final class Registration {
       if (!getPasswordBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
       }
+      if (!getPushNotificationTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pushNotificationToken_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -282,6 +336,9 @@ public final class Registration {
       }
       if (!getPasswordBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
+      }
+      if (!getPushNotificationTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pushNotificationToken_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -310,6 +367,8 @@ public final class Registration {
       }
       if (!getPassword()
           .equals(other.getPassword())) return false;
+      if (!getPushNotificationToken()
+          .equals(other.getPushNotificationToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -331,6 +390,8 @@ public final class Registration {
       }
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + PUSHNOTIFICATIONTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getPushNotificationToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -478,6 +539,8 @@ public final class Registration {
         }
         password_ = "";
 
+        pushNotificationToken_ = "";
+
         return this;
       }
 
@@ -515,6 +578,7 @@ public final class Registration {
           result.comsumer_ = comsumerBuilder_.build();
         }
         result.password_ = password_;
+        result.pushNotificationToken_ = pushNotificationToken_;
         onBuilt();
         return result;
       }
@@ -571,6 +635,10 @@ public final class Registration {
         }
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
+          onChanged();
+        }
+        if (!other.getPushNotificationToken().isEmpty()) {
+          pushNotificationToken_ = other.pushNotificationToken_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -901,6 +969,75 @@ public final class Registration {
   checkByteStringIsUtf8(value);
         
         password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pushNotificationToken_ = "";
+      /**
+       * <code>string pushNotificationToken = 4;</code>
+       */
+      public java.lang.String getPushNotificationToken() {
+        java.lang.Object ref = pushNotificationToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushNotificationToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pushNotificationToken = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPushNotificationTokenBytes() {
+        java.lang.Object ref = pushNotificationToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pushNotificationToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string pushNotificationToken = 4;</code>
+       */
+      public Builder setPushNotificationToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pushNotificationToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushNotificationToken = 4;</code>
+       */
+      public Builder clearPushNotificationToken() {
+        
+        pushNotificationToken_ = getDefaultInstance().getPushNotificationToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushNotificationToken = 4;</code>
+       */
+      public Builder setPushNotificationTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pushNotificationToken_ = value;
         onChanged();
         return this;
       }
@@ -2172,17 +2309,18 @@ public final class Registration {
     java.lang.String[] descriptorData = {
       "\n\022registration.proto\022\026com.prod.app.proto" +
       "buff\032\014worker.proto\032\016consumer.proto\032\030resp" +
-      "onsestatusenum.proto\032\013login.proto\"\221\001\n\025Re" +
+      "onsestatusenum.proto\032\013login.proto\"\260\001\n\025Re" +
       "gistrationRequestPb\0220\n\006worker\030\001 \001(\0132 .co" +
       "m.prod.app.protobuff.WorkerPb\0224\n\010comsume" +
       "r\030\002 \001(\0132\".com.prod.app.protobuff.Consume" +
-      "rPb\022\020\n\010password\030\003 \001(\t\"\350\001\n\026RegistrationRe" +
-      "sponsePb\0220\n\006worker\030\001 \001(\0132 .com.prod.app." +
-      "protobuff.WorkerPb\0224\n\010consumer\030\002 \001(\0132\".c" +
-      "om.prod.app.protobuff.ConsumerPb\022.\n\005logi" +
-      "n\030\003 \001(\0132\037.com.prod.app.protobuff.LoginPb" +
-      "\0226\n\006status\030\004 \001(\0132&.com.prod.app.protobuf" +
-      "f.ResponseTypePbb\006proto3"
+      "rPb\022\020\n\010password\030\003 \001(\t\022\035\n\025pushNotificatio" +
+      "nToken\030\004 \001(\t\"\350\001\n\026RegistrationResponsePb\022" +
+      "0\n\006worker\030\001 \001(\0132 .com.prod.app.protobuff" +
+      ".WorkerPb\0224\n\010consumer\030\002 \001(\0132\".com.prod.a" +
+      "pp.protobuff.ConsumerPb\022.\n\005login\030\003 \001(\0132\037" +
+      ".com.prod.app.protobuff.LoginPb\0226\n\006statu" +
+      "s\030\004 \001(\0132&.com.prod.app.protobuff.Respons" +
+      "eTypePbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2197,7 +2335,7 @@ public final class Registration {
     internal_static_com_prod_app_protobuff_RegistrationRequestPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_RegistrationRequestPb_descriptor,
-        new java.lang.String[] { "Worker", "Comsumer", "Password", });
+        new java.lang.String[] { "Worker", "Comsumer", "Password", "PushNotificationToken", });
     internal_static_com_prod_app_protobuff_RegistrationResponsePb_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_prod_app_protobuff_RegistrationResponsePb_fieldAccessorTable = new

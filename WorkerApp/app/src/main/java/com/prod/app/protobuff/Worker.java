@@ -147,6 +147,19 @@ public final class Worker {
      * <code>.com.prod.app.protobuff.ImagePb profilePics = 10;</code>
      */
     com.prod.app.protobuff.Image.ImagePbOrBuilder getProfilePicsOrBuilder();
+
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    boolean hasPushNotificationRef();
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    com.prod.app.protobuff.Genericref.GenericRefPb getPushNotificationRef();
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder getPushNotificationRefOrBuilder();
   }
   /**
    * Protobuf type {@code com.prod.app.protobuff.WorkerPb}
@@ -319,6 +332,19 @@ public final class Worker {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(profilePics_);
                 profilePics_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              com.prod.app.protobuff.Genericref.GenericRefPb.Builder subBuilder = null;
+              if (pushNotificationRef_ != null) {
+                subBuilder = pushNotificationRef_.toBuilder();
+              }
+              pushNotificationRef_ = input.readMessage(com.prod.app.protobuff.Genericref.GenericRefPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pushNotificationRef_);
+                pushNotificationRef_ = subBuilder.buildPartial();
               }
 
               break;
@@ -565,6 +591,27 @@ public final class Worker {
       return getProfilePics();
     }
 
+    public static final int PUSHNOTIFICATIONREF_FIELD_NUMBER = 11;
+    private com.prod.app.protobuff.Genericref.GenericRefPb pushNotificationRef_;
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    public boolean hasPushNotificationRef() {
+      return pushNotificationRef_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    public com.prod.app.protobuff.Genericref.GenericRefPb getPushNotificationRef() {
+      return pushNotificationRef_ == null ? com.prod.app.protobuff.Genericref.GenericRefPb.getDefaultInstance() : pushNotificationRef_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+     */
+    public com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder getPushNotificationRefOrBuilder() {
+      return getPushNotificationRef();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -608,6 +655,9 @@ public final class Worker {
       }
       if (profilePics_ != null) {
         output.writeMessage(10, getProfilePics());
+      }
+      if (pushNotificationRef_ != null) {
+        output.writeMessage(11, getPushNotificationRef());
       }
       unknownFields.writeTo(output);
     }
@@ -657,6 +707,10 @@ public final class Worker {
       if (profilePics_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getProfilePics());
+      }
+      if (pushNotificationRef_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getPushNotificationRef());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -723,6 +777,11 @@ public final class Worker {
         if (!getProfilePics()
             .equals(other.getProfilePics())) return false;
       }
+      if (hasPushNotificationRef() != other.hasPushNotificationRef()) return false;
+      if (hasPushNotificationRef()) {
+        if (!getPushNotificationRef()
+            .equals(other.getPushNotificationRef())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -773,6 +832,10 @@ public final class Worker {
       if (hasProfilePics()) {
         hash = (37 * hash) + PROFILEPICS_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePics().hashCode();
+      }
+      if (hasPushNotificationRef()) {
+        hash = (37 * hash) + PUSHNOTIFICATIONREF_FIELD_NUMBER;
+        hash = (53 * hash) + getPushNotificationRef().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -967,6 +1030,12 @@ public final class Worker {
           profilePics_ = null;
           profilePicsBuilder_ = null;
         }
+        if (pushNotificationRefBuilder_ == null) {
+          pushNotificationRef_ = null;
+        } else {
+          pushNotificationRef_ = null;
+          pushNotificationRefBuilder_ = null;
+        }
         return this;
       }
 
@@ -1042,6 +1111,11 @@ public final class Worker {
           result.profilePics_ = profilePics_;
         } else {
           result.profilePics_ = profilePicsBuilder_.build();
+        }
+        if (pushNotificationRefBuilder_ == null) {
+          result.pushNotificationRef_ = pushNotificationRef_;
+        } else {
+          result.pushNotificationRef_ = pushNotificationRefBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1120,6 +1194,9 @@ public final class Worker {
         }
         if (other.hasProfilePics()) {
           mergeProfilePics(other.getProfilePics());
+        }
+        if (other.hasPushNotificationRef()) {
+          mergePushNotificationRef(other.getPushNotificationRef());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2318,6 +2395,123 @@ public final class Worker {
           profilePics_ = null;
         }
         return profilePicsBuilder_;
+      }
+
+      private com.prod.app.protobuff.Genericref.GenericRefPb pushNotificationRef_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Genericref.GenericRefPb, com.prod.app.protobuff.Genericref.GenericRefPb.Builder, com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder> pushNotificationRefBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public boolean hasPushNotificationRef() {
+        return pushNotificationRefBuilder_ != null || pushNotificationRef_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public com.prod.app.protobuff.Genericref.GenericRefPb getPushNotificationRef() {
+        if (pushNotificationRefBuilder_ == null) {
+          return pushNotificationRef_ == null ? com.prod.app.protobuff.Genericref.GenericRefPb.getDefaultInstance() : pushNotificationRef_;
+        } else {
+          return pushNotificationRefBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public Builder setPushNotificationRef(com.prod.app.protobuff.Genericref.GenericRefPb value) {
+        if (pushNotificationRefBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pushNotificationRef_ = value;
+          onChanged();
+        } else {
+          pushNotificationRefBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public Builder setPushNotificationRef(
+          com.prod.app.protobuff.Genericref.GenericRefPb.Builder builderForValue) {
+        if (pushNotificationRefBuilder_ == null) {
+          pushNotificationRef_ = builderForValue.build();
+          onChanged();
+        } else {
+          pushNotificationRefBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public Builder mergePushNotificationRef(com.prod.app.protobuff.Genericref.GenericRefPb value) {
+        if (pushNotificationRefBuilder_ == null) {
+          if (pushNotificationRef_ != null) {
+            pushNotificationRef_ =
+              com.prod.app.protobuff.Genericref.GenericRefPb.newBuilder(pushNotificationRef_).mergeFrom(value).buildPartial();
+          } else {
+            pushNotificationRef_ = value;
+          }
+          onChanged();
+        } else {
+          pushNotificationRefBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public Builder clearPushNotificationRef() {
+        if (pushNotificationRefBuilder_ == null) {
+          pushNotificationRef_ = null;
+          onChanged();
+        } else {
+          pushNotificationRef_ = null;
+          pushNotificationRefBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public com.prod.app.protobuff.Genericref.GenericRefPb.Builder getPushNotificationRefBuilder() {
+        
+        onChanged();
+        return getPushNotificationRefFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      public com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder getPushNotificationRefOrBuilder() {
+        if (pushNotificationRefBuilder_ != null) {
+          return pushNotificationRefBuilder_.getMessageOrBuilder();
+        } else {
+          return pushNotificationRef_ == null ?
+              com.prod.app.protobuff.Genericref.GenericRefPb.getDefaultInstance() : pushNotificationRef_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.GenericRefPb pushNotificationRef = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Genericref.GenericRefPb, com.prod.app.protobuff.Genericref.GenericRefPb.Builder, com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder> 
+          getPushNotificationRefFieldBuilder() {
+        if (pushNotificationRefBuilder_ == null) {
+          pushNotificationRefBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Genericref.GenericRefPb, com.prod.app.protobuff.Genericref.GenericRefPb.Builder, com.prod.app.protobuff.Genericref.GenericRefPbOrBuilder>(
+                  getPushNotificationRef(),
+                  getParentForChildren(),
+                  isClean());
+          pushNotificationRef_ = null;
+        }
+        return pushNotificationRefBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4086,30 +4280,32 @@ public final class Worker {
     java.lang.String[] descriptorData = {
       "\n\014worker.proto\022\026com.prod.app.protobuff\032\014" +
       "entity.proto\032\020deviceinfo.proto\032\024personty" +
-      "peenum.proto\032\013names.proto\032\024contactdetail" +
-      "s.proto\032\ntime.proto\032\014gender.proto\032\raddre" +
-      "ss.proto\032\020workertype.proto\032\013image.proto\"" +
-      "\246\004\n\010WorkerPb\0220\n\006dbInfo\030\001 \001(\0132 .com.prod." +
-      "app.protobuff.EntityPb\022-\n\004name\030\002 \001(\0132\037.c" +
-      "om.prod.app.protobuff.NamesPb\022@\n\016contact" +
-      "Details\030\003 \001(\0132(.com.prod.app.protobuff.C" +
-      "ontactDetailsPb\022+\n\003dob\030\004 \001(\0132\036.com.prod." +
-      "app.protobuff.TimePb\0220\n\006gender\030\005 \001(\0132 .c" +
-      "om.prod.app.protobuff.GenderPb\0222\n\007addres" +
-      "s\030\006 \001(\0132!.com.prod.app.protobuff.Address" +
-      "Pb\022D\n\020workerTypeConfig\030\007 \001(\0132*.com.prod." +
-      "app.protobuff.WorkerTypeConfigPb\0222\n\004type" +
-      "\030\010 \001(\0132$.com.prod.app.protobuff.PersonTy" +
-      "pePb\0224\n\006device\030\t \001(\0132$.com.prod.app.prot" +
-      "obuff.DeviceInfoPb\0224\n\013profilePics\030\n \001(\0132" +
-      "\037.com.prod.app.protobuff.ImagePb\"\205\001\n\022Wor" +
-      "kerTypeConfigPb\022:\n\nworkerType\030\001 \001(\0162&.co" +
-      "m.prod.app.protobuff.WorkerTypeEnum\0223\n\nc" +
-      "ategories\030\002 \003(\0132\037.com.prod.app.protobuff" +
-      ".NamesPb\"n\n\013WorkerPbRef\0220\n\006dbInfo\030\001 \001(\0132" +
-      " .com.prod.app.protobuff.EntityPb\022-\n\004nam" +
-      "e\030\002 \001(\0132\037.com.prod.app.protobuff.NamesPb" +
-      "b\006proto3"
+      "peenum.proto\032\013names.proto\032\020genericref.pr" +
+      "oto\032\024contactdetails.proto\032\013image.proto\032\n" +
+      "time.proto\032\014gender.proto\032\raddress.proto\032" +
+      "\020workertype.proto\"\351\004\n\010WorkerPb\0220\n\006dbInfo" +
+      "\030\001 \001(\0132 .com.prod.app.protobuff.EntityPb" +
+      "\022-\n\004name\030\002 \001(\0132\037.com.prod.app.protobuff." +
+      "NamesPb\022@\n\016contactDetails\030\003 \001(\0132(.com.pr" +
+      "od.app.protobuff.ContactDetailsPb\022+\n\003dob" +
+      "\030\004 \001(\0132\036.com.prod.app.protobuff.TimePb\0220" +
+      "\n\006gender\030\005 \001(\0132 .com.prod.app.protobuff." +
+      "GenderPb\0222\n\007address\030\006 \001(\0132!.com.prod.app" +
+      ".protobuff.AddressPb\022D\n\020workerTypeConfig" +
+      "\030\007 \001(\0132*.com.prod.app.protobuff.WorkerTy" +
+      "peConfigPb\0222\n\004type\030\010 \001(\0132$.com.prod.app." +
+      "protobuff.PersonTypePb\0224\n\006device\030\t \001(\0132$" +
+      ".com.prod.app.protobuff.DeviceInfoPb\0224\n\013" +
+      "profilePics\030\n \001(\0132\037.com.prod.app.protobu" +
+      "ff.ImagePb\022A\n\023pushNotificationRef\030\013 \001(\0132" +
+      "$.com.prod.app.protobuff.GenericRefPb\"\205\001" +
+      "\n\022WorkerTypeConfigPb\022:\n\nworkerType\030\001 \001(\016" +
+      "2&.com.prod.app.protobuff.WorkerTypeEnum" +
+      "\0223\n\ncategories\030\002 \003(\0132\037.com.prod.app.prot" +
+      "obuff.NamesPb\"n\n\013WorkerPbRef\0220\n\006dbInfo\030\001" +
+      " \001(\0132 .com.prod.app.protobuff.EntityPb\022-" +
+      "\n\004name\030\002 \001(\0132\037.com.prod.app.protobuff.Na" +
+      "mesPbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4118,19 +4314,20 @@ public final class Worker {
           com.prod.app.protobuff.Deviceinfo.getDescriptor(),
           com.prod.app.protobuff.Persontypeenum.getDescriptor(),
           com.prod.app.protobuff.Names.getDescriptor(),
+          com.prod.app.protobuff.Genericref.getDescriptor(),
           com.prod.app.protobuff.Contactdetails.getDescriptor(),
+          com.prod.app.protobuff.Image.getDescriptor(),
           com.prod.app.protobuff.Time.getDescriptor(),
           com.prod.app.protobuff.Gender.getDescriptor(),
           com.prod.app.protobuff.Address.getDescriptor(),
           com.prod.app.protobuff.Workertype.getDescriptor(),
-          com.prod.app.protobuff.Image.getDescriptor(),
         });
     internal_static_com_prod_app_protobuff_WorkerPb_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_prod_app_protobuff_WorkerPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_WorkerPb_descriptor,
-        new java.lang.String[] { "DbInfo", "Name", "ContactDetails", "Dob", "Gender", "Address", "WorkerTypeConfig", "Type", "Device", "ProfilePics", });
+        new java.lang.String[] { "DbInfo", "Name", "ContactDetails", "Dob", "Gender", "Address", "WorkerTypeConfig", "Type", "Device", "ProfilePics", "PushNotificationRef", });
     internal_static_com_prod_app_protobuff_WorkerTypeConfigPb_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_prod_app_protobuff_WorkerTypeConfigPb_fieldAccessorTable = new
@@ -4147,12 +4344,13 @@ public final class Worker {
     com.prod.app.protobuff.Deviceinfo.getDescriptor();
     com.prod.app.protobuff.Persontypeenum.getDescriptor();
     com.prod.app.protobuff.Names.getDescriptor();
+    com.prod.app.protobuff.Genericref.getDescriptor();
     com.prod.app.protobuff.Contactdetails.getDescriptor();
+    com.prod.app.protobuff.Image.getDescriptor();
     com.prod.app.protobuff.Time.getDescriptor();
     com.prod.app.protobuff.Gender.getDescriptor();
     com.prod.app.protobuff.Address.getDescriptor();
     com.prod.app.protobuff.Workertype.getDescriptor();
-    com.prod.app.protobuff.Image.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
