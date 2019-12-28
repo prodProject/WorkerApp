@@ -26,7 +26,7 @@ import javax.inject.Inject;
 public class SplashScreen extends AppCompatActivity {
 
     private ServerUrlManeger m_serverManeger;
-    private Button click;
+   // private Button click;
     //   private Button click;
     private RegistrationClientService m_service;
     private DatabaseInitHandler databaseInitHandler;
@@ -52,7 +52,7 @@ public class SplashScreen extends AppCompatActivity {
         m_LoginEntityDaoHelper = new LoginEntityDaoHelper(getApplicationContext());
         m_serverManeger = new ServerUrlManeger();
         m_maneger = new SessionManager(getApplicationContext());
-        click = (Button) findViewById(R.id.button);
+        //click = (Button) findViewById(R.id.button);
         //   click = (Button) findViewById(R.id.button);
         m_service = new RegistrationClientService(RequestMethodEnum.POST);
         Worker.WorkerPb.Builder bu = Worker.WorkerPb.newBuilder();

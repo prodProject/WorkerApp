@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -20,13 +21,17 @@ import com.prod.app.Utility.AndroidUtility;
 
 import org.greenrobot.greendao.annotation.Id;
 
+import java.util.concurrent.TimeUnit;
+
 public class OtpVerificationWidget extends LinearLayout implements IView<OtpVerificationView> {
 
-    private Button m_sendCodeButton, m_verifyButton;
-    private EditText m_phoneNumber, m_otpcode;
+    private Button m_getverificationcode, m_BUTTON1;
+    private EditText m_editTextPhone, m_editTextCode;
     private LinearLayout m_sendOtpLayout, m_verifyOtpLayout;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private String verificationId;
+    private String number;
+
 
 
     private OtpVerificationView m_view;
@@ -34,11 +39,13 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
 
     public OtpVerificationWidget(Context context, AttributeSet attrs) {
         super(context, attrs);
+        m_view = new OtpVerificationView();
         init(context, attrs);
     }
 
     private void init(Context context, AttributeSet attrs) {
         inflate(context, R.layout.activity_verify_phone_by_firebase, this);
+        getView().setActivityContext(context);
         inflateLayout();
         if (!isInEditMode()) {
             initWidget();
@@ -46,16 +53,14 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
     }
 
     private void inflateLayout() {
-        inflate(getContext(), R.layout.activity_verify_phone_by_firebase, this);
+
         /*m_sendOtpLayout = (LinearLayout) findViewById(R.id.numberPanel);
         m_verifyOtpLayout = (LinearLayout) findViewById(R.id.verify);*/
-        m_otpcode = (EditText) findViewById(R.id.editTextCode);
-        m_phoneNumber = (EditText) findViewById(R.id.editTextPhone);
-        m_verifyButton = (Button) findViewById(R.id.BUTTON1);
-        m_sendCodeButton = (Button) findViewById(R.id.getverificationcode);
-        m_view = new OtpVerificationView(getContext());
-        m_verifyOtpLayout.setVisibility(GONE);
-        m_sendOtpLayout.setVisibility(VISIBLE);
+        m_editTextCode = (EditText) findViewById(R.id.editTextCode);
+        m_editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+        m_BUTTON1 = (Button) findViewById(R.id.BUTTON1);
+        m_getverificationcode = (Button) findViewById(R.id.getverificationcode);
+
     }
 
     private void initWidget() {
@@ -64,14 +69,14 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
             public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
                 String code = phoneAuthCredential.getSmsCode();
                 if (code != null) {
-                    editTextCode.setText(code);
-                    verifySignInCode(code);
+                    m_editTextCode.setText(code);
+                    getView().verifySignInCode(code,verificationId);
                 }
             }
 
             @Override
             public void onVerificationFailed(FirebaseException e) {
-                Toast.makeText(VerifyPhoneByFirebase.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getView().getActivityContext().getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -81,19 +86,12 @@ public class OtpVerificationWidget extends LinearLayout implements IView<OtpVeri
             }
         };
 
-
-        m_sendCodeButton.setOnClickListener(new View.OnClickListener() {
+        m_getverificationcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getView().sendVerificationCode(AndroidUtility.getTextFromEditText(m_phoneNumber), mCallbacks);
-                switchLayout();
+                getView().sendVerificationCode(AndroidUtility.getTextFromEditText(m_editTextPhone), mCallbacks);
             }
         });
-    }
-
-    private void switchLayout() {
-        m_sendOtpLayout.setVisibility(GONE);
-        m_verifyOtpLayout.setVisibility(VISIBLE);
     }
 
     @Override
