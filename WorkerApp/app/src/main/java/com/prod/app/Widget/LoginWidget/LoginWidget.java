@@ -2,12 +2,14 @@ package com.prod.app.Widget.LoginWidget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.prod.app.Interfaces.IView;
 import com.prod.app.R;
+import com.prod.app.Utility.AndroidUtility;
 
 public class LoginWidget extends LinearLayout implements IView<LoginView> {
 
@@ -19,6 +21,7 @@ public class LoginWidget extends LinearLayout implements IView<LoginView> {
 
     public LoginWidget(Context context, AttributeSet attrs) {
         super(context, attrs);
+        m_view =  new LoginView();
         getView().setActivityContext(context);
         init(context, attrs);
     }
@@ -38,7 +41,13 @@ public class LoginWidget extends LinearLayout implements IView<LoginView> {
     }
 
     private void initWidget() {
+        m_login.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getView().startlogin(AndroidUtility.getTextFromEditText(m_emailOrPhone), AndroidUtility.getTextFromEditText(m_password));
 
+            }
+        });
     }
 
 
