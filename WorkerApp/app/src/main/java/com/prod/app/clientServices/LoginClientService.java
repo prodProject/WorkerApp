@@ -47,7 +47,7 @@ public class LoginClientService implements IClientServices<Login.LoginPb, Login.
 
     public Login.LoginResponsePb doLogin(Login.LoginRequestPb requestPb){
         try {
-            return m_loginProcess.execute(requestPb).get();
+            return new LoginProcess().execute(requestPb).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
