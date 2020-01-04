@@ -24,7 +24,7 @@ public class GetFirebasePushNotificationToken {
                             return;
                         }
                         tokenId[0] = task.getResult().getToken();
-
+                        Log.w("notify", tokenId[0]);
                     }
                 });
         return tokenId[0];

@@ -34,6 +34,12 @@ message LoginSearchRespsonsePb {
 message LoginRequestPb {
     LoginPb login = 1;
 }
+
+enum LoginTypeEnum{
+    UNKNOWN_TYPE=0;
+    MAIL=1;
+    MOBILE_NO=2;
+}
 message LoginResponsePb {
     WorkerPb worker = 1;
     ConsumerPb consumer = 2;

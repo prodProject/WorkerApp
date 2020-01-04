@@ -18,7 +18,7 @@ import java.io.IOException;
 public class RegistrationHelper {
 
 
-    public Registration.RegistrationRequestPb getRegistrationRequestPb(String firstName, String lastName, String email, String mobileNumber, String password) {
+    public Registration.RegistrationRequestPb.Builder getRegistrationRequestPb(String firstName, String lastName, String email, String mobileNumber, String password) {
         Registration.RegistrationRequestPb.Builder builder = Registration.RegistrationRequestPb.newBuilder();
         Worker.WorkerPb.Builder workerBuilder = builder.getWorkerBuilder();
         workerBuilder.getNameBuilder().setFirstName(firstName);
@@ -31,7 +31,7 @@ public class RegistrationHelper {
         workerBuilder.getDobBuilder().setDate("21").setMonth("04").setTimezone(Time.TimeZoneEnum.IST).setYear("1997");
         workerBuilder.build();
         builder.setPassword(password);
-        return builder.build();
+        return builder;
     }
 
     public Registration.RegistrationRequestPb getRegistrationRequestPb(Registration.RegistrationRequestPb registrationRequestPb) {

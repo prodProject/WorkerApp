@@ -14,6 +14,113 @@ public final class Login {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code com.prod.app.protobuff.LoginTypeEnum}
+   */
+  public enum LoginTypeEnum
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNKNOWN_TYPE = 0;</code>
+     */
+    UNKNOWN_TYPE(0),
+    /**
+     * <code>MAIL = 1;</code>
+     */
+    MAIL(1),
+    /**
+     * <code>MOBILE_NO = 2;</code>
+     */
+    MOBILE_NO(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNKNOWN_TYPE = 0;</code>
+     */
+    public static final int UNKNOWN_TYPE_VALUE = 0;
+    /**
+     * <code>MAIL = 1;</code>
+     */
+    public static final int MAIL_VALUE = 1;
+    /**
+     * <code>MOBILE_NO = 2;</code>
+     */
+    public static final int MOBILE_NO_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LoginTypeEnum valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static LoginTypeEnum forNumber(int value) {
+      switch (value) {
+        case 0: return UNKNOWN_TYPE;
+        case 1: return MAIL;
+        case 2: return MOBILE_NO;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LoginTypeEnum>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        LoginTypeEnum> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<LoginTypeEnum>() {
+            public LoginTypeEnum findValueByNumber(int number) {
+              return LoginTypeEnum.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Login.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LoginTypeEnum[] VALUES = values();
+
+    public static LoginTypeEnum valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LoginTypeEnum(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.prod.app.protobuff.LoginTypeEnum)
+  }
+
   public interface LoginPbOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.LoginPb)
       com.google.protobuf.MessageOrBuilder {
@@ -4898,7 +5005,8 @@ public final class Login {
       "tobuff.WorkerPb\0224\n\010consumer\030\002 \001(\0132\".com." +
       "prod.app.protobuff.ConsumerPb\0226\n\006status\030" +
       "\003 \001(\0132&.com.prod.app.protobuff.ResponseT" +
-      "ypePbb\006proto3"
+      "ypePb*:\n\rLoginTypeEnum\022\020\n\014UNKNOWN_TYPE\020\000" +
+      "\022\010\n\004MAIL\020\001\022\r\n\tMOBILE_NO\020\002b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
