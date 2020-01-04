@@ -18,6 +18,7 @@ public class RegistrationWidget extends LinearLayout implements IView<Registrati
 
     public RegistrationWidget(Context context, AttributeSet attrs) {
         super(context, attrs);
+        m_view = new RegistrationView();
         getView().setActivityContext(context);
         init(context, attrs);
     }
