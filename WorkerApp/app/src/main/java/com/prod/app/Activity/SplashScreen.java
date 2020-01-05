@@ -1,5 +1,6 @@
 package com.prod.app.Activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.prod.app.DatabaseEnitityHelper.LoginEntityDaoHelper;
+import com.prod.app.Firebase.GetFirebasePushNotificationToken;
 import com.prod.app.Helper.DeviceHelper;
 import com.prod.app.LocalDatabase.DaoSession;
 import com.prod.app.LocalDatabase.DatabaseInitHandler;
@@ -32,7 +34,7 @@ import java.util.Calendar;
 
 import javax.inject.Inject;
 
-public class SplashScreen extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class SplashScreen extends AppCompatActivity{
 
     private ServerUrlManeger m_serverManeger;
     //   private Button click;
@@ -59,7 +61,8 @@ public class SplashScreen extends AppCompatActivity implements DatePickerDialog.
         setContentView(R.layout.activity_main);
         m_pushNotificationnClientService = new PushNotificationnClientService();
         m_deviceHelper = new DeviceHelper();
-        //getFirebaseConnection();
+        getFirebaseConnection();
+       // GetFirebasePushNotificationToken.getToken();
         //  onViewCreated(new View(this),savedInstanceState);
         m_LoginEntityDaoHelper = new LoginEntityDaoHelper(getApplicationContext());
         m_serverManeger = new ServerUrlManeger();
@@ -70,16 +73,6 @@ public class SplashScreen extends AppCompatActivity implements DatePickerDialog.
         bu.getTypeBuilder().setPersonType(Persontypeenum.PersonTypeEnum.WORKER);
         m_session = new WorkerSession();
         m_session.setSession(bu.build());
-
-        Calendar now = Calendar.getInstance();
-        DatePickerDialog dpd = DatePickerDialog.newInstance(
-                SplashScreen.this,
-                now.get(Calendar.YEAR), // Initial year selection
-                now.get(Calendar.MONTH), // Initial month selection
-                now.get(Calendar.DAY_OF_MONTH) // Inital day selection
-        );
-// If you're calling this from a support Fragment
-        dpd.show(getSupportFragmentManager(),"");
 
     }
 
@@ -94,16 +87,15 @@ public class SplashScreen extends AppCompatActivity implements DatePickerDialog.
                             return;
                         }
                         String token = task.getResult().getToken();
-
-                        m_pushNotificationnClientService.create(m_deviceHelper.getPushNotificationCreateBuilder(token));
+                        Log.w("notify", token);
+                        SharedPreferences sharedPrefrences =  getApplicationContext().getSharedPreferences("firebaetokenId",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPrefrences.edit();
+                        editor.putString("firebaetokenId", token);
+                        editor.commit();
                     }
                 });
     }
 
-    @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        Toast.makeText(getApplicationContext(),"date",Toast.LENGTH_LONG).show();
-    }
 
     /*@Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

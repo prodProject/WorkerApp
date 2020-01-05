@@ -25,7 +25,7 @@ public class RegistrationClientService {
 
     public Registration.RegistrationResponsePb doRegistration(Registration.RegistrationRequestPb requiest) {
         try {
-            return m_registrationProcess.execute(requiest).get();
+            return new RegistrationProcess().execute(requiest).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

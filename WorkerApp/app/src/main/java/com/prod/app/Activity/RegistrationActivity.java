@@ -64,46 +64,6 @@ public class RegistrationActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
 
         m_session = new WorkerSession();
-        click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AsyncJob.AsyncJobBuilder<Registration.RegistrationResponsePb>()
-                        .doInBackground(new AsyncJob.AsyncAction<Registration.RegistrationResponsePb>() {
-                            @Override
-                            public Registration.RegistrationResponsePb doAsync() {
-                                try {
-                                    Registration.RegistrationRequestPb req = m_helper.getRegistrationRequestPb(AndroidUtility.getTextFromEditText(fname),
-                                            AndroidUtility.getTextFromEditText(lname),
-                                            AndroidUtility.getTextFromEditText(email),
-                                            AndroidUtility.getTextFromEditText(number),
-                                            AndroidUtility.getTextFromEditText(password));
-                                    return m_registrationService.doRegistration(req);
-                                }catch (Exception e){
-                                    e.printStackTrace();
-                                }
-                                return null;
-                            }
 
-                        })
-                        .doWhenFinished(new AsyncJob.AsyncResultAction<Registration.RegistrationResponsePb>() {
-                            @Override
-                            public void onResult(Registration.RegistrationResponsePb result) {
-                                if (result.getStatus().getStatusType() == ResponseSatusEnum.SUCCESS) {
-                                    m_loginEntityDaoHelper.getDeoEntity().insert(m_helper.getLoginEntityFromLoginPb(m_helper.getLoginPb(result.getLogin(),AndroidUtility.getTextFromEditText(password))));
-                                    m_workerSession.setSession(result.getWorker());
-                                } else {
-                                    Toast.makeText(getApplicationContext(), result.getStatus().getStatusType().name(), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }).create().start();
-            }
-        });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }

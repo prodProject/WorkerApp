@@ -1,10 +1,8 @@
 package com.prod.app.ControlFlows;
 
 import com.prod.app.DatabaseEnitityHelper.LoginEntityDaoHelper;
-import com.prod.app.Firebase.GetFirebasePushNotificationToken;
 import com.prod.app.Helper.RegistrationHelper;
 import com.prod.app.SessionsManger.WorkerSession;
-import com.prod.app.Utility.AndroidUtility;
 import com.prod.app.clientServices.RegistrationClientService;
 import com.prod.app.protobuff.Registration;
 import com.prod.basic.common.async.AControlFlow;
@@ -54,7 +52,7 @@ public class RegistrationCF extends AControlFlow<RegistrationCF.State, Void, Voi
         @Override
         public State handleState() {
             m_registrationRequestPb = m_helper.getRegistrationRequestPb(m_registrationRequestPb);
-            return State.GET_PUSH_NOTIFICATION_TOKEN;
+            return State.CREATE_REGISTRATION;
         }
     }
 
@@ -67,7 +65,7 @@ public class RegistrationCF extends AControlFlow<RegistrationCF.State, Void, Voi
 
         @Override
         public State handleState() {
-            m_registrationRequestPb.toBuilder().setPushNotificationToken(GetFirebasePushNotificationToken.getToken());
+            m_registrationRequestPb.toBuilder().setPushNotificationToken("");
             return State.CREATE_REGISTRATION;
         }
     }
