@@ -2,13 +2,10 @@ package com.prod.app.ControlFlows;
 
 import android.util.Log;
 
-import com.prod.app.DatabaseEnitityHelper.LoginEntityDaoHelper;
 import com.prod.app.Helper.LoginHelper;
 import com.prod.app.SessionsManger.WorkerSession;
 import com.prod.app.clientServices.LoginClientService;
-import com.prod.app.clientServices.RegistrationClientService;
 import com.prod.app.protobuff.Login;
-import com.prod.app.protobuff.Registration;
 import com.prod.app.protobuff.Responsestatusenum;
 import com.prod.basic.common.async.AControlFlow;
 import com.prod.basic.common.exception.VoidException;
@@ -24,14 +21,6 @@ public class LoginCF extends AControlFlow<LoginCF.State, Void, VoidException> {
     private String m_emailOrPhone;
     private String m_password;
 
-    enum State {
-        GET_LOGINPB,
-        PERFORM_LOGIN,
-        SET_WORKER_SESSION,
-        DONE,
-    }
-
-
     public LoginCF(LoginHelper helper, LoginClientService loginService, WorkerSession workerSession, String emailOrPhone, String password) {
         super(State.GET_LOGINPB, State.DONE);
         m_helper = helper;
@@ -42,6 +31,14 @@ public class LoginCF extends AControlFlow<LoginCF.State, Void, VoidException> {
         addStateHandler(State.GET_LOGINPB, new GetLoginPbHandler());
         addStateHandler(State.PERFORM_LOGIN, new PerformLoginHandler());
         addStateHandler(State.SET_WORKER_SESSION, new SetWorkerSessionHandler());
+    }
+
+
+    enum State {
+        GET_LOGINPB,
+        PERFORM_LOGIN,
+        SET_WORKER_SESSION,
+        DONE,
     }
 
     private class GetLoginPbHandler implements StateHandler<State> {
@@ -101,3 +98,4 @@ public class LoginCF extends AControlFlow<LoginCF.State, Void, VoidException> {
     }
 
 }
+
