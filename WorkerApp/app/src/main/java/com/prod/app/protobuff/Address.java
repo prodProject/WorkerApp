@@ -19,44 +19,97 @@ public final class Address {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string houseNo = 1;</code>
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    boolean hasLatlong();
+    /**
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    com.prod.app.protobuff.Address.LatLongPb getLatlong();
+    /**
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    com.prod.app.protobuff.Address.LatLongPbOrBuilder getLatlongOrBuilder();
+
+    /**
+     * <code>string houseNo = 2;</code>
      */
     java.lang.String getHouseNo();
     /**
-     * <code>string houseNo = 1;</code>
+     * <code>string houseNo = 2;</code>
      */
     com.google.protobuf.ByteString
         getHouseNoBytes();
 
     /**
-     * <code>string streetOrRoad = 2;</code>
+     * <code>string streetOrRoad = 3;</code>
      */
     java.lang.String getStreetOrRoad();
     /**
-     * <code>string streetOrRoad = 2;</code>
+     * <code>string streetOrRoad = 3;</code>
      */
     com.google.protobuf.ByteString
         getStreetOrRoadBytes();
 
     /**
-     * <code>string landmark = 3;</code>
+     * <code>string area = 4;</code>
+     */
+    java.lang.String getArea();
+    /**
+     * <code>string area = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getAreaBytes();
+
+    /**
+     * <code>string landmark = 5;</code>
      */
     java.lang.String getLandmark();
     /**
-     * <code>string landmark = 3;</code>
+     * <code>string landmark = 5;</code>
      */
     com.google.protobuf.ByteString
         getLandmarkBytes();
 
     /**
-     * <code>string pincode = 4;</code>
+     * <code>string city = 6;</code>
+     */
+    java.lang.String getCity();
+    /**
+     * <code>string city = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getCityBytes();
+
+    /**
+     * <code>string state = 7;</code>
+     */
+    java.lang.String getState();
+    /**
+     * <code>string state = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getStateBytes();
+
+    /**
+     * <code>string pincode = 8;</code>
      */
     java.lang.String getPincode();
     /**
-     * <code>string pincode = 4;</code>
+     * <code>string pincode = 8;</code>
      */
     com.google.protobuf.ByteString
         getPincodeBytes();
+
+    /**
+     * <code>string country = 9;</code>
+     */
+    java.lang.String getCountry();
+    /**
+     * <code>string country = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getCountryBytes();
   }
   /**
    * Protobuf type {@code com.prod.app.protobuff.AddressPb}
@@ -73,8 +126,12 @@ public final class Address {
     private AddressPb() {
       houseNo_ = "";
       streetOrRoad_ = "";
+      area_ = "";
       landmark_ = "";
+      city_ = "";
+      state_ = "";
       pincode_ = "";
+      country_ = "";
     }
 
     @java.lang.Override
@@ -108,27 +165,64 @@ public final class Address {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.prod.app.protobuff.Address.LatLongPb.Builder subBuilder = null;
+              if (latlong_ != null) {
+                subBuilder = latlong_.toBuilder();
+              }
+              latlong_ = input.readMessage(com.prod.app.protobuff.Address.LatLongPb.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(latlong_);
+                latlong_ = subBuilder.buildPartial();
+              }
 
-              houseNo_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              streetOrRoad_ = s;
+              houseNo_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              landmark_ = s;
+              streetOrRoad_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              area_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              landmark_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              city_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              state_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               pincode_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              country_ = s;
               break;
             }
             default: {
@@ -163,10 +257,31 @@ public final class Address {
               com.prod.app.protobuff.Address.AddressPb.class, com.prod.app.protobuff.Address.AddressPb.Builder.class);
     }
 
-    public static final int HOUSENO_FIELD_NUMBER = 1;
+    public static final int LATLONG_FIELD_NUMBER = 1;
+    private com.prod.app.protobuff.Address.LatLongPb latlong_;
+    /**
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    public boolean hasLatlong() {
+      return latlong_ != null;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    public com.prod.app.protobuff.Address.LatLongPb getLatlong() {
+      return latlong_ == null ? com.prod.app.protobuff.Address.LatLongPb.getDefaultInstance() : latlong_;
+    }
+    /**
+     * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+     */
+    public com.prod.app.protobuff.Address.LatLongPbOrBuilder getLatlongOrBuilder() {
+      return getLatlong();
+    }
+
+    public static final int HOUSENO_FIELD_NUMBER = 2;
     private volatile java.lang.Object houseNo_;
     /**
-     * <code>string houseNo = 1;</code>
+     * <code>string houseNo = 2;</code>
      */
     public java.lang.String getHouseNo() {
       java.lang.Object ref = houseNo_;
@@ -181,7 +296,7 @@ public final class Address {
       }
     }
     /**
-     * <code>string houseNo = 1;</code>
+     * <code>string houseNo = 2;</code>
      */
     public com.google.protobuf.ByteString
         getHouseNoBytes() {
@@ -197,10 +312,10 @@ public final class Address {
       }
     }
 
-    public static final int STREETORROAD_FIELD_NUMBER = 2;
+    public static final int STREETORROAD_FIELD_NUMBER = 3;
     private volatile java.lang.Object streetOrRoad_;
     /**
-     * <code>string streetOrRoad = 2;</code>
+     * <code>string streetOrRoad = 3;</code>
      */
     public java.lang.String getStreetOrRoad() {
       java.lang.Object ref = streetOrRoad_;
@@ -215,7 +330,7 @@ public final class Address {
       }
     }
     /**
-     * <code>string streetOrRoad = 2;</code>
+     * <code>string streetOrRoad = 3;</code>
      */
     public com.google.protobuf.ByteString
         getStreetOrRoadBytes() {
@@ -231,10 +346,44 @@ public final class Address {
       }
     }
 
-    public static final int LANDMARK_FIELD_NUMBER = 3;
+    public static final int AREA_FIELD_NUMBER = 4;
+    private volatile java.lang.Object area_;
+    /**
+     * <code>string area = 4;</code>
+     */
+    public java.lang.String getArea() {
+      java.lang.Object ref = area_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        area_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string area = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAreaBytes() {
+      java.lang.Object ref = area_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        area_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LANDMARK_FIELD_NUMBER = 5;
     private volatile java.lang.Object landmark_;
     /**
-     * <code>string landmark = 3;</code>
+     * <code>string landmark = 5;</code>
      */
     public java.lang.String getLandmark() {
       java.lang.Object ref = landmark_;
@@ -249,7 +398,7 @@ public final class Address {
       }
     }
     /**
-     * <code>string landmark = 3;</code>
+     * <code>string landmark = 5;</code>
      */
     public com.google.protobuf.ByteString
         getLandmarkBytes() {
@@ -265,10 +414,78 @@ public final class Address {
       }
     }
 
-    public static final int PINCODE_FIELD_NUMBER = 4;
+    public static final int CITY_FIELD_NUMBER = 6;
+    private volatile java.lang.Object city_;
+    /**
+     * <code>string city = 6;</code>
+     */
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        city_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string city = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCityBytes() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object state_;
+    /**
+     * <code>string state = 7;</code>
+     */
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string state = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PINCODE_FIELD_NUMBER = 8;
     private volatile java.lang.Object pincode_;
     /**
-     * <code>string pincode = 4;</code>
+     * <code>string pincode = 8;</code>
      */
     public java.lang.String getPincode() {
       java.lang.Object ref = pincode_;
@@ -283,7 +500,7 @@ public final class Address {
       }
     }
     /**
-     * <code>string pincode = 4;</code>
+     * <code>string pincode = 8;</code>
      */
     public com.google.protobuf.ByteString
         getPincodeBytes() {
@@ -293,6 +510,40 @@ public final class Address {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         pincode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COUNTRY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object country_;
+    /**
+     * <code>string country = 9;</code>
+     */
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        country_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string country = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        country_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -313,17 +564,32 @@ public final class Address {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (latlong_ != null) {
+        output.writeMessage(1, getLatlong());
+      }
       if (!getHouseNoBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, houseNo_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, houseNo_);
       }
       if (!getStreetOrRoadBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, streetOrRoad_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, streetOrRoad_);
+      }
+      if (!getAreaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, area_);
       }
       if (!getLandmarkBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, landmark_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, landmark_);
+      }
+      if (!getCityBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, city_);
+      }
+      if (!getStateBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, state_);
       }
       if (!getPincodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pincode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, pincode_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, country_);
       }
       unknownFields.writeTo(output);
     }
@@ -334,17 +600,33 @@ public final class Address {
       if (size != -1) return size;
 
       size = 0;
+      if (latlong_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getLatlong());
+      }
       if (!getHouseNoBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, houseNo_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, houseNo_);
       }
       if (!getStreetOrRoadBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, streetOrRoad_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, streetOrRoad_);
+      }
+      if (!getAreaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, area_);
       }
       if (!getLandmarkBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, landmark_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, landmark_);
+      }
+      if (!getCityBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, city_);
+      }
+      if (!getStateBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, state_);
       }
       if (!getPincodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pincode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, pincode_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, country_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -361,14 +643,27 @@ public final class Address {
       }
       com.prod.app.protobuff.Address.AddressPb other = (com.prod.app.protobuff.Address.AddressPb) obj;
 
+      if (hasLatlong() != other.hasLatlong()) return false;
+      if (hasLatlong()) {
+        if (!getLatlong()
+            .equals(other.getLatlong())) return false;
+      }
       if (!getHouseNo()
           .equals(other.getHouseNo())) return false;
       if (!getStreetOrRoad()
           .equals(other.getStreetOrRoad())) return false;
+      if (!getArea()
+          .equals(other.getArea())) return false;
       if (!getLandmark()
           .equals(other.getLandmark())) return false;
+      if (!getCity()
+          .equals(other.getCity())) return false;
+      if (!getState()
+          .equals(other.getState())) return false;
       if (!getPincode()
           .equals(other.getPincode())) return false;
+      if (!getCountry()
+          .equals(other.getCountry())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -380,14 +675,26 @@ public final class Address {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLatlong()) {
+        hash = (37 * hash) + LATLONG_FIELD_NUMBER;
+        hash = (53 * hash) + getLatlong().hashCode();
+      }
       hash = (37 * hash) + HOUSENO_FIELD_NUMBER;
       hash = (53 * hash) + getHouseNo().hashCode();
       hash = (37 * hash) + STREETORROAD_FIELD_NUMBER;
       hash = (53 * hash) + getStreetOrRoad().hashCode();
+      hash = (37 * hash) + AREA_FIELD_NUMBER;
+      hash = (53 * hash) + getArea().hashCode();
       hash = (37 * hash) + LANDMARK_FIELD_NUMBER;
       hash = (53 * hash) + getLandmark().hashCode();
+      hash = (37 * hash) + CITY_FIELD_NUMBER;
+      hash = (53 * hash) + getCity().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getState().hashCode();
       hash = (37 * hash) + PINCODE_FIELD_NUMBER;
       hash = (53 * hash) + getPincode().hashCode();
+      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+      hash = (53 * hash) + getCountry().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -521,13 +828,27 @@ public final class Address {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (latlongBuilder_ == null) {
+          latlong_ = null;
+        } else {
+          latlong_ = null;
+          latlongBuilder_ = null;
+        }
         houseNo_ = "";
 
         streetOrRoad_ = "";
 
+        area_ = "";
+
         landmark_ = "";
 
+        city_ = "";
+
+        state_ = "";
+
         pincode_ = "";
+
+        country_ = "";
 
         return this;
       }
@@ -555,10 +876,19 @@ public final class Address {
       @java.lang.Override
       public com.prod.app.protobuff.Address.AddressPb buildPartial() {
         com.prod.app.protobuff.Address.AddressPb result = new com.prod.app.protobuff.Address.AddressPb(this);
+        if (latlongBuilder_ == null) {
+          result.latlong_ = latlong_;
+        } else {
+          result.latlong_ = latlongBuilder_.build();
+        }
         result.houseNo_ = houseNo_;
         result.streetOrRoad_ = streetOrRoad_;
+        result.area_ = area_;
         result.landmark_ = landmark_;
+        result.city_ = city_;
+        result.state_ = state_;
         result.pincode_ = pincode_;
+        result.country_ = country_;
         onBuilt();
         return result;
       }
@@ -607,6 +937,9 @@ public final class Address {
 
       public Builder mergeFrom(com.prod.app.protobuff.Address.AddressPb other) {
         if (other == com.prod.app.protobuff.Address.AddressPb.getDefaultInstance()) return this;
+        if (other.hasLatlong()) {
+          mergeLatlong(other.getLatlong());
+        }
         if (!other.getHouseNo().isEmpty()) {
           houseNo_ = other.houseNo_;
           onChanged();
@@ -615,12 +948,28 @@ public final class Address {
           streetOrRoad_ = other.streetOrRoad_;
           onChanged();
         }
+        if (!other.getArea().isEmpty()) {
+          area_ = other.area_;
+          onChanged();
+        }
         if (!other.getLandmark().isEmpty()) {
           landmark_ = other.landmark_;
           onChanged();
         }
+        if (!other.getCity().isEmpty()) {
+          city_ = other.city_;
+          onChanged();
+        }
+        if (!other.getState().isEmpty()) {
+          state_ = other.state_;
+          onChanged();
+        }
         if (!other.getPincode().isEmpty()) {
           pincode_ = other.pincode_;
+          onChanged();
+        }
+        if (!other.getCountry().isEmpty()) {
+          country_ = other.country_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -652,9 +1001,126 @@ public final class Address {
         return this;
       }
 
+      private com.prod.app.protobuff.Address.LatLongPb latlong_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Address.LatLongPb, com.prod.app.protobuff.Address.LatLongPb.Builder, com.prod.app.protobuff.Address.LatLongPbOrBuilder> latlongBuilder_;
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public boolean hasLatlong() {
+        return latlongBuilder_ != null || latlong_ != null;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public com.prod.app.protobuff.Address.LatLongPb getLatlong() {
+        if (latlongBuilder_ == null) {
+          return latlong_ == null ? com.prod.app.protobuff.Address.LatLongPb.getDefaultInstance() : latlong_;
+        } else {
+          return latlongBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public Builder setLatlong(com.prod.app.protobuff.Address.LatLongPb value) {
+        if (latlongBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          latlong_ = value;
+          onChanged();
+        } else {
+          latlongBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public Builder setLatlong(
+          com.prod.app.protobuff.Address.LatLongPb.Builder builderForValue) {
+        if (latlongBuilder_ == null) {
+          latlong_ = builderForValue.build();
+          onChanged();
+        } else {
+          latlongBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public Builder mergeLatlong(com.prod.app.protobuff.Address.LatLongPb value) {
+        if (latlongBuilder_ == null) {
+          if (latlong_ != null) {
+            latlong_ =
+              com.prod.app.protobuff.Address.LatLongPb.newBuilder(latlong_).mergeFrom(value).buildPartial();
+          } else {
+            latlong_ = value;
+          }
+          onChanged();
+        } else {
+          latlongBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public Builder clearLatlong() {
+        if (latlongBuilder_ == null) {
+          latlong_ = null;
+          onChanged();
+        } else {
+          latlong_ = null;
+          latlongBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public com.prod.app.protobuff.Address.LatLongPb.Builder getLatlongBuilder() {
+        
+        onChanged();
+        return getLatlongFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      public com.prod.app.protobuff.Address.LatLongPbOrBuilder getLatlongOrBuilder() {
+        if (latlongBuilder_ != null) {
+          return latlongBuilder_.getMessageOrBuilder();
+        } else {
+          return latlong_ == null ?
+              com.prod.app.protobuff.Address.LatLongPb.getDefaultInstance() : latlong_;
+        }
+      }
+      /**
+       * <code>.com.prod.app.protobuff.LatLongPb latlong = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.prod.app.protobuff.Address.LatLongPb, com.prod.app.protobuff.Address.LatLongPb.Builder, com.prod.app.protobuff.Address.LatLongPbOrBuilder> 
+          getLatlongFieldBuilder() {
+        if (latlongBuilder_ == null) {
+          latlongBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.prod.app.protobuff.Address.LatLongPb, com.prod.app.protobuff.Address.LatLongPb.Builder, com.prod.app.protobuff.Address.LatLongPbOrBuilder>(
+                  getLatlong(),
+                  getParentForChildren(),
+                  isClean());
+          latlong_ = null;
+        }
+        return latlongBuilder_;
+      }
+
       private java.lang.Object houseNo_ = "";
       /**
-       * <code>string houseNo = 1;</code>
+       * <code>string houseNo = 2;</code>
        */
       public java.lang.String getHouseNo() {
         java.lang.Object ref = houseNo_;
@@ -669,7 +1135,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string houseNo = 1;</code>
+       * <code>string houseNo = 2;</code>
        */
       public com.google.protobuf.ByteString
           getHouseNoBytes() {
@@ -685,7 +1151,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string houseNo = 1;</code>
+       * <code>string houseNo = 2;</code>
        */
       public Builder setHouseNo(
           java.lang.String value) {
@@ -698,7 +1164,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string houseNo = 1;</code>
+       * <code>string houseNo = 2;</code>
        */
       public Builder clearHouseNo() {
         
@@ -707,7 +1173,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string houseNo = 1;</code>
+       * <code>string houseNo = 2;</code>
        */
       public Builder setHouseNoBytes(
           com.google.protobuf.ByteString value) {
@@ -723,7 +1189,7 @@ public final class Address {
 
       private java.lang.Object streetOrRoad_ = "";
       /**
-       * <code>string streetOrRoad = 2;</code>
+       * <code>string streetOrRoad = 3;</code>
        */
       public java.lang.String getStreetOrRoad() {
         java.lang.Object ref = streetOrRoad_;
@@ -738,7 +1204,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string streetOrRoad = 2;</code>
+       * <code>string streetOrRoad = 3;</code>
        */
       public com.google.protobuf.ByteString
           getStreetOrRoadBytes() {
@@ -754,7 +1220,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string streetOrRoad = 2;</code>
+       * <code>string streetOrRoad = 3;</code>
        */
       public Builder setStreetOrRoad(
           java.lang.String value) {
@@ -767,7 +1233,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string streetOrRoad = 2;</code>
+       * <code>string streetOrRoad = 3;</code>
        */
       public Builder clearStreetOrRoad() {
         
@@ -776,7 +1242,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string streetOrRoad = 2;</code>
+       * <code>string streetOrRoad = 3;</code>
        */
       public Builder setStreetOrRoadBytes(
           com.google.protobuf.ByteString value) {
@@ -790,9 +1256,78 @@ public final class Address {
         return this;
       }
 
+      private java.lang.Object area_ = "";
+      /**
+       * <code>string area = 4;</code>
+       */
+      public java.lang.String getArea() {
+        java.lang.Object ref = area_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          area_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string area = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAreaBytes() {
+        java.lang.Object ref = area_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          area_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string area = 4;</code>
+       */
+      public Builder setArea(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        area_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string area = 4;</code>
+       */
+      public Builder clearArea() {
+        
+        area_ = getDefaultInstance().getArea();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string area = 4;</code>
+       */
+      public Builder setAreaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        area_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object landmark_ = "";
       /**
-       * <code>string landmark = 3;</code>
+       * <code>string landmark = 5;</code>
        */
       public java.lang.String getLandmark() {
         java.lang.Object ref = landmark_;
@@ -807,7 +1342,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string landmark = 3;</code>
+       * <code>string landmark = 5;</code>
        */
       public com.google.protobuf.ByteString
           getLandmarkBytes() {
@@ -823,7 +1358,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string landmark = 3;</code>
+       * <code>string landmark = 5;</code>
        */
       public Builder setLandmark(
           java.lang.String value) {
@@ -836,7 +1371,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string landmark = 3;</code>
+       * <code>string landmark = 5;</code>
        */
       public Builder clearLandmark() {
         
@@ -845,7 +1380,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string landmark = 3;</code>
+       * <code>string landmark = 5;</code>
        */
       public Builder setLandmarkBytes(
           com.google.protobuf.ByteString value) {
@@ -859,9 +1394,147 @@ public final class Address {
         return this;
       }
 
+      private java.lang.Object city_ = "";
+      /**
+       * <code>string city = 6;</code>
+       */
+      public java.lang.String getCity() {
+        java.lang.Object ref = city_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          city_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string city = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCityBytes() {
+        java.lang.Object ref = city_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          city_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string city = 6;</code>
+       */
+      public Builder setCity(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        city_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string city = 6;</code>
+       */
+      public Builder clearCity() {
+        
+        city_ = getDefaultInstance().getCity();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string city = 6;</code>
+       */
+      public Builder setCityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        city_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object state_ = "";
+      /**
+       * <code>string state = 7;</code>
+       */
+      public java.lang.String getState() {
+        java.lang.Object ref = state_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          state_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string state = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStateBytes() {
+        java.lang.Object ref = state_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          state_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string state = 7;</code>
+       */
+      public Builder setState(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string state = 7;</code>
+       */
+      public Builder clearState() {
+        
+        state_ = getDefaultInstance().getState();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string state = 7;</code>
+       */
+      public Builder setStateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        state_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object pincode_ = "";
       /**
-       * <code>string pincode = 4;</code>
+       * <code>string pincode = 8;</code>
        */
       public java.lang.String getPincode() {
         java.lang.Object ref = pincode_;
@@ -876,7 +1549,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string pincode = 4;</code>
+       * <code>string pincode = 8;</code>
        */
       public com.google.protobuf.ByteString
           getPincodeBytes() {
@@ -892,7 +1565,7 @@ public final class Address {
         }
       }
       /**
-       * <code>string pincode = 4;</code>
+       * <code>string pincode = 8;</code>
        */
       public Builder setPincode(
           java.lang.String value) {
@@ -905,7 +1578,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string pincode = 4;</code>
+       * <code>string pincode = 8;</code>
        */
       public Builder clearPincode() {
         
@@ -914,7 +1587,7 @@ public final class Address {
         return this;
       }
       /**
-       * <code>string pincode = 4;</code>
+       * <code>string pincode = 8;</code>
        */
       public Builder setPincodeBytes(
           com.google.protobuf.ByteString value) {
@@ -924,6 +1597,75 @@ public final class Address {
   checkByteStringIsUtf8(value);
         
         pincode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object country_ = "";
+      /**
+       * <code>string country = 9;</code>
+       */
+      public java.lang.String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          country_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string country = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCountryBytes() {
+        java.lang.Object ref = country_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string country = 9;</code>
+       */
+      public Builder setCountry(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string country = 9;</code>
+       */
+      public Builder clearCountry() {
+        
+        country_ = getDefaultInstance().getCountry();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string country = 9;</code>
+       */
+      public Builder setCountryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        country_ = value;
         onChanged();
         return this;
       }
@@ -980,11 +1722,562 @@ public final class Address {
 
   }
 
+  public interface LatLongPbOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.prod.app.protobuff.LatLongPb)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double latitude = 1;</code>
+     */
+    double getLatitude();
+
+    /**
+     * <code>double longitude = 2;</code>
+     */
+    double getLongitude();
+  }
+  /**
+   * Protobuf type {@code com.prod.app.protobuff.LatLongPb}
+   */
+  public  static final class LatLongPb extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.prod.app.protobuff.LatLongPb)
+      LatLongPbOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LatLongPb.newBuilder() to construct.
+    private LatLongPb(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LatLongPb() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LatLongPb();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LatLongPb(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              latitude_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              longitude_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prod.app.protobuff.Address.internal_static_com_prod_app_protobuff_LatLongPb_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prod.app.protobuff.Address.internal_static_com_prod_app_protobuff_LatLongPb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prod.app.protobuff.Address.LatLongPb.class, com.prod.app.protobuff.Address.LatLongPb.Builder.class);
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 1;
+    private double latitude_;
+    /**
+     * <code>double latitude = 1;</code>
+     */
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 2;
+    private double longitude_;
+    /**
+     * <code>double longitude = 2;</code>
+     */
+    public double getLongitude() {
+      return longitude_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (latitude_ != 0D) {
+        output.writeDouble(1, latitude_);
+      }
+      if (longitude_ != 0D) {
+        output.writeDouble(2, longitude_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (latitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, latitude_);
+      }
+      if (longitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, longitude_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.prod.app.protobuff.Address.LatLongPb)) {
+        return super.equals(obj);
+      }
+      com.prod.app.protobuff.Address.LatLongPb other = (com.prod.app.protobuff.Address.LatLongPb) obj;
+
+      if (java.lang.Double.doubleToLongBits(getLatitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLatitude())) return false;
+      if (java.lang.Double.doubleToLongBits(getLongitude())
+          != java.lang.Double.doubleToLongBits(
+              other.getLongitude())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLatitude()));
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLongitude()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.prod.app.protobuff.Address.LatLongPb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.prod.app.protobuff.Address.LatLongPb prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.prod.app.protobuff.LatLongPb}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.prod.app.protobuff.LatLongPb)
+        com.prod.app.protobuff.Address.LatLongPbOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prod.app.protobuff.Address.internal_static_com_prod_app_protobuff_LatLongPb_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prod.app.protobuff.Address.internal_static_com_prod_app_protobuff_LatLongPb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prod.app.protobuff.Address.LatLongPb.class, com.prod.app.protobuff.Address.LatLongPb.Builder.class);
+      }
+
+      // Construct using com.prod.app.protobuff.Address.LatLongPb.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        latitude_ = 0D;
+
+        longitude_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prod.app.protobuff.Address.internal_static_com_prod_app_protobuff_LatLongPb_descriptor;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Address.LatLongPb getDefaultInstanceForType() {
+        return com.prod.app.protobuff.Address.LatLongPb.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Address.LatLongPb build() {
+        com.prod.app.protobuff.Address.LatLongPb result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.prod.app.protobuff.Address.LatLongPb buildPartial() {
+        com.prod.app.protobuff.Address.LatLongPb result = new com.prod.app.protobuff.Address.LatLongPb(this);
+        result.latitude_ = latitude_;
+        result.longitude_ = longitude_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prod.app.protobuff.Address.LatLongPb) {
+          return mergeFrom((com.prod.app.protobuff.Address.LatLongPb)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prod.app.protobuff.Address.LatLongPb other) {
+        if (other == com.prod.app.protobuff.Address.LatLongPb.getDefaultInstance()) return this;
+        if (other.getLatitude() != 0D) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongitude() != 0D) {
+          setLongitude(other.getLongitude());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prod.app.protobuff.Address.LatLongPb parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prod.app.protobuff.Address.LatLongPb) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double latitude_ ;
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public double getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public Builder setLatitude(double value) {
+        
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public Builder clearLatitude() {
+        
+        latitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double longitude_ ;
+      /**
+       * <code>double longitude = 2;</code>
+       */
+      public double getLongitude() {
+        return longitude_;
+      }
+      /**
+       * <code>double longitude = 2;</code>
+       */
+      public Builder setLongitude(double value) {
+        
+        longitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double longitude = 2;</code>
+       */
+      public Builder clearLongitude() {
+        
+        longitude_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.prod.app.protobuff.LatLongPb)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.prod.app.protobuff.LatLongPb)
+    private static final com.prod.app.protobuff.Address.LatLongPb DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.prod.app.protobuff.Address.LatLongPb();
+    }
+
+    public static com.prod.app.protobuff.Address.LatLongPb getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LatLongPb>
+        PARSER = new com.google.protobuf.AbstractParser<LatLongPb>() {
+      @java.lang.Override
+      public LatLongPb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LatLongPb(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LatLongPb> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LatLongPb> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.prod.app.protobuff.Address.LatLongPb getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_prod_app_protobuff_AddressPb_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_prod_app_protobuff_AddressPb_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_prod_app_protobuff_LatLongPb_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_prod_app_protobuff_LatLongPb_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -995,9 +2288,13 @@ public final class Address {
   static {
     java.lang.String[] descriptorData = {
       "\n\raddress.proto\022\026com.prod.app.protobuff\"" +
-      "U\n\tAddressPb\022\017\n\007houseNo\030\001 \001(\t\022\024\n\014streetO" +
-      "rRoad\030\002 \001(\t\022\020\n\010landmark\030\003 \001(\t\022\017\n\007pincode" +
-      "\030\004 \001(\tb\006proto3"
+      "\305\001\n\tAddressPb\0222\n\007latlong\030\001 \001(\0132!.com.pro" +
+      "d.app.protobuff.LatLongPb\022\017\n\007houseNo\030\002 \001" +
+      "(\t\022\024\n\014streetOrRoad\030\003 \001(\t\022\014\n\004area\030\004 \001(\t\022\020" +
+      "\n\010landmark\030\005 \001(\t\022\014\n\004city\030\006 \001(\t\022\r\n\005state\030" +
+      "\007 \001(\t\022\017\n\007pincode\030\010 \001(\t\022\017\n\007country\030\t \001(\t\"" +
+      "0\n\tLatLongPb\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongit" +
+      "ude\030\002 \001(\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1008,7 +2305,13 @@ public final class Address {
     internal_static_com_prod_app_protobuff_AddressPb_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_prod_app_protobuff_AddressPb_descriptor,
-        new java.lang.String[] { "HouseNo", "StreetOrRoad", "Landmark", "Pincode", });
+        new java.lang.String[] { "Latlong", "HouseNo", "StreetOrRoad", "Area", "Landmark", "City", "State", "Pincode", "Country", });
+    internal_static_com_prod_app_protobuff_LatLongPb_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_prod_app_protobuff_LatLongPb_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_prod_app_protobuff_LatLongPb_descriptor,
+        new java.lang.String[] { "Latitude", "Longitude", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

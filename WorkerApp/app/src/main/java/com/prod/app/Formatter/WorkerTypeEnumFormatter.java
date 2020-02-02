@@ -41,28 +41,30 @@ public class WorkerTypeEnumFormatter implements IFormatter<String, Workertype.Wo
     public Workertype.WorkerTypeEnum format(int pos) {
 
         switch (pos) {
+            case 0:
+                return Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE;
             case 1:
-                return Workertype.WorkerTypeEnum.MAID;
-            case 2:
-                return Workertype.WorkerTypeEnum.SALON;
-            case 3:
-                return Workertype.WorkerTypeEnum.CLEANING;
-            case 4:
-                return Workertype.WorkerTypeEnum.PAINTING;
-            case 5:
-                return Workertype.WorkerTypeEnum.PLUMBING;
-            case 6:
                 return Workertype.WorkerTypeEnum.CARPENTER;
-            case 7:
+            case 2:
+                return Workertype.WorkerTypeEnum.CLEANING;
+            case 3:
                 return Workertype.WorkerTypeEnum.CONSTRUCTOR;
-            case 8:
+            case 4:
                 return Workertype.WorkerTypeEnum.ELECTRICIAN;
+            case 5:
+                return Workertype.WorkerTypeEnum.LAUNDARY_AND_DRY_CLEANING;
+            case 6:
+                return Workertype.WorkerTypeEnum.MAID;
+            case 7:
+                return Workertype.WorkerTypeEnum.PACKERS_AND_MOVERS;
+            case 8:
+                return Workertype.WorkerTypeEnum.PAINTING;
             case 9:
                 return Workertype.WorkerTypeEnum.PEST_CONTROL;
             case 10:
                 return Workertype.WorkerTypeEnum.PACKERS_AND_MOVERS;
             case 11:
-                return Workertype.WorkerTypeEnum.LAUNDARY_AND_DRY_CLEANING;
+                return Workertype.WorkerTypeEnum.SALON;
             default:
                 return Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE;
         }

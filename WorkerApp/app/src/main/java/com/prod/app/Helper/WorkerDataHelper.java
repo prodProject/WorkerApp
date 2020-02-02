@@ -1,5 +1,6 @@
 package com.prod.app.Helper;
 
+import com.prod.app.Comapretors.WorkerTypeEnumComparetor;
 import com.prod.app.Formatter.WorkerTypeEnumFormatter;
 import com.prod.app.SessionsManger.WorkerSession;
 import com.prod.app.protobuff.Entity;
@@ -22,9 +23,14 @@ public class WorkerDataHelper {
 
     public List<String> getFormattedEnumList(List<Workertype.WorkerTypeEnum> workerTyepEnumList) {
         List<String> formattedNameList = new ArrayList<String>();
+        formattedNameList.add("Select Type");
         for (Workertype.WorkerTypeEnum workerType : workerTyepEnumList) {
-            formattedNameList.add(m_workerTypeEnumFormatter.format(workerType));
+            if (!(workerType == Workertype.WorkerTypeEnum.UNKNOWN_WORKER_TYPE || workerType == Workertype.WorkerTypeEnum.UNRECOGNIZED)) {
+                formattedNameList.add(m_workerTypeEnumFormatter.format(workerType));
+            }
         }
+        formattedNameList.sort(new WorkerTypeEnumComparetor());
+        formattedNameList.add(0, "Select Type");
         return formattedNameList;
     }
 

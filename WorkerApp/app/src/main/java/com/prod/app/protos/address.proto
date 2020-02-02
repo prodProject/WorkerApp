@@ -3,8 +3,18 @@ syntax = "proto3";
 package com.prod.app.protobuff;
 
 message AddressPb {
-    string houseNo= 1;
-    string streetOrRoad = 2;
-    string landmark = 3;
-    string pincode = 4;
+    LatLongPb latlong = 1;
+    string houseNo = 2;
+    string streetOrRoad = 3;
+    string area = 4;
+    string landmark = 5;
+    string city = 6;
+    string state = 7;
+    string pincode = 8;
+    string country = 9;
+}
+
+message LatLongPb {
+    double latitude = 1;
+    double longitude = 2;
 }

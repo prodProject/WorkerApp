@@ -43,7 +43,7 @@ public class WorkerTypeClientService implements IClientServices<Workertype.Worke
     @Override
     public Workertype.WorkerTypeSearchResponsePb search(Workertype.WorkerTypeSearchRequestPb request) {
         try {
-            return m_search.execute(request).get();
+            return new WorkerTypeSearchService().execute(request).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

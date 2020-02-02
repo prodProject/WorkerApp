@@ -43,7 +43,6 @@ public class DeviceInfo {
                 }
                 StringBuilder res1 = new StringBuilder();
                 for (byte b : macBytes) {
-                    //res1.append(Integer.toHexString(b & 0xFF) + ":");
                     res1.append(String.format("%02X:", b));
                 }
                 if (res1.length() > 0) {

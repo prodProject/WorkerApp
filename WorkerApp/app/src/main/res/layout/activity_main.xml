@@ -5,4 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".Activity.SplashScreen">
 
+    <com.prod.app.Widget.WorkerDataTypeWidget.WorkerDataTypeWidget
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

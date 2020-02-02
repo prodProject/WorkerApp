@@ -1,7 +1,5 @@
 package com.prod.app.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.prod.app.Adapters.CustomCheckboxAdapter;
 import com.prod.app.Async.AsyncJob;
@@ -20,19 +19,14 @@ import com.prod.app.Formatter.WorkerTypeEnumFormatter;
 import com.prod.app.Helper.WorkerDataHelper;
 import com.prod.app.Model.CheckboxModel;
 import com.prod.app.R;
-import com.prod.app.Utility.AndroidUtility;
 import com.prod.app.clientServices.WorkerClientService;
 import com.prod.app.clientServices.WorkerTypeClientService;
-import com.prod.app.protobuff.Login;
 import com.prod.app.protobuff.Names;
-import com.prod.app.protobuff.Responsestatusenum;
 import com.prod.app.protobuff.Worker;
 import com.prod.app.protobuff.Workertype;
-import com.prod.basic.common.httpCommon.Enums.RequestMethodEnum;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class WorkerDataActivity extends AppCompatActivity {
 
@@ -87,7 +81,7 @@ public class WorkerDataActivity extends AppCompatActivity {
                                         for (Names.NamesPb data : result.getResults(0).getCategoriesList()) {
                                             dataModels.add(new CheckboxModel(Strings.toTitileCaseFormatter(data.getCanonicalName()), data.getCanonicalName(), false));
                                         }
-                                        adapter = new CustomCheckboxAdapter(dataModels, getApplicationContext());
+
                                         listView.setAdapter(adapter);
                                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override

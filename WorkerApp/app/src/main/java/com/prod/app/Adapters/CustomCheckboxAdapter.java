@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.prod.app.Model.CheckboxModel;
 import com.prod.app.R;
+import com.prod.basic.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,10 @@ public class CustomCheckboxAdapter extends ArrayAdapter {
 
     public CustomCheckboxAdapter(ArrayList data, Context context) {
         super(context, R.layout.row_item, data);
+        this.dataSet = new ArrayList<CheckboxModel>();
+        this.dataSet.clear();
         this.dataSet = data;
+        super.notifyDataSetChanged();
         this.mContext = context;
         tags = new ArrayList<String>();
 
