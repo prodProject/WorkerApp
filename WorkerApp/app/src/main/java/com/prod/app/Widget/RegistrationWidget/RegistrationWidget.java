@@ -21,7 +21,7 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
 
-public class RegistrationWidget extends LinearLayout implements IView<RegistrationView>, DatePickerDialog.OnDateSetListener{
+public class RegistrationWidget extends LinearLayout implements IView<RegistrationView>, DatePickerDialog.OnDateSetListener {
     private EditText m_firstName;
     private EditText m_lastName;
     private EditText m_email;
@@ -71,15 +71,15 @@ public class RegistrationWidget extends LinearLayout implements IView<Registrati
                         now.get(Calendar.MONTH), // Initial month selection
                         now.get(Calendar.DAY_OF_MONTH) // Inital day selection
                 );
-                FragmentActivity activity = (FragmentActivity)getView().getActivityContext();
-                dpd.show(activity.getSupportFragmentManager(),"dateDailogBox");
+                FragmentActivity activity = (FragmentActivity) getView().getActivityContext();
+                dpd.show(activity.getSupportFragmentManager(), "dateDailogBox");
                 return false;
             }
         });
         m_registration.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                m_genderRadioButton=(RadioButton)findViewById(m_genderRadioGroup.getCheckedRadioButtonId());
+                m_genderRadioButton = (RadioButton) findViewById(m_genderRadioGroup.getCheckedRadioButtonId());
                 getView().setGenderToRegistrationRequestPb(Gender.GenderEnum.valueOf(m_genderRadioButton.getText().toString().toUpperCase()));
                 getView().performRegistration(AndroidUtility.getTextFromEditText(m_firstName),
                         AndroidUtility.getTextFromEditText(m_lastName),
@@ -99,7 +99,7 @@ public class RegistrationWidget extends LinearLayout implements IView<Registrati
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        m_dateOfBirth.setText(""+dayOfMonth+"/"+monthOfYear+"/"+year);
+        m_dateOfBirth.setText("" + dayOfMonth + "/" + monthOfYear + "/" + year);
         Time.TimePb.Builder dob = Time.TimePb.newBuilder();
         dob.setYear(String.valueOf(year));
         dob.setMonth(String.valueOf(monthOfYear));

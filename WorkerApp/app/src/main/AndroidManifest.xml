@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
@@ -23,11 +22,8 @@
             android:name=".GeoLocation.PermissionResult"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"></activity>
-
-        <activity android:name=".Activity.WorkerDataActivity"></activity>
+        <activity android:name=".Activity.WorkerDataActivity" />
         <activity android:name=".Activity.HomeActivity" />
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.RegistrationActivity" />
         <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
